@@ -5,15 +5,35 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import moment from 'moment-timezone';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+
 import Select from 'react-select';
 
 import eventsData from './data/Events.json';
+
+const localizer = momentLocalizer(moment);
+
+const eventClassNames = {
+    'Concert': 'concert',
+    'Ceremony': 'ceremony',
+    'Release': 'release',
+    'Football': 'football',
+    'Other': 'other',
+    'World of Outlaws': 'woo',
+    'Lucas Oil': 'lolms',
+    'FloRacing Night in America': 'flo',
+    'F1': 'f1'
+};
 
 const App = () => {
     const [showAllEvents, setShowAllEvents] = useState(false);
     const [activeOption, setActiveOption] = useState('America/Chicago');
     const [selectedCategories, setSelectedCategories] = useState(new Set());
     const [showCategoryPopup, setShowCategoryPopup] = useState(false);
+    const [viewMode, setViewMode] = useState('list');
+    const [showEventDetailsPopup, setShowEventDetailsPopup] = useState(false);
+    const [selectedEventDetails, setSelectedEventDetails] = useState(null);
 
     const categoryPopupRef = useRef(null);
     const categoryButtonRef = useRef(null);
@@ -30,7 +50,7 @@ const App = () => {
             document.addEventListener('mousedown', handleClickOutside);
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
-        }
+        };
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
@@ -159,6 +179,66 @@ const App = () => {
         }
     }, [events, selectedCategories]);
 
+    const calendarEvents = useMemo(() => {
+        const currentDate = new Date();
+        const calendarEvents = sortedEvents
+            .filter(event => {
+                const [month, day, year] = event.date.split('/').map(Number);
+                const eventDate = new Date(2000 + year, month - 1, day);
+                return showAllEvents || eventDate >= currentDate;
+            })
+            .map(event => {
+            const [month, day, year] = event.date.split('/').map(Number);
+            let startMoment;
+
+            if (event.time && event.time.trim() !== '') {
+                const parts = event.time.split(' ');
+                let timeString = parts[0];
+                const period = parts[1];
+
+                const [h, m] = timeString.split(':').map(Number);
+                const hours = (h % 12) + (period === 'PM' ? 12 : 0);
+                const minutes = m;
+
+                startMoment = moment.tz({
+                    year: 2000 + year,
+                    month: month - 1,
+                    day: day,
+                    hour: hours,
+                    minute: minutes
+                }, 'America/Chicago');
+            } else {
+                startMoment = moment.tz({
+                    year: 2000 + year,
+                    month: month - 1,
+                    day: day,
+                    hour: 0,
+                    minute: 0
+                }, 'America/Chicago');
+            }
+
+            const displayMoment = startMoment.tz(activeOption);
+
+            const allDay = !event.time || event.time.trim() === '';
+
+            let endMoment = displayMoment.clone();
+            if (!allDay) {
+                endMoment.add(1, 'hour');
+            } else {
+                endMoment.add(1, 'day').startOf('day');
+            }
+
+            return {
+                title: event.title,
+                start: displayMoment.toDate(),
+                end: endMoment.toDate(),
+                allDay: allDay,
+                resource: event
+            };
+        });
+        return calendarEvents;
+    }, [sortedEvents, activeOption, showAllEvents]);
+
     const handleOptionChange = (selectedOption) => {
         setActiveOption(selectedOption.value);
     };
@@ -213,18 +293,25 @@ const App = () => {
         return (
             <div>
                 <button
-                    className={`btn ${showAllEvents ? 'btn-outline-secondary' : 'btn-primary'}`}
+                    className={`btn ${viewMode === 'list' && !showAllEvents ? 'btn-primary' : 'btn-outline-secondary'}`}
                     style={{ margin: '5px' }}
-                    onClick={() => setShowAllEvents(false)}
+                    onClick={() => { setViewMode('list'); setShowAllEvents(false); }}
                 >
                     Upcoming Events
                 </button>
                 <button
-                    className={`btn ${showAllEvents ? 'btn-primary' : 'btn-outline-secondary'}`}
+                    className={`btn ${viewMode === 'list' && showAllEvents ? 'btn-primary' : 'btn-outline-secondary'}`}
                     style={{ margin: '5px' }}
-                    onClick={() => setShowAllEvents(true)}
+                    onClick={() => { setViewMode('list'); setShowAllEvents(true); }}
                 >
                     All Events
+                </button>
+                <button
+                    className={`btn ${viewMode === 'calendar' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                    style={{ margin: '5px' }}
+                    onClick={() => setViewMode('calendar')}
+                >
+                    Calendar View
                 </button>
             </div>
         );
@@ -331,20 +418,11 @@ const App = () => {
     };
 
     const singleEvent = (event) => {
-        const classNames = {
-            'Concert': 'concert',
-            'Ceremony': 'ceremony',
-            'Release': 'release',
-            'Football': 'football',
-            'Other': 'other',
-            'World of Outlaws': 'woo',
-            'Lucas Oil': 'lolms',
-            'Flo': 'flo',
-            'F1': 'f1'
-        };
+        const className = eventClassNames[event.subcategory] || eventClassNames[event.category] || eventClassNames['Other'];
+
         if(event.subcategory !== "") {
             return (
-                <button className={`unclickable-button ${classNames[event.subcategory] || classNames[event.category] || classNames['Other']}`}>
+                <button className={`unclickable-button ${className}`}>
                     {event.subcategory && (
                         <>
                             <span style={{ fontSize: 'larger'}}>
@@ -372,7 +450,7 @@ const App = () => {
             );
         }
         return (
-            <button className={`unclickable-button ${classNames[event.subcategory] || classNames[event.category] || classNames['Other']}`}>
+            <button className={`unclickable-button ${className}`}>
                 {event.category && (
                     <>
                         <span style={{ fontSize: 'larger'}}>
@@ -434,6 +512,26 @@ const App = () => {
         </React.Fragment>
     ));
 
+    const eventPropGetter = (event) => {
+        const originalEvent = event.resource;
+        const categoryClass = eventClassNames[originalEvent.subcategory] ||
+                              eventClassNames[originalEvent.category] ||
+                              eventClassNames['Other'];
+        return {
+            className: categoryClass,
+        };
+    };
+
+    const handleSelectCalendarEvent = (calendarEvent) => {
+        setSelectedEventDetails(calendarEvent.resource);
+        setShowEventDetailsPopup(true);
+    };
+
+    const handleCloseEventDetailsPopup = () => {
+        setShowEventDetailsPopup(false);
+        setSelectedEventDetails(null);
+    };
+
     return (
         <div>
             <div className="container">
@@ -454,10 +552,70 @@ const App = () => {
                 </div>
 
                 <hr className="featurette-divider" />
-                {allEvents}
+
+                {viewMode === 'list' ? (
+                    allEvents
+                ) : (
+                    <div style={{ height: '700px', margin: '20px 0' }}>
+                        <Calendar
+                            localizer={localizer}
+                            events={calendarEvents}
+                            startAccessor="start"
+                            endAccessor="end"
+                            eventPropGetter={eventPropGetter}
+                            onSelectEvent={handleSelectCalendarEvent}
+                            key={activeOption + '-' + selectedCategories.size + '-' + showAllEvents}
+                            style={{ height: '100%' }}
+                            views={['month', 'week', 'day', 'agenda']}
+                            defaultView="month"
+                            scrollToTime={moment().toDate()}
+                        />
+                    </div>
+                )}
             </div>
+
+            {showEventDetailsPopup && selectedEventDetails && (
+                <EventDetailsPopup
+                    event={selectedEventDetails}
+                    onClose={handleCloseEventDetailsPopup}
+                    activeTimeZone={activeOption}
+                />
+            )}
         </div>
     );
 }
+
+const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
+    if (!event) return null;
+
+    const [month, day, year] = event.date.split('/').map(Number);
+    let eventMoment = moment.tz({
+        year: 2000 + year,
+        month: month - 1,
+        day: day,
+        hour: event.time ? (parseInt(event.time.split(':')[0]) % 12) + (event.time.includes('PM') ? 12 : 0) : 0,
+        minute: event.time ? parseInt(event.time.split(':')[1]) : 0
+    }, 'America/Chicago');
+
+    const displayMoment = eventMoment.tz(activeTimeZone);
+
+    const displayDate = displayMoment.format('ddd, MMM D, YYYY');
+    const displayTime = event.time ? displayMoment.format('h:mm A z') : 'All Day';
+
+    return (
+        <div className="event-details-overlay">
+            <div className="event-details-popup">
+                <button className="close-button" onClick={onClose}>&times;</button>
+                <h2>{event.title}</h2>
+                <p><strong>Date:</strong> {displayDate}</p>
+                <p><strong>Time:</strong> {displayTime}</p>
+                {event.location && <p><strong>Location:</strong> {event.location}</p>}
+                {event.category && <p><strong>Category:</strong> {event.category}</p>}
+                {event.subcategory && <p><strong>Subcategory:</strong> {event.subcategory}</p>}
+                {event.description && <p><strong>Description:</strong> {event.description}</p>}
+            </div>
+        </div>
+    );
+};
 
 export default App;

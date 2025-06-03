@@ -36,3 +36,75 @@
     text-transform: uppercase;
     padding: 5px;
   }
+
+  /* Existing styles */
+
+/* Event Details Popup Styles */
+.event-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Higher than other elements, like filter popup */
+}
+
+.event-details-popup {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  max-width: 500px; /* Limit width */
+  width: 90%; /* Responsive width */
+  color: #333; /* Darker text for readability */
+}
+
+.event-details-popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.event-details-popup p {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.event-details-popup strong {
+  color: #555;
+}
+
+.event-details-popup .close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: #888;
+  line-height: 1;
+  padding: 0;
+}
+
+.event-details-popup .close-button:hover {
+  color: #333;
+}
+
+/* You mentioned colors not working. If the specific `.concert`, `.football` etc.
+ classes in your App.css are not strong enough, you might need to add `!important`
+ to their `background-color` or `color` properties, for example:
+ .concert {
+     background-color: #ffcc00 !important;
+     color: black !important;
+ }
+ This helps override react-big-calendar's default styles, which often have high specificity.
+*/
