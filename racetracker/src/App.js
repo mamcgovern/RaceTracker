@@ -22,7 +22,7 @@ const eventClassNames = {
     'Other': 'other',
     'World of Outlaws': 'woo',
     'Lucas Oil': 'lolms',
-    'FloRacing Night in America': 'flo',
+    'Flo': 'flo',
     'F1': 'f1'
 };
 
@@ -34,6 +34,10 @@ const App = () => {
     const [viewMode, setViewMode] = useState('list');
     const [showEventDetailsPopup, setShowEventDetailsPopup] = useState(false);
     const [selectedEventDetails, setSelectedEventDetails] = useState(null);
+
+    // New state for controlling calendar navigation
+    const [currentDate, setCurrentDate] = useState(new Date()); // Tracks the currently displayed date
+    const [currentView, setCurrentView] = useState('month');   // Tracks the current calendar view
 
     const categoryPopupRef = useRef(null);
     const categoryButtonRef = useRef(null);
@@ -532,6 +536,15 @@ const App = () => {
         setSelectedEventDetails(null);
     };
 
+    // Handlers for calendar navigation and view changes
+    const handleNavigate = (newDate) => {
+        setCurrentDate(newDate);
+    };
+
+    const handleViewChange = (newView) => {
+        setCurrentView(newView);
+    };
+
     return (
         <div>
             <div className="container">
@@ -564,10 +577,16 @@ const App = () => {
                             endAccessor="end"
                             eventPropGetter={eventPropGetter}
                             onSelectEvent={handleSelectCalendarEvent}
+                            // --- BEGIN Calendar Navigation Props ---
+                            date={currentDate}      // Control the current date
+                            view={currentView}      // Control the current view
+                            onNavigate={handleNavigate} // Update date on navigation
+                            onView={handleViewChange}   // Update view on view change
+                            // --- END Calendar Navigation Props ---
                             key={activeOption + '-' + selectedCategories.size + '-' + showAllEvents}
                             style={{ height: '100%' }}
                             views={['month', 'week', 'day', 'agenda']}
-                            defaultView="month"
+                            // Removed defaultView as 'view' prop is now used
                             scrollToTime={moment().toDate()}
                         />
                     </div>
@@ -599,7 +618,7 @@ const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
 
     const displayMoment = eventMoment.tz(activeTimeZone);
 
-    const displayDate = displayMoment.format('ddd, MMM D, YYYY');
+    const displayDate = displayMoment.format('ddd, MMM D, YYYY'); // Added YYYY for clarity
     const displayTime = event.time ? displayMoment.format('h:mm A z') : 'All Day';
 
     return (
