@@ -2,7 +2,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "08/09/25",
+        "date": "08/09/2025",
         "time": "7:00 PM",
         "title": "Preseason: Chiefs @ Cardinals",
         "location": "State Farm Stadium"
@@ -10,7 +10,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "08/15/25",
+        "date": "08/15/2025",
         "time": "9:00 PM",
         "title": "Preseason: Chiefs @ Seahawks",
         "location": "Lumen Field"
@@ -18,7 +18,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "08/22/25",
+        "date": "08/22/2025",
         "time": "7:20 PM",
         "title": "Preseason: Chiefs vs Bears",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -26,7 +26,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "09/05/25",
+        "date": "09/05/2025",
         "time": "7:00 PM",
         "title": "Chiefs @ Chargers",
         "location": "Arena Corinthians"
@@ -34,7 +34,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "09/14/25",
+        "date": "09/14/2025",
         "time": "3:25 PM",
         "title": "Chiefs vs Eagles",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -42,7 +42,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "09/21/25",
+        "date": "09/21/2025",
         "time": "7:20 PM",
         "title": "Chiefs @ Giants",
         "location": "Metlife Stadium"
@@ -50,7 +50,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "09/28/25",
+        "date": "09/28/2025",
         "time": "3:25 PM",
         "title": "Chiefs vs Ravens",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -58,7 +58,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "10/06/25",
+        "date": "10/06/2025",
         "time": "7:15 PM",
         "title": "Chiefs @ Jaguars",
         "location": "Everbank Stadium"
@@ -66,7 +66,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "10/12/25",
+        "date": "10/12/2025",
         "time": "7:20 PM",
         "title": "Chiefs vs Lions",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -74,7 +74,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "10/19/25",
+        "date": "10/19/2025",
         "time": "12:00 PM",
         "title": "Chiefs vs Raiders",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -82,7 +82,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "10/27/25",
+        "date": "10/27/2025",
         "time": "7:15 PM",
         "title": "Chiefs vs Commanders",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -90,7 +90,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "11/02/25",
+        "date": "11/02/2025",
         "time": "3:25 PM",
         "title": "Chiefs @ Bills",
         "location": "Highmark Stadium"
@@ -98,7 +98,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "11/16/25",
+        "date": "11/16/2025",
         "time": "3:25 PM",
         "title": "Chiefs @ Broncos",
         "location": "Empower Field at Mile High"
@@ -106,7 +106,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "11/23/25",
+        "date": "11/23/2025",
         "time": "12:00 PM",
         "title": "Chiefs vs Colts",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -114,7 +114,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "11/27/25",
+        "date": "11/27/2025",
         "time": "3:30 PM",
         "title": "Chiefs @ Cowboys",
         "location": "AT&T Stadium"
@@ -122,7 +122,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "12/07/25",
+        "date": "12/07/2025",
         "time": "7:20 PM",
         "title": "Chiefs vs Texans",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -130,7 +130,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "12/14/25",
+        "date": "12/14/2025",
         "time": "12:00 PM",
         "title": "Chiefs vs Chargers",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -138,7 +138,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "12/21/25",
+        "date": "12/21/2025",
         "time": "12:00 PM",
         "title": "Chiefs vs Titans",
         "location": "Nissan Stadium"
@@ -146,7 +146,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "12/25/25",
+        "date": "12/25/2025",
         "time": "7:15 PM",
         "title": "Chiefs vs Broncos",
         "location": "GEHA Field at Arrowhead Stadium"
@@ -154,7 +154,7 @@
     {
         "category": "Football",
         "subcategory": "Chiefs",
-        "date": "1/4/26",
+        "date": "01/04/2026",
         "time": "",
         "title": "Chiefs @ Raiders",
         "location": "Allegiant Stadium"
@@ -162,7 +162,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "08/09/25",
+        "date": "08/09/2025",
         "time": "7:00 PM",
         "title": "Preseason: Packers vs Jets",
         "location": "Lambeau Field"
@@ -170,7 +170,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "08/16/25",
+        "date": "08/16/2025",
         "time": "12:00 PM",
         "title": "Preseason: Packers @ Colts",
         "location": "Lucas Oil Stadium"
@@ -178,7 +178,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "08/23/25",
+        "date": "08/23/2025",
         "time": "3:00 PM",
         "title": "Preseason: Packers vs Seahawks",
         "location": "Lambeau Field"
@@ -186,7 +186,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "09/07/25",
+        "date": "09/07/2025",
         "time": "3:25 PM",
         "title": "Packers vs Lions",
         "location": "Lambeau Field"
@@ -194,7 +194,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "09/11/25",
+        "date": "09/11/2025",
         "time": "7:15 PM",
         "title": "Packers vs Commanders",
         "location": "Lambeau Field"
@@ -202,7 +202,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "09/21/25",
+        "date": "09/21/2025",
         "time": "12:00 PM",
         "title": "Packers @ Browns",
         "location": "Huntington Bank Field"
@@ -210,7 +210,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "09/28/25",
+        "date": "09/28/2025",
         "time": "7:20 PM",
         "title": "Packers @ Cowboys",
         "location": "AT&T Stadium"
@@ -218,7 +218,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "10/12/25",
+        "date": "10/12/2025",
         "time": "3:25 PM",
         "title": "Packers vs Bengals",
         "location": "Lambeau Field"
@@ -226,7 +226,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "10/19/25",
+        "date": "10/19/2025",
         "time": "3:25 PM",
         "title": "Packers @ Cardinals",
         "location": "State Farm Stadium"
@@ -234,7 +234,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "10/26/25",
+        "date": "10/26/2025",
         "time": "7:20 PM",
         "title": "Packers @ Steelers",
         "location": "Acrisure Stadium"
@@ -242,7 +242,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "11/02/25",
+        "date": "11/02/2025",
         "time": "12:00 PM",
         "title": "Packers vs Panthers",
         "location": "Lambeau Field"
@@ -250,7 +250,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "11/10/25",
+        "date": "11/10/2025",
         "time": "7:15 PM",
         "title": "Packers vs Eagles",
         "location": "Lambeau Field"
@@ -258,7 +258,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "11/16/25",
+        "date": "11/16/2025",
         "time": "12:00 PM",
         "title": "Packers @ Giants",
         "location": "Metlife Stadium"
@@ -266,7 +266,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "11/23/25",
+        "date": "11/23/2025",
         "time": "12:00 PM",
         "title": "Packers vs Vikings",
         "location": "Lambeau Field"
@@ -274,7 +274,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "11/27/25",
+        "date": "11/27/2025",
         "time": "12:00 PM",
         "title": "Packers @ Lions",
         "location": "Ford Field"
@@ -282,7 +282,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "12/07/25",
+        "date": "12/07/2025",
         "time": "12:00 PM",
         "title": "Packers vs Bears",
         "location": "Lambeau Field"
@@ -290,7 +290,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "12/14/25",
+        "date": "12/14/2025",
         "time": "3:25 PM",
         "title": "Packers @ Broncos",
         "location": "Empower Field at Mile High"
@@ -298,7 +298,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "12/20/25",
+        "date": "12/20/2025",
         "time": "",
         "title": "Packers @ Bears",
         "location": "Soldier Field"
@@ -306,7 +306,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "12/27/25",
+        "date": "12/27/2025",
         "time": "",
         "title": "Packers vs Ravens",
         "location": "Lambeau Field"
@@ -314,7 +314,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "01/04/26",
+        "date": "01/04/2026",
         "time": "",
         "title": "Packers @ Vikings",
         "location": "U.S. Bank Stadium"
@@ -322,7 +322,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "",
-        "date": "6/5/25",
+        "date": "06/05/2025",
         "time": "5:00 PM",
         "title": "Dirt Late Model Dream",
         "location": "Eldora Speedway"
@@ -330,7 +330,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "",
-        "date": "6/6/25",
+        "date": "06/06/2025",
         "time": "5:00 PM",
         "title": "Dirt Late Model Dream",
         "location": "Eldora Speedway"
@@ -338,7 +338,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "",
-        "date": "6/7/25",
+        "date": "06/07/2025",
         "time": "5:00 PM",
         "title": "Dirt Late Model Dream",
         "location": "Eldora Speedway"
@@ -346,7 +346,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "",
-        "date": "9/4/25",
+        "date": "09/04/2025",
         "time": "",
         "title": "World 100",
         "location": "Eldora Speedway"
@@ -354,7 +354,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "",
-        "date": "9/5/25",
+        "date": "09/05/2025",
         "time": "",
         "title": "World 100",
         "location": "Eldora Speedway"
@@ -362,7 +362,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "",
-        "date": "9/6/25",
+        "date": "09/06/2025",
         "time": "",
         "title": "World 100",
         "location": "Eldora Speedway"
@@ -370,7 +370,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "",
-        "date": "12/4/25",
+        "date": "12/04/2025",
         "time": "",
         "title": "Gateway Dirt Nationals",
         "location": "The Dome at Americas Center"
@@ -378,7 +378,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "",
-        "date": "12/5/25",
+        "date": "12/05/2025",
         "time": "",
         "title": "Gateway Dirt Nationals",
         "location": "The Dome at Americas Center"
@@ -386,7 +386,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "",
-        "date": "12/6/25",
+        "date": "12/06/2025",
         "time": "",
         "title": "Gateway Dirt Nationals",
         "location": "The Dome at Americas Center"
@@ -394,7 +394,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "6/20/25",
+        "date": "06/20/2025",
         "time": "6:15 PM",
         "title": "Pevely Summer Nationals Shootout",
         "location": "Federated Auto Parts Raceway at I-55"
@@ -402,7 +402,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "6/21/25",
+        "date": "06/21/2025",
         "time": "6:15 PM",
         "title": "Pevely Summer Nationals Shootout",
         "location": "Federated Auto Parts Raceway at I-55"
@@ -410,7 +410,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "6/23/25",
+        "date": "06/23/2025",
         "time": "6:15 PM",
         "title": "Monday Madness at Independence",
         "location": "Independence Motor Speedway"
@@ -418,7 +418,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "6/26/25",
+        "date": "06/26/2025",
         "time": "6:45 PM",
         "title": "Fergus Falls Showdown",
         "location": "I-94 EMR Speedway"
@@ -426,7 +426,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "6/27/25",
+        "date": "06/27/2025",
         "time": "6:45 PM",
         "title": "Grand Forks Showdown",
         "location": "River Cities Speedway"
@@ -434,7 +434,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "6/29/25",
+        "date": "06/29/2025",
         "time": "6:30 PM",
         "title": "Minot Mayhem",
         "location": "Nodak Speedway"
@@ -442,7 +442,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "7/3/25",
+        "date": "07/03/2025",
         "time": "6:15 PM",
         "title": "Gopher 50",
         "location": "Deer Creek Speedway"
@@ -450,7 +450,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "7/4/25",
+        "date": "07/04/2025",
         "time": "6:15 PM",
         "title": "Gopher 50",
         "location": "Deer Creek Speedway"
@@ -458,7 +458,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "7/5/25",
+        "date": "07/05/2025",
         "time": "6:15 PM",
         "title": "Gopher 50",
         "location": "Deer Creek Speedway"
@@ -466,7 +466,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "7/11/25",
+        "date": "07/11/2025",
         "time": "5:30 PM",
         "title": "Battle at the Border",
         "location": "Sharon Speedway"
@@ -474,7 +474,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "7/12/25",
+        "date": "07/12/2025",
         "time": "5:30 PM",
         "title": "Battle at the Border",
         "location": "Sharon Speedway"
@@ -482,7 +482,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "7/25/25",
+        "date": "07/25/2025",
         "time": "5:00 PM",
         "title": "Prairie Dirt Classic",
         "location": "Fairbury Speedway"
@@ -490,7 +490,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "7/26/25",
+        "date": "07/26/2025",
         "time": "5:00 PM",
         "title": "Prairie Dirt Classic",
         "location": "Fairbury Speedway"
@@ -498,7 +498,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "7/28/25",
+        "date": "07/28/2025",
         "time": "6:15 PM",
         "title": "Wilmot Late Model Showdown",
         "location": "Wilmot Raceway"
@@ -506,7 +506,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "7/31/25",
+        "date": "07/31/2025",
         "time": "6:00 PM",
         "title": "USA Nationals",
         "location": "Cedar Lake Speedway"
@@ -514,7 +514,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "8/1/25",
+        "date": "08/01/2025",
         "time": "6:00 PM",
         "title": "USA Nationals",
         "location": "Cedar Lake Speedway"
@@ -522,7 +522,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "8/2/25",
+        "date": "08/02/2025",
         "time": "6:00 PM",
         "title": "USA Nationals",
         "location": "Cedar Lake Speedway"
@@ -530,7 +530,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "8/13/25",
+        "date": "08/13/2025",
         "time": "6:15 PM",
         "title": "Beat the Heat 40",
         "location": "Highland Speedway"
@@ -538,7 +538,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "8/14/25",
+        "date": "08/14/2025",
         "time": "6:15 PM",
         "title": "Spoon River Showdown",
         "location": "Spoon River Speedway"
@@ -546,7 +546,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "8/15/25",
+        "date": "08/15/2025",
         "time": "7:00 PM",
         "title": "Hawkeye 100",
         "location": "Maquoketa Speedway"
@@ -554,7 +554,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "8/16/25",
+        "date": "08/16/2025",
         "time": "7:00 PM",
         "title": "Hawkeye 100",
         "location": "Maquoketa Speedway"
@@ -562,7 +562,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "8/22/25",
+        "date": "08/22/2025",
         "time": "7:15 PM",
         "title": "Sooner State Showdown",
         "location": "Arrowhead Speedway"
@@ -570,7 +570,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "8/23/25",
+        "date": "08/23/2025",
         "time": "7:15 PM",
         "title": "Sooner State Showdown",
         "location": "Arrowhead Speedway"
@@ -578,7 +578,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "9/13/25",
+        "date": "09/13/2025",
         "time": "4:15 PM",
         "title": "Billy Clanton Classic",
         "location": "Senoia Raceway"
@@ -586,7 +586,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "9/26/25",
+        "date": "09/26/2025",
         "time": "6:15 PM",
         "title": "Battle by the Arch",
         "location": "Tri-City Speedway"
@@ -594,7 +594,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "9/27/25",
+        "date": "09/27/2025",
         "time": "6:15 PM",
         "title": "Battle by the Arch",
         "location": "Tri-City Speedway"
@@ -602,7 +602,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "10/3/25",
+        "date": "10/03/2025",
         "time": "6:15 PM",
         "title": "Humboldt Showdown",
         "location": "Humboldt Speedway"
@@ -610,7 +610,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "10/4/25",
+        "date": "10/04/2025",
         "time": "6:15 PM",
         "title": "Wichita Showdown",
         "location": "81 Speedway"
@@ -618,7 +618,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "10/10/25",
+        "date": "10/10/2025",
         "time": "6:30 PM",
         "title": "Bayou Classic",
         "location": "Boothill Speedway"
@@ -626,7 +626,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "10/11/25",
+        "date": "10/11/2025",
         "time": "6:30 PM",
         "title": "Bayou Classic",
         "location": "Boothill Speedway"
@@ -634,7 +634,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "11/5/25",
+        "date": "11/05/2025",
         "time": "",
         "title": "World of Outlaws World Finals",
         "location": "The Dirt Track at Charlotte"
@@ -642,7 +642,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "11/6/25",
+        "date": "11/06/2025",
         "time": "",
         "title": "World of Outlaws World Finals",
         "location": "The Dirt Track at Charlotte"
@@ -650,7 +650,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "11/7/25",
+        "date": "11/07/2025",
         "time": "",
         "title": "World of Outlaws World Finals",
         "location": "The Dirt Track at Charlotte"
@@ -658,7 +658,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
-        "date": "11/8/25",
+        "date": "11/08/2025",
         "time": "",
         "title": "World of Outlaws World Finals",
         "location": "The Dirt Track at Charlotte"
@@ -666,7 +666,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "FloRacing Night in America",
-        "date": "6/4/25",
+        "date": "06/04/2025",
         "time": "4:30 PM",
         "title": "FloRacing Night in America",
         "location": "Eldora Speedway"
@@ -674,7 +674,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "FloRacing Night in America",
-        "date": "7/23/25",
+        "date": "07/23/2025",
         "time": "",
         "title": "FloRacing Night in America",
         "location": "Fairbury Speedway"
@@ -682,7 +682,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "FloRacing Night in America",
-        "date": "9/11/25",
+        "date": "09/11/2025",
         "time": "",
         "title": "2nd Annual Scott Bloomquist Memorial Scorcher",
         "location": "Volunteer Speedway"
@@ -690,7 +690,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "FloRacing Night in America",
-        "date": "9/24/25",
+        "date": "09/24/2025",
         "time": "",
         "title": "FloRacing Night in America",
         "location": "Tri-State Speedway"
@@ -698,7 +698,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "FloRacing Night in America",
-        "date": "11/14/25",
+        "date": "11/14/2025",
         "time": "",
         "title": "5th Annual Peach State Classic: FloRacing Night in America",
         "location": "Senoia Raceway"
@@ -706,7 +706,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "FloRacing Night in America",
-        "date": "11/15/25",
+        "date": "11/15/2025",
         "time": "",
         "title": "5th Annual Peach State Classic: FloRacing Night in America",
         "location": "Senoia Raceway"
@@ -714,7 +714,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "6/13/25",
+        "date": "06/13/2025",
         "time": "",
         "title": "Mountain Moonshine Classic",
         "location": "Smoky Mountain Speedway"
@@ -722,7 +722,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "6/14/25",
+        "date": "06/14/2025",
         "time": "",
         "title": "Mountain Moonshine Classic",
         "location": "Smoky Mountain Speedway"
@@ -730,7 +730,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "6/19/25",
+        "date": "06/19/2025",
         "time": "",
         "title": "19th Annual Firecracker 100",
         "location": "Lernerville Speedway"
@@ -738,7 +738,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "6/20/25",
+        "date": "06/20/2025",
         "time": "",
         "title": "19th Annual Firecracker 100",
         "location": "Lernerville Speedway"
@@ -746,7 +746,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "6/21/25",
+        "date": "06/21/2025",
         "time": "",
         "title": "19th Annual Firecracker 100",
         "location": "Lernerville Speedway"
@@ -754,7 +754,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/4/25",
+        "date": "07/04/2025",
         "time": "",
         "title": "Lucas Oil Late Model Dirt Series",
         "location": "Atomic Speedway"
@@ -762,7 +762,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/5/25",
+        "date": "07/05/2025",
         "time": "",
         "title": "Freedom 60",
         "location": "Muskingum County Speedway"
@@ -770,7 +770,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/10/25",
+        "date": "07/10/2025",
         "time": "",
         "title": "Lucas Oil Late Model Dirt Series",
         "location": "34 Raceway"
@@ -778,7 +778,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/11/25",
+        "date": "07/11/2025",
         "time": "",
         "title": "19th Annual CMH Diamond Nationals",
         "location": "Lucas Oil Speedway"
@@ -786,7 +786,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/12/25",
+        "date": "07/12/2025",
         "time": "",
         "title": "19th Annual CMH Diamond Nationals",
         "location": "Lucas Oil Speedway"
@@ -794,7 +794,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/15/25",
+        "date": "07/15/2025",
         "time": "",
         "title": "Kosiski Family 53",
         "location": "Shelby County Speedway"
@@ -802,7 +802,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/17/25",
+        "date": "07/17/2025",
         "time": "",
         "title": "15th Annual Silver Dollar Nationals",
         "location": "Husets Speedway"
@@ -810,7 +810,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/18/25",
+        "date": "07/18/2025",
         "time": "",
         "title": "15th Annual Silver Dollar Nationals",
         "location": "Husets Speedway"
@@ -818,7 +818,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/19/25",
+        "date": "07/19/2025",
         "time": "",
         "title": "15th Annual Silver Dollar Nationals",
         "location": "Husets Speedway"
@@ -826,7 +826,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "8/7/25",
+        "date": "08/07/2025",
         "time": "",
         "title": "North/South 100",
         "location": "Florence Speedway"
@@ -834,7 +834,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "8/8/25",
+        "date": "08/08/2025",
         "time": "",
         "title": "North/South 100",
         "location": "Florence Speedway"
@@ -842,7 +842,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "8/9/25",
+        "date": "08/09/2025",
         "time": "",
         "title": "North/South 100",
         "location": "Florence Speedway"
@@ -850,7 +850,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "8/15/25",
+        "date": "08/15/2025",
         "time": "",
         "title": "33rd Annual Topless 100",
         "location": "Batesville Motor Speedway"
@@ -858,7 +858,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "8/16/25",
+        "date": "08/16/2025",
         "time": "",
         "title": "33rd Annual Topless 100",
         "location": "Batesville Motor Speedway"
@@ -866,7 +866,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "8/22/25",
+        "date": "08/22/2025",
         "time": "",
         "title": "Rumble by the River",
         "location": "Port Royal Speedway"
@@ -874,7 +874,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "8/23/25",
+        "date": "08/23/2025",
         "time": "",
         "title": "Rumble by the River",
         "location": "Port Royal Speedway"
@@ -882,7 +882,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "8/29/25",
+        "date": "08/29/2025",
         "time": "",
         "title": "57th Annual Hillbilly Hundred",
         "location": "Lernerville Speedway"
@@ -890,7 +890,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "8/30/25",
+        "date": "08/30/2025",
         "time": "",
         "title": "57th Annual Hillbilly Hundred",
         "location": "Lernerville Speedway"
@@ -898,7 +898,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "9/18/25",
+        "date": "09/18/2025",
         "time": "",
         "title": "Late Model Nationals",
         "location": "Knoxville Raceway"
@@ -906,7 +906,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "9/19/25",
+        "date": "09/19/2025",
         "time": "",
         "title": "Late Model Nationals",
         "location": "Knoxville Raceway"
@@ -914,7 +914,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "9/20/25",
+        "date": "09/20/2025",
         "time": "",
         "title": "Late Model Nationals",
         "location": "Knoxville Raceway"
@@ -922,7 +922,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "9/26/25",
+        "date": "09/26/2025",
         "time": "",
         "title": "4th Annual CJ Rayburn Memorial",
         "location": "Brownstown Speedway"
@@ -930,7 +930,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "9/27/25",
+        "date": "09/27/2025",
         "time": "",
         "title": "46th Annual Jackson 100",
         "location": "Brownstown Speedway"
@@ -938,7 +938,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "10/3/25",
+        "date": "10/03/2025",
         "time": "",
         "title": "37th Annual Pittsburgher",
         "location": "Pittsburgh Pennsylvania Motor Speedway"
@@ -946,7 +946,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "10/4/25",
+        "date": "10/04/2025",
         "time": "",
         "title": "37th Annual Pittsburgher",
         "location": "Pittsburgh Pennsylvania Motor Speedway"
@@ -954,7 +954,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "10/17/25",
+        "date": "10/17/2025",
         "time": "",
         "title": "45th Annual Dirt Track World Championship",
         "location": "Eldora Speedway"
@@ -962,7 +962,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "10/18/25",
+        "date": "10/18/2025",
         "time": "",
         "title": "45th Annual Dirt Track World Championship",
         "location": "Eldora Speedway"
@@ -970,7 +970,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "6/14/25",
+        "date": "06/14/2025",
         "time": "3:00 PM",
         "title": "Canadian Quali",
         "location": "Circuit Gilles-Villeneuve"
@@ -978,7 +978,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "6/15/25",
+        "date": "06/15/2025",
         "time": "1:00 PM",
         "title": "Canadian Grand Prix",
         "location": "Circuit Gilles-Villeneuve"
@@ -986,7 +986,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "6/28/25",
+        "date": "06/28/2025",
         "time": "9:00 AM",
         "title": "Austrian Quali",
         "location": "Red Bull Ring"
@@ -994,7 +994,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "6/29/25",
+        "date": "06/29/2025",
         "time": "8:00 AM",
         "title": "Austrian Grand Prix",
         "location": "Red Bull Ring"
@@ -1002,7 +1002,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "7/5/25",
+        "date": "07/05/2025",
         "time": "9:00 AM",
         "title": "British Quali",
         "location": "Silverstone Circuit"
@@ -1010,7 +1010,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "7/6/25",
+        "date": "07/06/2025",
         "time": "9:00 AM",
         "title": "British Grand Prix",
         "location": "Silverstone Circuit"
@@ -1018,7 +1018,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "7/26/25",
+        "date": "07/26/2025",
         "time": "9:00 AM",
         "title": "Belgian Quali",
         "location": "Circuit de Spa-Francorchamps"
@@ -1026,7 +1026,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "7/27/25",
+        "date": "07/27/2025",
         "time": "8:00 AM",
         "title": "Belgian Grand Prix",
         "location": "Circuit de Spa-Francorchamps"
@@ -1034,7 +1034,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "8/2/25",
+        "date": "08/02/2025",
         "time": "9:00 AM",
         "title": "Hungarian Quali",
         "location": "Hungaroring"
@@ -1042,7 +1042,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "8/3/25",
+        "date": "08/03/2025",
         "time": "8:00 AM",
         "title": "Hungarian Grand Prix",
         "location": "Hungaroring"
@@ -1050,7 +1050,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "8/30/25",
+        "date": "08/30/2025",
         "time": "8:00 AM",
         "title": "Dutch Quali",
         "location": "Circuit Zandvoort"
@@ -1058,7 +1058,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "8/31/25",
+        "date": "08/31/2025",
         "time": "8:00 AM",
         "title": "Dutch Grand Prix",
         "location": "Circuit Zandvoort"
@@ -1066,7 +1066,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "9/6/25",
+        "date": "09/06/2025",
         "time": "9:00 AM",
         "title": "Italian Quali",
         "location": "Autodromo Nazionale Monza"
@@ -1074,7 +1074,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "9/7/25",
+        "date": "09/07/2025",
         "time": "8:00 AM",
         "title": "Italian Grand Prix",
         "location": "Autodromo Nazionale Monza"
@@ -1082,7 +1082,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "9/20/25",
+        "date": "09/20/2025",
         "time": "7:00 AM",
         "title": "Azerbaijan Quali",
         "location": "Baku City Circuit"
@@ -1090,7 +1090,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "9/21/25",
+        "date": "09/21/2025",
         "time": "6:00 AM",
         "title": "Azerbaijan Grand Prix",
         "location": "Baku City Circuit"
@@ -1098,7 +1098,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "10/4/25",
+        "date": "10/04/2025",
         "time": "8:00 AM",
         "title": "Singapore Quali",
         "location": "Marina Bay Street Circuit"
@@ -1106,7 +1106,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "10/5/25",
+        "date": "10/05/2025",
         "time": "7:00 AM",
         "title": "Singapore Grand Prix",
         "location": "Marina Bay Street Circuit"
@@ -1114,7 +1114,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "10/18/25",
+        "date": "10/18/2025",
         "time": "4:00 PM",
         "title": "US Quali",
         "location": "Circuit of The Americas"
@@ -1122,7 +1122,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "10/19/25",
+        "date": "10/19/2025",
         "time": "2:00 PM",
         "title": "US Grand Prix",
         "location": "Circuit of The Americas"
@@ -1130,7 +1130,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "10/25/25",
+        "date": "10/25/2025",
         "time": "4:00 PM",
         "title": "Mexican Quali",
         "location": "Autódromo Hermanos Rodríguez"
@@ -1138,7 +1138,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "10/26/25",
+        "date": "10/26/2025",
         "time": "3:00 PM",
         "title": "Mexican Grand Prix",
         "location": "Autódromo Hermanos Rodríguez"
@@ -1146,7 +1146,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "11/8/25",
+        "date": "11/08/2025",
         "time": "12:00 PM",
         "title": "Brazilian Quali",
         "location": "Autódromo José Carlos Pace"
@@ -1154,7 +1154,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "11/9/25",
+        "date": "11/09/2025",
         "time": "11:00 AM",
         "title": "Brazilian Grand Prix",
         "location": "Autódromo José Carlos Pace"
@@ -1162,7 +1162,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "11/21/25",
+        "date": "11/21/2025",
         "time": "10:00 PM",
         "title": "Las Vegas Quali",
         "location": "Las Vegas Strip Circuit"
@@ -1170,7 +1170,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "11/22/25",
+        "date": "11/22/2025",
         "time": "10:00 PM",
         "title": "Las Vegas Grand Prix",
         "location": "Las Vegas Strip Circuit"
@@ -1178,7 +1178,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "11/29/25",
+        "date": "11/29/2025",
         "time": "12:00 PM",
         "title": "Qatar Quali",
         "location": "Lusail International Circuit"
@@ -1186,7 +1186,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "11/30/25",
+        "date": "11/30/2025",
         "time": "10:00 AM",
         "title": "Qatar Grand Prix",
         "location": "Lusail International Circuit"
@@ -1202,7 +1202,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "12/6/25",
+        "date": "12/06/2025",
         "time": "8:00 AM",
         "title": "Abu Dhabi Grand Prix",
         "location": "Yas Marina Circuit"
@@ -1210,7 +1210,7 @@
     {
         "category": "F1",
         "subcategory": "",
-        "date": "12/7/25",
+        "date": "12/07/2025",
         "time": "7:00 AM",
         "title": "Abu Dhabi Quali",
         "location": "Yas Marina Circuit"
@@ -1218,7 +1218,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "12/13/25",
+        "date": "12/13/2025",
         "time": "",
         "title": "Taylor Swift's Birthday",
         "location": ""
@@ -1226,7 +1226,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "2/1/26",
+        "date": "02/01/2026",
         "time": "7:00 PM",
         "title": "68th Annual GRAMMY Awards",
         "location": "Los Angeles, California"
@@ -1234,7 +1234,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "1/11/26",
+        "date": "01/11/2026",
         "time": "7:00 PM",
         "title": "83rd Annual Golden Globe Awards",
         "location": "Beverly Hills, California"
@@ -1242,7 +1242,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "9/7/25",
+        "date": "09/07/2025",
         "time": "7:00 PM",
         "title": "MTV Video Music Awards",
         "location": "Elmont, New York"
@@ -1250,7 +1250,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "12/12/25",
+        "date": "12/12/2025",
         "time": "7:00 PM",
         "title": "Billboard Music Awards",
         "location": "Las Vegas, New Mexico"
@@ -1258,7 +1258,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "10/24/25",
+        "date": "10/24/2025",
         "time": "",
         "title": "Debut's 19th Birthday",
         "location": ""
@@ -1266,7 +1266,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "11/11/25",
+        "date": "11/11/2025",
         "time": "",
         "title": "Fearless's 17th Birthday",
         "location": ""
@@ -1274,7 +1274,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "10/25/25",
+        "date": "10/25/2025",
         "time": "",
         "title": "Speak Now's 15th Birthday",
         "location": ""
@@ -1282,7 +1282,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "10/22/25",
+        "date": "10/22/2025",
         "time": "",
         "title": "Red's 13th Birthday",
         "location": ""
@@ -1290,7 +1290,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "10/27/25",
+        "date": "10/27/2025",
         "time": "",
         "title": "1989's 11th Birthday",
         "location": ""
@@ -1298,7 +1298,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "11/10/25",
+        "date": "11/10/2025",
         "time": "",
         "title": "reputation's 8th Birthday",
         "location": ""
@@ -1306,7 +1306,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "8/23/25",
+        "date": "08/23/2025",
         "time": "",
         "title": "Lover's 6th Birthday",
         "location": ""
@@ -1314,7 +1314,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "7/24/25",
+        "date": "07/24/2025",
         "time": "",
         "title": "folklore's 5th Birthday",
         "location": ""
@@ -1322,7 +1322,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "12/11/25",
+        "date": "12/11/2025",
         "time": "",
         "title": "evermore's 5th Birthday",
         "location": ""
@@ -1330,7 +1330,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "10/21/25",
+        "date": "10/21/2025",
         "time": "",
         "title": "Midnight's 3rd Birthday",
         "location": ""
@@ -1338,7 +1338,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "4/19/26",
+        "date": "04/19/2026",
         "time": "",
         "title": "The Tortured Poets Department's 2nd Birthday",
         "location": ""
@@ -1346,7 +1346,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "4/9/26",
+        "date": "04/09/2026",
         "time": "",
         "title": "Fearless (TV)'s 4th Birthday",
         "location": ""
@@ -1354,7 +1354,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "11/12/25",
+        "date": "11/12/2025",
         "time": "",
         "title": "Red (TV)'s 4th Birthday",
         "location": ""
@@ -1362,7 +1362,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "7/7/25",
+        "date": "07/07/2025",
         "time": "",
         "title": "Speak Now (TV)'s 2nd Birthday",
         "location": ""
@@ -1370,7 +1370,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "10/27/23",
+        "date": "10/27/2023",
         "time": "",
         "title": "1989 (TV)'s 2nd Birthday",
         "location": ""
@@ -1378,7 +1378,7 @@
     {
         "category": "Taylor Swift",
         "subcategory": "",
-        "date": "5/30/26",
+        "date": "05/30/2026",
         "time": "",
         "title": "Taypendence Day",
         "location": ""
@@ -1386,7 +1386,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "6/8/25",
+        "date": "06/08/2025",
         "time": "1:00 PM",
         "title": "Firekeepers Casino 400",
         "location": "Michigan International Speedway"
@@ -1394,7 +1394,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "6/15/25",
+        "date": "06/15/2025",
         "time": "2:00 PM",
         "title": "Viva Mexico 250",
         "location": "Autódromo Hermanos Rodríguez"
@@ -1402,7 +1402,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "6/22/25",
+        "date": "06/22/2025",
         "time": "1:00 PM",
         "title": "The Great American Getaway 400",
         "location": "Pocono Raceway"
@@ -1410,7 +1410,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "6/28/25",
+        "date": "06/28/2025",
         "time": "6:00 PM",
         "title": "Quaker State 400",
         "location": "Atlanta Motor Speedway"
@@ -1418,7 +1418,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "7/6/25",
+        "date": "07/06/2025",
         "time": "1:00 PM",
         "title": "Grant Park 165",
         "location": "Chicago Street Race"
@@ -1426,7 +1426,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "7/13/25",
+        "date": "07/13/2025",
         "time": "2:30 PM",
         "title": "Toyota / Save Mart 350",
         "location": "Sonoma Raceway"
@@ -1434,7 +1434,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "7/20/25",
+        "date": "07/20/2025",
         "time": "1:00 PM",
         "title": "Autotrader EchoPark Automotive 400",
         "location": "Dover Motor Speedway"
@@ -1442,7 +1442,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "7/27/25",
+        "date": "07/27/2025",
         "time": "1:00 PM",
         "title": "Brickyard 400",
         "location": "Indianapolis Motor Speedway"
@@ -1450,7 +1450,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "8/3/25",
+        "date": "08/03/2025",
         "time": "2:30 PM",
         "title": "Iowa Corn 350",
         "location": "Iowa Speedway"
@@ -1458,7 +1458,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "8/10/25",
+        "date": "08/10/2025",
         "time": "1:00 PM",
         "title": "Go Bowling at The Glen",
         "location": "Watkins Glen International"
@@ -1466,7 +1466,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "8/16/25",
+        "date": "08/16/2025",
         "time": "6:30 PM",
         "title": "Cook Out 400",
         "location": "Richmond Raceway"
@@ -1474,7 +1474,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "8/23/25",
+        "date": "08/23/2025",
         "time": "6:30 PM",
         "title": "Coke Zero Sugar 400",
         "location": "Daytona International Speedway"
@@ -1482,7 +1482,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "8/31/25",
+        "date": "08/31/2025",
         "time": "5:00 PM",
         "title": "Cook Out Southern 500",
         "location": "Darlington Raceway"
@@ -1490,7 +1490,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "9/7/25",
+        "date": "09/07/2025",
         "time": "2:00 PM",
         "title": "Enjoy Illinois 300",
         "location": "World Wide Technology Raceway"
@@ -1498,7 +1498,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "9/13/25",
+        "date": "09/13/2025",
         "time": "6:30 PM",
         "title": "Bass Pro Shops Night Race",
         "location": "Bristol Motor Speedway"
@@ -1506,7 +1506,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "9/21/25",
+        "date": "09/21/2025",
         "time": "1:00 PM",
         "title": "NASCAR Cup Series Playoff Race at New Hampshire",
         "location": "New Hampshire Motor Speedway"
@@ -1514,7 +1514,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "9/28/25",
+        "date": "09/28/2025",
         "time": "2:00 PM",
         "title": "Hollywood Casino 400",
         "location": "Kansas Speedway"
@@ -1522,7 +1522,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "10/5/25",
+        "date": "10/05/2025",
         "time": "2:00 PM",
         "title": "Bank of America ROVAL 400",
         "location": "Charlotte Motor Speedway Road Course"
@@ -1530,7 +1530,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "10/12/25",
+        "date": "10/12/2025",
         "time": "4:30 PM",
         "title": "South Point 400",
         "location": "Las Vegas Motor Speedway"
@@ -1538,7 +1538,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "10/19/25",
+        "date": "10/19/2025",
         "time": "1:00 PM",
         "title": "YellaWood 500",
         "location": "Talladega Superspeedway"
@@ -1546,7 +1546,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "10/26/25",
+        "date": "10/26/2025",
         "time": "1:00 PM",
         "title": "Xfinity 500",
         "location": "Martinsville Speedway"
@@ -1554,7 +1554,7 @@
     {
         "category": "Nascar",
         "subcategory": "",
-        "date": "11/2/25",
+        "date": "11/02/2025",
         "time": "2:00 PM",
         "title": "NASCAR Cup Series Championship",
         "location": "Phoenix Raceway"

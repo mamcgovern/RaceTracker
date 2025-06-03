@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import moment from 'moment-timezone';
+import 'moment-timezone'; // This will use a smaller default dataset
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
@@ -23,9 +24,7 @@ const eventClassNames = {
     'World of Outlaws': 'woo',
     'Lucas Oil': 'lolms',
     'Flo': 'flo',
-    'F1': 'f1',
-    'Taylor Swift': 'ts',
-    'Nascar': 'nascar'
+    'F1': 'f1'
 };
 
 const App = () => {
@@ -62,8 +61,14 @@ const App = () => {
         };
     }, [showCategoryPopup]);
 
+    // MODIFIED: Corrected year handling for MM/DD/YYYY format
     const convertToTimeZone = (date, time, timeZone) => {
-        const [month, day, year] = date.split('/').map(Number);
+        const eventDateMomentBase = moment(date, ['MM/DD/YYYY', 'MM/DD/YY']); // Still allows for flexibility, though data is now consistent
+
+        if (!eventDateMomentBase.isValid()) {
+            console.warn(`Warning: Invalid date in convertToTimeZone: "${date}"`);
+            return { newDate: 'Invalid Date', newTime: '' };
+        }
 
         let hours = 0;
         let minutes = 0;
@@ -81,10 +86,11 @@ const App = () => {
             }
         }
 
+        // Use the year, month, day directly from the parsed moment object
         let eventDate = moment.tz({
-            year: 2000 + year,
-            month: month - 1,
-            day: day,
+            year: eventDateMomentBase.year(),
+            month: eventDateMomentBase.month(), // moment months are 0-indexed
+            day: eventDateMomentBase.date(),
             hour: (hours % 12) + (period === 'PM' ? 12 : 0),
             minute: minutes
         }, 'America/Chicago');
@@ -118,15 +124,12 @@ const App = () => {
         };
     };
 
-    const events = useMemo(() => eventsData || [], []); 
+    const events = useMemo(() => eventsData || [], []);
 
-    // MODIFIED: Generate timeZones with UTC offset in labels for clarity
     const timeZones = useMemo(() => moment.tz.names()
         .map(zone => {
-            // Get a moment in this timezone (e.g., for the current date)
-            // to determine its offset reliably (considering DST)
             const nowInZone = moment().tz(zone);
-            const offsetMinutes = nowInZone.utcOffset(); // Offset in minutes
+            const offsetMinutes = nowInZone.utcOffset();
             const offsetHours = offsetMinutes / 60;
 
             let formattedOffset;
@@ -145,7 +148,6 @@ const App = () => {
             };
         })
         .sort((a, b) => {
-            // Sort by offset first, then alphabetically for better grouping
             const offsetA = moment().tz(a.value).utcOffset();
             const offsetB = moment().tz(b.value).utcOffset();
             if (offsetA !== offsetB) {
@@ -195,11 +197,13 @@ const App = () => {
         const sortableEvents = [...events];
 
         sortableEvents.sort((a, b) => {
-            const [monthA, dayA, yearA] = a.date.split('/').map(Number);
-            const momentA = moment({ year: 2000 + yearA, month: monthA - 1, day: dayA });
+            const momentA = moment(a.date, ['MM/DD/YYYY', 'MM/DD/YY']);
+            const momentB = moment(b.date, ['MM/DD/YYYY', 'MM/DD/YY']);
 
-            const [monthB, dayB, yearB] = b.date.split('/').map(Number);
-            const momentB = moment({ year: 2000 + yearB, month: monthB - 1, day: dayB });
+            if (!momentA.isValid() || !momentB.isValid()) {
+                console.warn(`Warning: Invalid date encountered during sorting. A: "${a.date}", B: "${b.date}"`);
+                return 0;
+            }
 
             return momentA.diff(momentB);
         });
@@ -218,12 +222,12 @@ const App = () => {
         const currentDate = new Date();
         const calendarEvents = sortedEvents
             .filter(event => {
-                const [month, day, year] = event.date.split('/').map(Number);
-                const eventDate = new Date(2000 + year, month - 1, day);
-                return showAllEvents || eventDate >= currentDate;
+                const eventDateMoment = moment(event.date, ['MM/DD/YYYY', 'MM/DD/YY']);
+                return showAllEvents || eventDateMoment.isSameOrAfter(moment(currentDate).startOf('day'));
             })
             .map(event => {
-            const [month, day, year] = event.date.split('/').map(Number);
+            const eventStartMoment = moment(event.date, ['MM/DD/YYYY', 'MM/DD/YY']);
+
             let startMoment;
 
             if (event.time && event.time.trim() !== '') {
@@ -236,17 +240,17 @@ const App = () => {
                 const minutes = m;
 
                 startMoment = moment.tz({
-                    year: 2000 + year,
-                    month: month - 1,
-                    day: day,
+                    year: eventStartMoment.year(),
+                    month: eventStartMoment.month(),
+                    day: eventStartMoment.date(),
                     hour: hours,
                     minute: minutes
                 }, 'America/Chicago');
             } else {
                 startMoment = moment.tz({
-                    year: 2000 + year,
-                    month: month - 1,
-                    day: day,
+                    year: eventStartMoment.year(),
+                    month: eventStartMoment.month(),
+                    day: eventStartMoment.date(),
                     hour: 0,
                     minute: 0
                 }, 'America/Chicago');
@@ -288,7 +292,8 @@ const App = () => {
             if (isFullyChecked || isIndeterminate) {
                 newSet.delete(parentName);
                 children.forEach(child => newSet.delete(child.name));
-            } else {
+            }
+            else {
                 newSet.add(parentName);
                 children.forEach(child => newSet.add(child.name));
             }
@@ -514,13 +519,17 @@ const App = () => {
     };
 
     const renderEvent = (event) => {
-        const currentDate = new Date();
-        const [month, day, year] = event.date.split('/').map(Number);
-        const eventDate = new Date(2000 + year, month - 1, day);
+        const currentDateMoment = moment().startOf('day');
+        const eventDateMoment = moment(event.date, ['MM/DD/YYYY', 'MM/DD/YY']);
 
         const { newDate, newTime } = convertToTimeZone(event.date, event.time, activeOption);
 
-        if (showAllEvents || eventDate >= currentDate) {
+        if (!eventDateMoment.isValid()) {
+            console.warn(`Warning: Skipping event with invalid date in renderEvent: "${event.date}"`);
+            return null;
+        }
+
+        if (showAllEvents || eventDateMoment.isSameOrAfter(currentDateMoment)) {
             return (
                 <div key={`${event.title}-${event.date}`}>
                     <div className="row">
@@ -578,6 +587,8 @@ const App = () => {
     return (
         <div>
             <div className="container">
+                <h1 className="page-title">Events</h1>
+                <hr className="featurette-divider" />
 
                 <div className="mb-4">
                     <div className="d-flex justify-content-center mb-3">
@@ -632,19 +643,49 @@ const App = () => {
 const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
     if (!event) return null;
 
-    const [month, day, year] = event.date.split('/').map(Number);
-    let eventMoment = moment.tz({
-        year: 2000 + year,
-        month: month - 1,
-        day: day,
-        hour: event.time ? (parseInt(event.time.split(':')[0]) % 12) + (event.time.includes('PM') ? 12 : 0) : 0,
-        minute: event.time ? parseInt(event.time.split(':')[1]) : 0
-    }, 'America/Chicago'); // Assuming original data is always in America/Chicago
+    const eventDateMomentBase = moment(event.date, ['MM/DD/YYYY', 'MM/DD/YY']);
+
+    if (!eventDateMomentBase.isValid()) {
+        console.error(`Error: Invalid event date in EventDetailsPopup: "${event.date}"`);
+        return null;
+    }
+
+    let eventMoment;
+    // Use year, month, day directly from the parsed moment object
+    const year = eventDateMomentBase.year();
+    const month = eventDateMomentBase.month(); // month is 0-indexed
+    const day = eventDateMomentBase.date(); // day of month
+
+    if (event.time && event.time.trim() !== '') {
+        const parts = event.time.split(' ');
+        let timeString = parts[0];
+        const period = parts[1];
+
+        const [h, m] = timeString.split(':').map(Number);
+        const hours = (h % 12) + (period === 'PM' ? 12 : 0);
+        const minutes = m;
+
+        eventMoment = moment.tz({
+            year: year,
+            month: month,
+            day: day,
+            hour: hours,
+            minute: minutes
+        }, 'America/Chicago');
+    } else {
+        eventMoment = moment.tz({
+            year: year,
+            month: month,
+            day: day,
+            hour: 0,
+            minute: 0
+        }, 'America/Chicago');
+    }
 
     const displayMoment = eventMoment.tz(activeTimeZone);
 
     const displayDate = displayMoment.format('ddd, MMM D, YYYY');
-    const displayTime = event.time ? displayMoment.format('h:mm A z') : 'All Day'; // 'z' displays the timezone abbreviation
+    const displayTime = event.time ? displayMoment.format('h:mm A z (Z)') : 'All Day';
 
     return (
         <div className="event-details-overlay">
