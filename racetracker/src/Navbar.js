@@ -12,7 +12,8 @@ const Navbar = () => {
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse d-lg-flex justify-content-lg-center" id="navbarsExample11">
-                        <a class="navbar-brand col-lg-3 me-0 nulshock" href="/">Hyperfixations Calendar</a>
+                        {/* REMOVE col-lg-3 from here */}
+                        <a class="navbar-brand me-0 nulshock" href="/">Race Tracker</a>
                     </div>
                 </div>
             </nav>
