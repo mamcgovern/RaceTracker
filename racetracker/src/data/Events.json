@@ -323,7 +323,7 @@
         "category": "Dirt Late Models",
         "subcategory": "",
         "date": "6/5/25",
-        "time": "",
+        "time": "5:00 PM",
         "title": "Dirt Late Model Dream",
         "location": "Eldora Speedway"
     },
@@ -331,13 +331,13 @@
         "category": "Dirt Late Models",
         "subcategory": "",
         "date": "6/6/25",
-        "time": "",
+        "time": "5:00 PM",
         "title": "Dirt Late Model Dream",
         "location": "Eldora Speedway"
     },
     {
         "category": "Dirt Late Models",
-        "subcategory": "",
+        "subcategory": "5:00 PM",
         "date": "6/7/25",
         "time": "",
         "title": "Dirt Late Model Dream",
@@ -393,17 +393,9 @@
     },
     {
         "category": "Dirt Late Models",
-        "subcategory": "",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "6/20/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Pevely Summer Nationals Shootout",
         "location": "Federated Auto Parts Raceway at I-55"
     },
@@ -411,7 +403,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "6/21/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Pevely Summer Nationals Shootout",
         "location": "Federated Auto Parts Raceway at I-55"
     },
@@ -419,7 +411,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "6/23/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Monday Madness at Independence",
         "location": "Independence Motor Speedway"
     },
@@ -427,7 +419,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "6/26/25",
-        "time": "",
+        "time": "6:45 PM",
         "title": "Fergus Falls Showdown",
         "location": "I-94 EMR Speedway"
     },
@@ -435,7 +427,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "6/27/25",
-        "time": "",
+        "time": "6:45 PM",
         "title": "Grand Forks Showdown",
         "location": "River Cities Speedway"
     },
@@ -443,7 +435,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "6/29/25",
-        "time": "",
+        "time": "6:30 PM",
         "title": "Minot Mayhem",
         "location": "Nodak Speedway"
     },
@@ -451,7 +443,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "7/3/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Gopher 50",
         "location": "Deer Creek Speedway"
     },
@@ -459,7 +451,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "7/4/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Gopher 50",
         "location": "Deer Creek Speedway"
     },
@@ -467,7 +459,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "7/5/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Gopher 50",
         "location": "Deer Creek Speedway"
     },
@@ -475,7 +467,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "7/11/25",
-        "time": "",
+        "time": "5:30 PM",
         "title": "Battle at the Border",
         "location": "Sharon Speedway"
     },
@@ -483,7 +475,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "7/12/25",
-        "time": "",
+        "time": "5:30 PM",
         "title": "Battle at the Border",
         "location": "Sharon Speedway"
     },
@@ -491,7 +483,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "7/25/25",
-        "time": "",
+        "time": "5:00 PM",
         "title": "Prairie Dirt Classic",
         "location": "Fairbury Speedway"
     },
@@ -499,7 +491,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "7/26/25",
-        "time": "",
+        "time": "5:00 PM",
         "title": "Prairie Dirt Classic",
         "location": "Fairbury Speedway"
     },
@@ -507,7 +499,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "7/28/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Wilmot Late Model Showdown",
         "location": "Wilmot Raceway"
     },
@@ -515,7 +507,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "7/31/25",
-        "time": "",
+        "time": "6:00 PM",
         "title": "USA Nationals",
         "location": "Cedar Lake Speedway"
     },
@@ -523,7 +515,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "8/1/25",
-        "time": "",
+        "time": "6:00 PM",
         "title": "USA Nationals",
         "location": "Cedar Lake Speedway"
     },
@@ -531,7 +523,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "8/2/25",
-        "time": "",
+        "time": "6:00 PM",
         "title": "USA Nationals",
         "location": "Cedar Lake Speedway"
     },
@@ -539,7 +531,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "8/13/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Beat the Heat 40",
         "location": "Highland Speedway"
     },
@@ -547,7 +539,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "8/14/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Spoon River Showdown",
         "location": "Spoon River Speedway"
     },
@@ -555,7 +547,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "8/15/25",
-        "time": "",
+        "time": "7:00 PM",
         "title": "Hawkeye 100",
         "location": "Maquoketa Speedway"
     },
@@ -563,7 +555,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "8/16/25",
-        "time": "",
+        "time": "7:00 PM",
         "title": "Hawkeye 100",
         "location": "Maquoketa Speedway"
     },
@@ -571,7 +563,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "8/22/25",
-        "time": "",
+        "time": "7:15 PM",
         "title": "Sooner State Showdown",
         "location": "Arrowhead Speedway"
     },
@@ -579,7 +571,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "8/23/25",
-        "time": "",
+        "time": "7:15 PM",
         "title": "Sooner State Showdown",
         "location": "Arrowhead Speedway"
     },
@@ -587,7 +579,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "9/13/25",
-        "time": "",
+        "time": "4:15 PM",
         "title": "Billy Clanton Classic",
         "location": "Senoia Raceway"
     },
@@ -595,7 +587,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "9/26/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Battle by the Arch",
         "location": "Tri-City Speedway"
     },
@@ -603,7 +595,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "9/27/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Battle by the Arch",
         "location": "Tri-City Speedway"
     },
@@ -611,7 +603,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "10/3/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Humboldt Showdown",
         "location": "Humboldt Speedway"
     },
@@ -619,7 +611,7 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "10/4/25",
-        "time": "",
+        "time": "6:15 PM",
         "title": "Wichita Showdown",
         "location": "81 Speedway"
     },
@@ -627,16 +619,16 @@
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "10/10/25",
-        "time": "",
-        "title": "Bauou Classic",
+        "time": "6:30 PM",
+        "title": "Bayou Classic",
         "location": "Boothill Speedway"
     },
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
         "date": "10/11/25",
-        "time": "",
-        "title": "Bauou Classic",
+        "time": "6:30 PM",
+        "title": "Bayou Classic",
         "location": "Boothill Speedway"
     },
     {
@@ -675,7 +667,7 @@
         "category": "Dirt Late Models",
         "subcategory": "FloRacing Night in America",
         "date": "6/4/25",
-        "time": "",
+        "time": "4:30 PM",
         "title": "FloRacing Night in America",
         "location": "Eldora Speedway"
     },
@@ -810,7 +802,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/17/2025",
+        "date": "7/17/25",
         "time": "",
         "title": "15th Annual Silver Dollar Nationals",
         "location": "Husets Speedway"
@@ -818,7 +810,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/18/2025",
+        "date": "7/18/25",
         "time": "",
         "title": "15th Annual Silver Dollar Nationals",
         "location": "Husets Speedway"
@@ -826,7 +818,7 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "Lucas Oil",
-        "date": "7/19/2025",
+        "date": "7/19/25",
         "time": "",
         "title": "15th Annual Silver Dollar Nationals",
         "location": "Husets Speedway"
