@@ -174,8 +174,6 @@ const App = () => {
     return (
         <div>
             <div className="container">
-                <h1 className="page-title">Events</h1>
-                <hr className="featurette-divider" />
                 <div style={{ textAlign: "center" }}>
                     {makeMenu()}
                 </div>
