@@ -1216,11 +1216,172 @@
         "location": "Yas Marina Circuit"
     },
     {
-        "category": "",
+        "category": "Taylor Swift",
         "subcategory": "",
-        "date": "",
+        "date": "12/13/25",
         "time": "",
-        "title": "",
+        "title": "Taylor Swift's Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "2/1/26",
+        "time": "7:00 PM",
+        "title": "68th Annual GRAMMY Awards",
+        "location": "Los Angeles, California"
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "1/11/26",
+        "time": "7:00 PM",
+        "title": "83rd Annual Golden Globe Awards",
+        "location": "Beverly Hills, California"
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "9/7/25",
+        "time": "7:00 PM",
+        "title": "MTV Video Music Awards",
+        "location": "Elmont, New York"
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "12/12/25",
+        "time": "7:00 PM",
+        "title": "Billboard Music Awards",
+        "location": "Las Vegas, New Mexico"
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "10/24/25",
+        "time": "",
+        "title": "Debut's 19th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "11/11/25",
+        "time": "",
+        "title": "Fearless's 17th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "10/25/25",
+        "time": "",
+        "title": "Speak Now's 15th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "10/22/25",
+        "time": "",
+        "title": "Red's 13th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "10/27/25",
+        "time": "",
+        "title": "1989's 11th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "11/10/25",
+        "time": "",
+        "title": "reputation's 8th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "8/23/25",
+        "time": "",
+        "title": "Lover's 6th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "7/24/25",
+        "time": "",
+        "title": "folklore's 5th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "12/11/25",
+        "time": "",
+        "title": "evermore's 5th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "10/21/25",
+        "time": "",
+        "title": "Midnight's 3rd Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "4/19/26",
+        "time": "",
+        "title": "The Tortured Poets Department's 2nd Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "4/9/26",
+        "time": "",
+        "title": "Fearless (TV)'s 4th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "11/12/25",
+        "time": "",
+        "title": "Red (TV)'s 4th Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "7/7/25",
+        "time": "",
+        "title": "Speak Now (TV)'s 2nd Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "10/27/23",
+        "time": "",
+        "title": "1989 (TV)'s 2nd Birthday",
+        "location": ""
+    },
+    {
+        "category": "Taylor Swift",
+        "subcategory": "",
+        "date": "5/30/26",
+        "time": "",
+        "title": "Taypendence Day",
         "location": ""
     }
+
 ]
