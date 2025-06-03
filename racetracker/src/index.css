@@ -264,6 +264,11 @@ body {
 }
 
 .flo {
+  background-color: #edede9;
+  color: #DF0501;
+}
+
+.f1 {
   background-color: #DF0501;
   color: #ffffff;
 }

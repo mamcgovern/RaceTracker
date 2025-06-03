@@ -104,9 +104,22 @@ const App = () => {
             'Other': 'other',
             'World of Outlaws': 'woo',
             'Lucas Oil': 'lolms',
-            'Flo': 'flo'
+            'Flo': 'flo',
+            'F1': 'f1'
         };
-        return (<button className={`unclickable-button ${classNames[event.subcategory] || classNames[event.category] || classNames['Other']}`}>{event.title}</button>);
+        return (
+            <button className={`unclickable-button ${classNames[event.subcategory] || classNames[event.category] || classNames['Other']}`}>
+                {event.title}
+                {event.location && ( // Only render location if it exists
+                    <>
+                        <br /> {/* Line break to put location on a new line */}
+                        <span style={{ fontSize: 'smaller', fontStyle: 'italic' }}>
+                            {event.location}
+                        </span>
+                    </>
+                )}
+            </button>
+        );
     };
 
     const sortedEvents = useMemo(() => {
