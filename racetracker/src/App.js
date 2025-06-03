@@ -589,8 +589,6 @@ const App = () => {
     return (
         <div>
             <div className="container">
-                <h1 className="page-title">Events</h1>
-                <hr className="featurette-divider" />
 
                 <div className="mb-4">
                     <div className="d-flex justify-content-center mb-3">
