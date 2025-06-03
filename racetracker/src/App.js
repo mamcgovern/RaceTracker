@@ -35,9 +35,8 @@ const App = () => {
     const [showEventDetailsPopup, setShowEventDetailsPopup] = useState(false);
     const [selectedEventDetails, setSelectedEventDetails] = useState(null);
 
-    // New state for controlling calendar navigation
-    const [currentDate, setCurrentDate] = useState(new Date()); // Tracks the currently displayed date
-    const [currentView, setCurrentView] = useState('month');   // Tracks the current calendar view
+    const [currentDate, setCurrentDate] = useState(new Date());
+    const [currentView, setCurrentView] = useState('month');
 
     const categoryPopupRef = useRef(null);
     const categoryButtonRef = useRef(null);
@@ -119,10 +118,40 @@ const App = () => {
 
     const events = useMemo(() => eventsData || [], []); 
 
-    const timeZones = useMemo(() => moment.tz.names().map(zone => ({
-        value: zone,
-        label: zone.replace(/_/g, ' ')
-    })), []);
+    // MODIFIED: Generate timeZones with UTC offset in labels for clarity
+    const timeZones = useMemo(() => moment.tz.names()
+        .map(zone => {
+            // Get a moment in this timezone (e.g., for the current date)
+            // to determine its offset reliably (considering DST)
+            const nowInZone = moment().tz(zone);
+            const offsetMinutes = nowInZone.utcOffset(); // Offset in minutes
+            const offsetHours = offsetMinutes / 60;
+
+            let formattedOffset;
+            if (offsetHours === 0) {
+                formattedOffset = 'UTC+0';
+            } else {
+                const sign = offsetHours > 0 ? '+' : '';
+                formattedOffset = `UTC${sign}${offsetHours}`;
+            }
+
+            const label = zone.replace(/_/g, ' ');
+
+            return {
+                value: zone,
+                label: `${label} (${formattedOffset})`
+            };
+        })
+        .sort((a, b) => {
+            // Sort by offset first, then alphabetically for better grouping
+            const offsetA = moment().tz(a.value).utcOffset();
+            const offsetB = moment().tz(b.value).utcOffset();
+            if (offsetA !== offsetB) {
+                return offsetA - offsetB;
+            }
+            return a.label.localeCompare(b.label);
+        }), []);
+
 
     const hierarchicalCategories = useMemo(() => {
         const categoriesWithChildren = new Map();
@@ -536,7 +565,6 @@ const App = () => {
         setSelectedEventDetails(null);
     };
 
-    // Handlers for calendar navigation and view changes
     const handleNavigate = (newDate) => {
         setCurrentDate(newDate);
     };
@@ -548,8 +576,6 @@ const App = () => {
     return (
         <div>
             <div className="container">
-                <h1 className="page-title">Events</h1>
-                <hr className="featurette-divider" />
 
                 <div className="mb-4">
                     <div className="d-flex justify-content-center mb-3">
@@ -577,16 +603,13 @@ const App = () => {
                             endAccessor="end"
                             eventPropGetter={eventPropGetter}
                             onSelectEvent={handleSelectCalendarEvent}
-                            // --- BEGIN Calendar Navigation Props ---
-                            date={currentDate}      // Control the current date
-                            view={currentView}      // Control the current view
-                            onNavigate={handleNavigate} // Update date on navigation
-                            onView={handleViewChange}   // Update view on view change
-                            // --- END Calendar Navigation Props ---
+                            date={currentDate}
+                            view={currentView}
+                            onNavigate={handleNavigate}
+                            onView={handleViewChange}
                             key={activeOption + '-' + selectedCategories.size + '-' + showAllEvents}
                             style={{ height: '100%' }}
                             views={['month', 'week', 'day', 'agenda']}
-                            // Removed defaultView as 'view' prop is now used
                             scrollToTime={moment().toDate()}
                         />
                     </div>
@@ -614,12 +637,12 @@ const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
         day: day,
         hour: event.time ? (parseInt(event.time.split(':')[0]) % 12) + (event.time.includes('PM') ? 12 : 0) : 0,
         minute: event.time ? parseInt(event.time.split(':')[1]) : 0
-    }, 'America/Chicago');
+    }, 'America/Chicago'); // Assuming original data is always in America/Chicago
 
     const displayMoment = eventMoment.tz(activeTimeZone);
 
-    const displayDate = displayMoment.format('ddd, MMM D, YYYY'); // Added YYYY for clarity
-    const displayTime = event.time ? displayMoment.format('h:mm A z') : 'All Day';
+    const displayDate = displayMoment.format('ddd, MMM D, YYYY');
+    const displayTime = event.time ? displayMoment.format('h:mm A z') : 'All Day'; // 'z' displays the timezone abbreviation
 
     return (
         <div className="event-details-overlay">
