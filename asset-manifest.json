@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.c6b5af70.css",
-    "main.js": "/react-gh-pages/static/js/main.76a99415.js",
-    "static/media/nulshock bd.ttf": "/react-gh-pages/static/media/nulshock bd.836416c859bbc366b02f.ttf",
-    "index.html": "/react-gh-pages/index.html",
-    "main.c6b5af70.css.map": "/react-gh-pages/static/css/main.c6b5af70.css.map",
-    "main.76a99415.js.map": "/react-gh-pages/static/js/main.76a99415.js.map"
+    "main.css": "/RaceTracker/static/css/main.a02abb56.css",
+    "main.js": "/RaceTracker/static/js/main.76a99415.js",
+    "static/media/nulshock bd.ttf": "/RaceTracker/static/media/nulshock bd.836416c859bbc366b02f.ttf",
+    "index.html": "/RaceTracker/index.html",
+    "main.a02abb56.css.map": "/RaceTracker/static/css/main.a02abb56.css.map",
+    "main.76a99415.js.map": "/RaceTracker/static/js/main.76a99415.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6b5af70.css",
+    "static/css/main.a02abb56.css",
     "static/js/main.76a99415.js"
   ]
 }
