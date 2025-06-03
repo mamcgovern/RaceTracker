@@ -896,64 +896,256 @@
         "location": "Eldora Speedway"
     },
     {
-        "category": "Dirt Late Models",
-        "subcategory": "Lucas Oil",
+        "category": "F1",
+        "subcategory": "",
+        "date": "6/14/25",
+        "time": "3:00 PM",
+        "title": "Canadian Quali",
+        "location": "Circuit Gilles-Villeneuve"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "6/15/25",
+        "time": "1:00 PM",
+        "title": "Canadian Grand Prix",
+        "location": "Circuit Gilles-Villeneuve"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "6/28/25",
+        "time": "9:00 AM",
+        "title": "Austrian Quali",
+        "location": "Red Bull Ring"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "6/29/25",
+        "time": "8:00 AM",
+        "title": "Austrian Grand Prix",
+        "location": "Red Bull Ring"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "7/5/25",
+        "time": "9:00 AM",
+        "title": "British Quali",
+        "location": "Silverstone Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "7/6/25",
+        "time": "9:00 AM",
+        "title": "British Grand Prix",
+        "location": "Silverstone Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "7/26/25",
+        "time": "9:00 AM",
+        "title": "Belgian Quali",
+        "location": "Circuit de Spa-Francorchamps"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "7/27/25",
+        "time": "8:00 AM",
+        "title": "Belgian Grand Prix",
+        "location": "Circuit de Spa-Francorchamps"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "8/2/25",
+        "time": "9:00 AM",
+        "title": "Hungarian Quali",
+        "location": "Hungaroring"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "8/3/25",
+        "time": "8:00 AM",
+        "title": "Hungarian Grand Prix",
+        "location": "Hungaroring"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "8/30/25",
+        "time": "8:00 AM",
+        "title": "Dutch Quali",
+        "location": "Circuit Zandvoort"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "8/31/25",
+        "time": "8:00 AM",
+        "title": "Dutch Grand Prix",
+        "location": "Circuit Zandvoort"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "9/6/25",
+        "time": "9:00 AM",
+        "title": "Italian Quali",
+        "location": "Autodromo Nazionale Monza"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "9/7/25",
+        "time": "8:00 AM",
+        "title": "Italian Grand Prix",
+        "location": "Autodromo Nazionale Monza"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "9/20/25",
+        "time": "7:00 AM",
+        "title": "Azerbaijan Quali",
+        "location": "Baku City Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "9/21/25",
+        "time": "6:00 AM",
+        "title": "Azerbaijan Grand Prix",
+        "location": "Baku City Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "10/4/25",
+        "time": "8:00 AM",
+        "title": "Singapore Quali",
+        "location": "Marina Bay Street Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "10/5/25",
+        "time": "7:00 AM",
+        "title": "Singapore Grand Prix",
+        "location": "Marina Bay Street Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "10/18/25",
+        "time": "4:00 PM",
+        "title": "US Quali",
+        "location": "Circuit of The Americas"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "10/19/25",
+        "time": "2:00 PM",
+        "title": "US Grand Prix",
+        "location": "Circuit of The Americas"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "10/25/25",
+        "time": "4:00 PM",
+        "title": "Mexican Quali",
+        "location": "Autódromo Hermanos Rodríguez"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "10/26/25",
+        "time": "3:00 PM",
+        "title": "Mexican Grand Prix",
+        "location": "Autódromo Hermanos Rodríguez"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "11/8/25",
+        "time": "12:00 PM",
+        "title": "Brazilian Quali",
+        "location": "Autódromo José Carlos Pace"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "11/9/25",
+        "time": "11:00 AM",
+        "title": "Brazilian Grand Prix",
+        "location": "Autódromo José Carlos Pace"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "11/21/25",
+        "time": "10:00 PM",
+        "title": "Las Vegas Quali",
+        "location": "Las Vegas Strip Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "11/22/25",
+        "time": "10:00 PM",
+        "title": "Las Vegas Grand Prix",
+        "location": "Las Vegas Strip Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "11/29/25",
+        "time": "12:00 PM",
+        "title": "Qatar Quali",
+        "location": "Lusail International Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
+        "date": "11/30/25",
+        "time": "10:00 AM",
+        "title": "Qatar Grand Prix",
+        "location": "Lusail International Circuit"
+    },
+    {
+        "category": "F1",
+        "subcategory": "",
         "date": "",
         "time": "",
-        "title": "",
+        "title": "Abu Dhabi Quali",
         "location": ""
     },
     {
-        "category": "Dirt Late Models",
-        "subcategory": "Lucas Oil",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
+        "category": "F1",
+        "subcategory": "",
+        "date": "12/6/25",
+        "time": "8:00 AM",
+        "title": "Abu Dhabi Grand Prix",
+        "location": "Yas Marina Circuit"
     },
     {
-        "category": "Dirt Late Models",
-        "subcategory": "Lucas Oil",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
+        "category": "F1",
+        "subcategory": "",
+        "date": "12/7/25",
+        "time": "7:00 AM",
+        "title": "Abu Dhabi Quali",
+        "location": "Yas Marina Circuit"
     },
     {
-        "category": "Dirt Late Models",
-        "subcategory": "Lucas Oil",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "Lucas Oil",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "Lucas Oil",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "Lucas Oil",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "Lucas Oil",
+        "category": "",
+        "subcategory": "",
         "date": "",
         "time": "",
         "title": "",
