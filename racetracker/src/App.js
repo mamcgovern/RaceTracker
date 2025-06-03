@@ -24,7 +24,9 @@ const eventClassNames = {
     'World of Outlaws': 'woo',
     'Lucas Oil': 'lolms',
     'Flo': 'flo',
-    'F1': 'f1'
+    'F1': 'f1',
+    'Taylor Swift': 'ts',
+    'Nascar': 'nascar'
 };
 
 const App = () => {
