@@ -218,7 +218,7 @@
     {
         "category": "Football",
         "subcategory": "Packers",
-        "date": "10/12/15",
+        "date": "10/12/25",
         "time": "3:25 PM",
         "title": "Packers vs Bengals",
         "location": "Lambeau Field"
@@ -322,6 +322,582 @@
     {
         "category": "Dirt Late Models",
         "subcategory": "World of Outlaws",
+        "date": "6/20/25",
+        "time": "",
+        "title": "Pevely Summer Nationals Shootout",
+        "location": "Federated Auto Parts Raceway at I-55"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "6/21/25",
+        "time": "",
+        "title": "Pevely Summer Nationals Shootout",
+        "location": "Federated Auto Parts Raceway at I-55"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "6/23/25",
+        "time": "",
+        "title": "Monday Madness at Independence",
+        "location": "Independence Motor Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "6/26/25",
+        "time": "",
+        "title": "Fergus Falls Showdown",
+        "location": "I-94 EMR Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "6/27/25",
+        "time": "",
+        "title": "Grand Forks Showdown",
+        "location": "River Cities Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "6/29/25",
+        "time": "",
+        "title": "Minot Mayhem",
+        "location": "Nodak Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "7/3/25",
+        "time": "",
+        "title": "Gopher 50",
+        "location": "Deer Creek Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "7/4/25",
+        "time": "",
+        "title": "Gopher 50",
+        "location": "Deer Creek Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "7/5/25",
+        "time": "",
+        "title": "Gopher 50",
+        "location": "Deer Creek Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "7/11/25",
+        "time": "",
+        "title": "Battle at the Border",
+        "location": "Sharon Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "7/12/25",
+        "time": "",
+        "title": "Battle at the Border",
+        "location": "Sharon Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "7/25/25",
+        "time": "",
+        "title": "Prairie Dirt Classic",
+        "location": "Fairbury Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "7/26/25",
+        "time": "",
+        "title": "Prairie Dirt Classic",
+        "location": "Fairbury Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "7/28/25",
+        "time": "",
+        "title": "Wilmot Late Model Showdown",
+        "location": "Wilmot Raceway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "7/31/25",
+        "time": "",
+        "title": "USA Nationals",
+        "location": "Cedar Lake Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "8/1/25",
+        "time": "",
+        "title": "USA Nationals",
+        "location": "Cedar Lake Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "8/2/25",
+        "time": "",
+        "title": "USA Nationals",
+        "location": "Cedar Lake Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "8/13/25",
+        "time": "",
+        "title": "Beat the Heat 40",
+        "location": "Highland Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "8/14/25",
+        "time": "",
+        "title": "Spoon River Showdown",
+        "location": "Spoon River Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "8/15/25",
+        "time": "",
+        "title": "Hawkeye 100",
+        "location": "Maquoketa Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "8/16/25",
+        "time": "",
+        "title": "Hawkeye 100",
+        "location": "Maquoketa Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "8/22/25",
+        "time": "",
+        "title": "Sooner State Showdown",
+        "location": "Arrowhead Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "8/23/25",
+        "time": "",
+        "title": "Sooner State Showdown",
+        "location": "Arrowhead Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "9/13/25",
+        "time": "",
+        "title": "Billy Clanton Classic",
+        "location": "Senoia Raceway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "9/26/25",
+        "time": "",
+        "title": "Battle by the Arch",
+        "location": "Tri-City Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "9/27/25",
+        "time": "",
+        "title": "Battle by the Arch",
+        "location": "Tri-City Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "10/3/25",
+        "time": "",
+        "title": "Humboldt Showdown",
+        "location": "Humboldt Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "10/4/25",
+        "time": "",
+        "title": "Wichita Showdown",
+        "location": "81 Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "10/10/25",
+        "time": "",
+        "title": "Bauou Classic",
+        "location": "Boothill Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "10/11/25",
+        "time": "",
+        "title": "Bauou Classic",
+        "location": "Boothill Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "11/5/25",
+        "time": "",
+        "title": "World of Outlaws World Finals",
+        "location": "The Dirt Track at Charlotte"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "11/6/25",
+        "time": "",
+        "title": "World of Outlaws World Finals",
+        "location": "The Dirt Track at Charlotte"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "11/7/25",
+        "time": "",
+        "title": "World of Outlaws World Finals",
+        "location": "The Dirt Track at Charlotte"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "World of Outlaws",
+        "date": "11/8/25",
+        "time": "",
+        "title": "World of Outlaws World Finals",
+        "location": "The Dirt Track at Charlotte"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Flo",
+        "date": "6/4/25",
+        "time": "",
+        "title": "FloRacing Night in America",
+        "location": "Eldora Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Flo",
+        "date": "7/23/25",
+        "time": "",
+        "title": "FloRacing Night in America",
+        "location": "Fairbury Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Flo",
+        "date": "9/11/25",
+        "time": "",
+        "title": "2nd Annual Scott Bloomquist Memorial Scorcher",
+        "location": "Volunteer Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Flo",
+        "date": "9/24/25",
+        "time": "",
+        "title": "FloRacing Night in America",
+        "location": "Tri-State Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Flo",
+        "date": "11/14/25",
+        "time": "",
+        "title": "5th Annual Peach State Classic: FloRacing Night in America",
+        "location": ""
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Flo",
+        "date": "11/15/25",
+        "time": "",
+        "title": "5th Annual Peach State Classic: FloRacing Night in America",
+        "location": ""
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "6/13/25",
+        "time": "",
+        "title": "Mountain Moonshine Classic",
+        "location": "Smoky Mountain Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "6/14/25",
+        "time": "",
+        "title": "Mountain Moonshine Classic",
+        "location": "Smoky Mountain Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "6/19/25",
+        "time": "",
+        "title": "19th Annual Firecracker 100",
+        "location": "Lernerville Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "6/20/25",
+        "time": "",
+        "title": "19th Annual Firecracker 100",
+        "location": "Lernerville Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "6/21/25",
+        "time": "",
+        "title": "19th Annual Firecracker 100",
+        "location": "Lernerville Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "7/4/25",
+        "time": "",
+        "title": "Lucas Oil Late Model Dirt Series",
+        "location": "Atomic Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "7/5/25",
+        "time": "",
+        "title": "Freedom 60",
+        "location": "Muskingum County Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "7/10/25",
+        "time": "",
+        "title": "Lucas Oil Late Model Dirt Series",
+        "location": "34 Raceway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "7/11/25",
+        "time": "",
+        "title": "19th Annual CMH Diamond Nationals",
+        "location": "Lucas Oil Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "7/12/25",
+        "time": "",
+        "title": "19th Annual CMH Diamond Nationals",
+        "location": "Lucas Oil Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "7/15/25",
+        "time": "",
+        "title": "Kosiski Family 53",
+        "location": "Shelby County Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "7/17/2025",
+        "time": "",
+        "title": "15th Annual Silver Dollar Nationals",
+        "location": "Husets Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "7/18/2025",
+        "time": "",
+        "title": "15th Annual Silver Dollar Nationals",
+        "location": "Husets Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "7/19/2025",
+        "time": "",
+        "title": "15th Annual Silver Dollar Nationals",
+        "location": "Husets Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "8/7/25",
+        "time": "",
+        "title": "North/South 100",
+        "location": "Florence Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "8/8/25",
+        "time": "",
+        "title": "North/South 100",
+        "location": "Florence Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "8/9/25",
+        "time": "",
+        "title": "North/South 100",
+        "location": "Florence Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "8/15/25",
+        "time": "",
+        "title": "33rd Annual Topless 100",
+        "location": "Batesville Motor Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "8/16/25",
+        "time": "",
+        "title": "33rd Annual Topless 100",
+        "location": "Batesville Motor Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "8/22/25",
+        "time": "",
+        "title": "Rumble by the River",
+        "location": "Port Royal Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "8/23/25",
+        "time": "",
+        "title": "Rumble by the River",
+        "location": "Port Royal Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "8/29/25",
+        "time": "",
+        "title": "57th Annual Hillbilly Hundred",
+        "location": "Lernerville Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "8/30/25",
+        "time": "",
+        "title": "57th Annual Hillbilly Hundred",
+        "location": "Lernerville Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "9/18/25",
+        "time": "",
+        "title": "Late Model Nationals",
+        "location": "Knoxville Raceway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "9/19/25",
+        "time": "",
+        "title": "Late Model Nationals",
+        "location": "Knoxville Raceway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "9/20/25",
+        "time": "",
+        "title": "Late Model Nationals",
+        "location": "Knoxville Raceway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "9/26/25",
+        "time": "",
+        "title": "4th Annual CJ Rayburn Memorial",
+        "location": "Brownstown Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "9/27/25",
+        "time": "",
+        "title": "46th Annual Jackson 100",
+        "location": "Brownstown Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "10/3/25",
+        "time": "",
+        "title": "37th Annual Pittsburgher",
+        "location": "Pittsburgh Pennsylvania Motor Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "10/4/25",
+        "time": "",
+        "title": "37th Annual Pittsburgher",
+        "location": "Pittsburgh Pennsylvania Motor Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "10/17/25",
+        "time": "",
+        "title": "45th Annual Dirt Track World Championship",
+        "location": "Eldora Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
+        "date": "10/18/25",
+        "time": "",
+        "title": "45th Annual Dirt Track World Championship",
+        "location": "Eldora Speedway"
+    },
+    {
+        "category": "Dirt Late Models",
+        "subcategory": "Lucas Oil",
         "date": "",
         "time": "",
         "title": "",
@@ -329,7 +905,7 @@
     },
     {
         "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
+        "subcategory": "Lucas Oil",
         "date": "",
         "time": "",
         "title": "",
@@ -337,7 +913,7 @@
     },
     {
         "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
+        "subcategory": "Lucas Oil",
         "date": "",
         "time": "",
         "title": "",
@@ -345,7 +921,7 @@
     },
     {
         "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
+        "subcategory": "Lucas Oil",
         "date": "",
         "time": "",
         "title": "",
@@ -353,7 +929,7 @@
     },
     {
         "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
+        "subcategory": "Lucas Oil",
         "date": "",
         "time": "",
         "title": "",
@@ -361,7 +937,7 @@
     },
     {
         "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
+        "subcategory": "Lucas Oil",
         "date": "",
         "time": "",
         "title": "",
@@ -369,7 +945,7 @@
     },
     {
         "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
+        "subcategory": "Lucas Oil",
         "date": "",
         "time": "",
         "title": "",
@@ -377,103 +953,7 @@
     },
     {
         "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
-        "date": "",
-        "time": "",
-        "title": "",
-        "location": ""
-    },
-    {
-        "category": "Dirt Late Models",
-        "subcategory": "World of Outlaws",
+        "subcategory": "Lucas Oil",
         "date": "",
         "time": "",
         "title": "",

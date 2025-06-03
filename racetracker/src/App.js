@@ -103,9 +103,12 @@ const App = () => {
             'Ceremony': 'ceremony',
             'Release': 'release',
             'Football': 'football',
-            'Other': 'other'
+            'Other': 'other',
+            'World of Outlaws': 'woo',
+            'Lucas Oil': 'lolms',
+            'Flo': 'flo'
         };
-        return (<button className={`unclickable-button ${classNames[event.category] || classNames['Other']}`}>{event.title}</button>);
+        return (<button className={`unclickable-button ${classNames[event.subcategory] || classNames[event.category] || classNames['Other']}`}>{event.title}</button>);
     };
 
     const sortedEvents = useMemo(() => {
