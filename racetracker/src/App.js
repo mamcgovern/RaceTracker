@@ -10,8 +10,6 @@ import Select from 'react-select';
 import eventsData from './data/Events.json';
 
 const App = () => {
-    // --- CHANGE IS HERE ---
-    // Change the dependency array from [eventsData] to []
     const events = useMemo(() => eventsData || [], []);
 
     const isSmallScreen = window.innerWidth <= 800;
