@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react'; // Import useRef and useEffect
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,15 +12,54 @@ import eventsData from './data/Events.json';
 const App = () => {
     const events = useMemo(() => eventsData || [], []);
 
-    const isSmallScreen = window.innerWidth <= 800;
+    // isSmallScreen can be removed as Bootstrap handles responsive layout for menus now
+    // const isSmallScreen = window.innerWidth <= 800;
 
     const [showAllEvents, setShowAllEvents] = useState(false);
     const [activeOption, setActiveOption] = useState('America/Chicago');
+    const [selectedCategories, setSelectedCategories] = useState(new Set());
+    // --- NEW STATE FOR POPUP ---
+    const [showCategoryPopup, setShowCategoryPopup] = useState(false);
+
+    // --- REFS FOR POPUP AND BUTTON ---
+    const categoryPopupRef = useRef(null);
+    const categoryButtonRef = useRef(null);
+
+    // --- useEffect for clicking outside to close popup ---
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Check if click is outside the popup and not on the button itself
+            if (categoryPopupRef.current && !categoryPopupRef.current.contains(event.target) &&
+                categoryButtonRef.current && !categoryButtonRef.current.contains(event.target)) {
+                setShowCategoryPopup(false);
+            }
+        };
+
+        if (showCategoryPopup) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showCategoryPopup]);
+
 
     const timeZones = useMemo(() => moment.tz.names().map(zone => ({
         value: zone,
         label: zone.replace(/_/g, ' ')
     })), []);
+
+    const categoryValues = useMemo(() => {
+        const categories = new Set();
+        events.forEach(event => {
+            if (event.category) categories.add(event.category);
+            if (event.subcategory) categories.add(event.subcategory);
+        });
+        return Array.from(categories).sort();
+    }, [events]);
 
     const convertToTimeZone = (date, time, timeZone) => {
         const [month, day, year] = date.split('/').map(Number);
@@ -66,14 +105,14 @@ const App = () => {
             <div>
                 <button
                     className={`btn ${showAllEvents ? 'btn-outline-secondary' : 'btn-primary'}`}
-                    style={{ textAlign: 'center', margin: '10px' }}
+                    style={{ margin: '5px' }}
                     onClick={() => setShowAllEvents(false)}
                 >
                     Upcoming Events
                 </button>
                 <button
                     className={`btn ${showAllEvents ? 'btn-primary' : 'btn-outline-secondary'}`}
-                    style={{ textAlign: 'center', margin: '10px' }}
+                    style={{ margin: '5px' }}
                     onClick={() => setShowAllEvents(true)}
                 >
                     All Events
@@ -84,16 +123,99 @@ const App = () => {
 
     const makeTimeZoneMenu = () => {
         return (
-            <div style={{ width: isSmallScreen ? 'auto' : '25%', margin: 'auto', textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', minWidth: '180px' }}>
                 <Select
                     options={timeZones}
                     onChange={handleOptionChange}
                     value={timeZones.find(zone => zone.value === activeOption)}
                     isSearchable
+                    placeholder="Select timezone..."
                 />
             </div>
         );
     };
+
+    const handleCategoryChange = (category) => {
+        setSelectedCategories(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(category)) {
+                newSet.delete(category);
+            } else {
+                newSet.add(category);
+            }
+            return newSet;
+        });
+    };
+
+    const handleAllCategoriesToggle = () => {
+        setSelectedCategories(new Set());
+    };
+
+    // --- REFACTORED: This is now just the checkbox content ---
+    const CategoryCheckboxes = () => {
+        return (
+            <>
+                <strong style={{ display: 'block', marginBottom: '5px' }}>Filter by Category:</strong>
+                <label style={{ display: 'block', marginBottom: '5px' }}>
+                    <input
+                        type="checkbox"
+                        checked={selectedCategories.size === 0}
+                        onChange={handleAllCategoriesToggle}
+                    />{' '}
+                    All Categories
+                </label>
+                {categoryValues.map(cat => (
+                    <label key={cat} style={{ display: 'block', marginBottom: '5px' }}>
+                        <input
+                            type="checkbox"
+                            checked={selectedCategories.has(cat)}
+                            onChange={() => handleCategoryChange(cat)}
+                        />{' '}
+                        {cat}
+                    </label>
+                ))}
+            </>
+        );
+    };
+
+    // --- NEW: Category Filter Popup Component ---
+    const CategoryFilterPopup = () => {
+        return (
+            // This div provides the relative positioning context for the popup
+            <div style={{ position: 'relative', display: 'inline-block' }}>
+                <button
+                    ref={categoryButtonRef} // Attach ref to the button
+                    className="btn btn-outline-secondary" // Or btn-primary
+                    onClick={() => setShowCategoryPopup(prev => !prev)}
+                    style={{ marginLeft: '10px' }} // Spacing from timezone selector
+                >
+                    Filter Categories
+                </button>
+
+                {showCategoryPopup && (
+                    <div
+                        ref={categoryPopupRef} // Attach ref to the popup content
+                        style={{
+                            position: 'absolute',
+                            top: '100%', // Position directly below the button
+                            right: 0,   // Align to the right of the button
+                            zIndex: 1000, // Ensure it's on top of other content
+                            backgroundColor: 'white', // Ensure good contrast
+                            border: '1px solid #ccc',
+                            borderRadius: '5px',
+                            padding: '15px',
+                            boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+                            minWidth: '200px',
+                            color: 'black' // Text color for contrast on white background
+                        }}
+                    >
+                        {CategoryCheckboxes()} {/* Render the checkbox content */}
+                    </div>
+                )}
+            </div>
+        );
+    };
+
 
     const singleEvent = (event) => {
         const classNames = {
@@ -110,9 +232,9 @@ const App = () => {
         return (
             <button className={`unclickable-button ${classNames[event.subcategory] || classNames[event.category] || classNames['Other']}`}>
                 {event.title}
-                {event.location && ( // Only render location if it exists
+                {event.location && (
                     <>
-                        <br /> {/* Line break to put location on a new line */}
+                        <br />
                         <span style={{ fontSize: 'smaller', fontStyle: 'italic' }}>
                             {event.location}
                         </span>
@@ -134,8 +256,15 @@ const App = () => {
 
             return momentA.diff(momentB);
         });
-        return sortableEvents;
-    }, [events]);
+
+        if (selectedCategories.size === 0) {
+            return sortableEvents;
+        } else {
+            return sortableEvents.filter(event =>
+                selectedCategories.has(event.category) || selectedCategories.has(event.subcategory)
+            );
+        }
+    }, [events, selectedCategories]);
 
     const renderEvent = (event) => {
         const currentDate = new Date();
@@ -174,12 +303,23 @@ const App = () => {
     return (
         <div>
             <div className="container">
-                <div style={{ textAlign: "center" }}>
-                    {makeMenu()}
+                <h1 className="page-title">Events</h1>
+                <hr className="featurette-divider" />
+
+                <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4">
+                    <div className="mb-3 mb-lg-0 text-center">
+                        {makeMenu()}
+                    </div>
+
+                    <div className="d-flex flex-column flex-md-row align-items-center ms-lg-auto">
+                        <div className="me-md-3 mb-3 mb-md-0">
+                            {makeTimeZoneMenu()}
+                        </div>
+                        {/* --- REPLACED makeCategoryMenu WITH CategoryFilterPopup --- */}
+                        <CategoryFilterPopup />
+                    </div>
                 </div>
-                <div style={{ textAlign: "right" }}>
-                    {makeTimeZoneMenu()}
-                </div>
+
                 <hr className="featurette-divider" />
                 {allEvents}
             </div>
