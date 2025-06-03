@@ -1382,6 +1382,189 @@
         "time": "",
         "title": "Taypendence Day",
         "location": ""
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "6/8/25",
+        "time": "1:00 PM",
+        "title": "Firekeepers Casino 400",
+        "location": "Michigan International Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "6/15/25",
+        "time": "2:00 PM",
+        "title": "Viva Mexico 250",
+        "location": "Autódromo Hermanos Rodríguez"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "6/22/25",
+        "time": "1:00 PM",
+        "title": "The Great American Getaway 400",
+        "location": "Pocono Raceway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "6/28/25",
+        "time": "6:00 PM",
+        "title": "Quaker State 400",
+        "location": "Atlanta Motor Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "7/6/25",
+        "time": "1:00 PM",
+        "title": "Grant Park 165",
+        "location": "Chicago Street Race"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "7/13/25",
+        "time": "2:30 PM",
+        "title": "Toyota / Save Mart 350",
+        "location": "Sonoma Raceway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "7/20/25",
+        "time": "1:00 PM",
+        "title": "Autotrader EchoPark Automotive 400",
+        "location": "Dover Motor Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "7/27/25",
+        "time": "1:00 PM",
+        "title": "Brickyard 400",
+        "location": "Indianapolis Motor Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "8/3/25",
+        "time": "2:30 PM",
+        "title": "Iowa Corn 350",
+        "location": "Iowa Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "8/10/25",
+        "time": "1:00 PM",
+        "title": "Go Bowling at The Glen",
+        "location": "Watkins Glen International"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "8/16/25",
+        "time": "6:30 PM",
+        "title": "Cook Out 400",
+        "location": "Richmond Raceway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "8/23/25",
+        "time": "6:30 PM",
+        "title": "Coke Zero Sugar 400",
+        "location": "Daytona International Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "8/31/25",
+        "time": "5:00 PM",
+        "title": "Cook Out Southern 500",
+        "location": "Darlington Raceway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "9/7/25",
+        "time": "2:00 PM",
+        "title": "Enjoy Illinois 300",
+        "location": "World Wide Technology Raceway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "9/13/25",
+        "time": "6:30 PM",
+        "title": "Bass Pro Shops Night Race",
+        "location": "Bristol Motor Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "9/21/25",
+        "time": "1:00 PM",
+        "title": "NASCAR Cup Series Playoff Race at New Hampshire",
+        "location": "New Hampshire Motor Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "9/28/25",
+        "time": "2:00 PM",
+        "title": "Hollywood Casino 400",
+        "location": "Kansas Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "10/5/25",
+        "time": "2:00 PM",
+        "title": "Bank of America ROVAL 400",
+        "location": "Charlotte Motor Speedway Road Course"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "10/12/25",
+        "time": "4:30 PM",
+        "title": "South Point 400",
+        "location": "Las Vegas Motor Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "10/19/25",
+        "time": "1:00 PM",
+        "title": "YellaWood 500",
+        "location": "Talladega Superspeedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "10/26/25",
+        "time": "1:00 PM",
+        "title": "Xfinity 500",
+        "location": "Martinsville Speedway"
+    },
+    {
+        "category": "Nascar",
+        "subcategory": "",
+        "date": "11/2/25",
+        "time": "2:00 PM",
+        "title": "NASCAR Cup Series Championship",
+        "location": "Phoenix Raceway"
+    },
+    {
+        "category": "",
+        "subcategory": "",
+        "date": "",
+        "time": "",
+        "title": "",
+        "location": ""
     }
-
 ]

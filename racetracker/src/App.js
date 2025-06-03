@@ -24,7 +24,8 @@ const eventClassNames = {
     'Lucas Oil': 'lolms',
     'Flo': 'flo',
     'F1': 'f1',
-    'Taylor Swift': 'ts'
+    'Taylor Swift': 'ts',
+    'Nascar': 'nascar'
 };
 
 const App = () => {
