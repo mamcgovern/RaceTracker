@@ -1,7 +1,7 @@
 {
   "name": "racetracker",
   "version": "0.1.0",
-  "homepage": "https://mamcgovern.github.io/RaceTracker/",
+  "homepage": "http://mamcgovern.github.io/RaceTracker/",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
