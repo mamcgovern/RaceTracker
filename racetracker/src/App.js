@@ -264,7 +264,7 @@ const App = () => {
 
             let endMoment = displayMoment.clone();
             if (!allDay) {
-                endMoment.add(1, 'hour');
+                endMoment.add(5, 'hour');
             } else {
                 endMoment.add(1, 'day').startOf('day');
             }
