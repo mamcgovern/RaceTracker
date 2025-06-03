@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react'; // Import useRef and useEffect
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,25 +10,16 @@ import Select from 'react-select';
 import eventsData from './data/Events.json';
 
 const App = () => {
-    const events = useMemo(() => eventsData || [], []);
-
-    // isSmallScreen can be removed as Bootstrap handles responsive layout for menus now
-    // const isSmallScreen = window.innerWidth <= 800;
-
     const [showAllEvents, setShowAllEvents] = useState(false);
     const [activeOption, setActiveOption] = useState('America/Chicago');
     const [selectedCategories, setSelectedCategories] = useState(new Set());
-    // --- NEW STATE FOR POPUP ---
     const [showCategoryPopup, setShowCategoryPopup] = useState(false);
 
-    // --- REFS FOR POPUP AND BUTTON ---
     const categoryPopupRef = useRef(null);
     const categoryButtonRef = useRef(null);
 
-    // --- useEffect for clicking outside to close popup ---
     useEffect(() => {
         const handleClickOutside = (event) => {
-            // Check if click is outside the popup and not on the button itself
             if (categoryPopupRef.current && !categoryPopupRef.current.contains(event.target) &&
                 categoryButtonRef.current && !categoryButtonRef.current.contains(event.target)) {
                 setShowCategoryPopup(false);
@@ -45,21 +36,6 @@ const App = () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [showCategoryPopup]);
-
-
-    const timeZones = useMemo(() => moment.tz.names().map(zone => ({
-        value: zone,
-        label: zone.replace(/_/g, ' ')
-    })), []);
-
-    const categoryValues = useMemo(() => {
-        const categories = new Set();
-        events.forEach(event => {
-            if (event.category) categories.add(event.category);
-            if (event.subcategory) categories.add(event.subcategory);
-        });
-        return Array.from(categories).sort();
-    }, [events]);
 
     const convertToTimeZone = (date, time, timeZone) => {
         const [month, day, year] = date.split('/').map(Number);
@@ -96,8 +72,141 @@ const App = () => {
         return { newDate, newTime };
     };
 
+    const getParentCheckboxState = (parentItem, currentSelections) => {
+        const { name: parentName, children } = parentItem;
+
+        if (children.length === 0) {
+            return {
+                checked: currentSelections.has(parentName),
+                indeterminate: false
+            };
+        }
+
+        const selectedChildrenCount = children.filter(child => currentSelections.has(child.name)).length;
+
+        const allChildrenSelected = selectedChildrenCount === children.length;
+        const someChildrenSelected = selectedChildrenCount > 0 && selectedChildrenCount < children.length;
+
+        return {
+            checked: allChildrenSelected,
+            indeterminate: someChildrenSelected
+        };
+    };
+
+    const events = useMemo(() => eventsData || [], []); 
+
+    const timeZones = useMemo(() => moment.tz.names().map(zone => ({
+        value: zone,
+        label: zone.replace(/_/g, ' ')
+    })), []);
+
+    const hierarchicalCategories = useMemo(() => {
+        const categoriesWithChildren = new Map();
+        const standaloneCategories = new Set();
+
+        events.forEach(event => {
+            if (event.category) {
+                if (event.subcategory) {
+                    if (!categoriesWithChildren.has(event.category)) {
+                        categoriesWithChildren.set(event.category, new Set());
+                    }
+                    categoriesWithChildren.get(event.category).add(event.subcategory);
+                } else {
+                    standaloneCategories.add(event.category);
+                }
+            }
+        });
+
+        categoriesWithChildren.forEach((_val, key) => standaloneCategories.delete(key));
+
+        const result = [];
+
+        Array.from(categoriesWithChildren.keys()).sort().forEach(categoryName => {
+            const children = Array.from(categoriesWithChildren.get(categoryName)).sort();
+            result.push({
+                name: categoryName,
+                children: children.map(subName => ({ name: subName }))
+            });
+        });
+
+        Array.from(standaloneCategories).sort().forEach(categoryName => {
+            result.push({ name: categoryName, children: [] });
+        });
+
+        return result;
+    }, [events]);
+
+    const sortedEvents = useMemo(() => {
+        const sortableEvents = [...events];
+
+        sortableEvents.sort((a, b) => {
+            const [monthA, dayA, yearA] = a.date.split('/').map(Number);
+            const momentA = moment({ year: 2000 + yearA, month: monthA - 1, day: dayA });
+
+            const [monthB, dayB, yearB] = b.date.split('/').map(Number);
+            const momentB = moment({ year: 2000 + yearB, month: monthB - 1, day: dayB });
+
+            return momentA.diff(momentB);
+        });
+
+        if (selectedCategories.size === 0) {
+            return sortableEvents;
+        } else {
+            const filtered = sortableEvents.filter(event => {
+                return selectedCategories.has(event.category) || selectedCategories.has(event.subcategory);
+            });
+            return filtered;
+        }
+    }, [events, selectedCategories]);
+
     const handleOptionChange = (selectedOption) => {
         setActiveOption(selectedOption.value);
+    };
+
+    const handleParentCategoryChange = (parentItem) => {
+        setSelectedCategories(prev => {
+            const newSet = new Set(prev);
+            const { name: parentName, children } = parentItem;
+
+            const { checked: isFullyChecked, indeterminate: isIndeterminate } = getParentCheckboxState(parentItem, prev);
+
+            if (isFullyChecked || isIndeterminate) {
+                newSet.delete(parentName);
+                children.forEach(child => newSet.delete(child.name));
+            } else {
+                newSet.add(parentName);
+                children.forEach(child => newSet.add(child.name));
+            }
+            return newSet;
+        });
+    };
+
+    const handleChildCategoryChange = (childName, parentItem) => {
+        setSelectedCategories(prev => {
+            const newSet = new Set(prev);
+            const { name: parentName, children } = parentItem;
+
+            if (newSet.has(childName)) {
+                newSet.delete(childName);
+            } else {
+                newSet.add(childName);
+            }
+
+            const { checked: isParentNowChecked, indeterminate: isParentNowIndeterminate } = getParentCheckboxState(parentItem, newSet);
+
+            if (isParentNowChecked) {
+                newSet.add(parentName);
+            } else if (isParentNowIndeterminate) {
+                newSet.delete(parentName);
+            } else {
+                 newSet.delete(parentName);
+            }
+            return newSet;
+        });
+    };
+
+    const handleAllCategoriesToggle = () => {
+        setSelectedCategories(new Set());
     };
 
     const makeMenu = () => {
@@ -135,23 +244,6 @@ const App = () => {
         );
     };
 
-    const handleCategoryChange = (category) => {
-        setSelectedCategories(prev => {
-            const newSet = new Set(prev);
-            if (newSet.has(category)) {
-                newSet.delete(category);
-            } else {
-                newSet.add(category);
-            }
-            return newSet;
-        });
-    };
-
-    const handleAllCategoriesToggle = () => {
-        setSelectedCategories(new Set());
-    };
-
-    // --- REFACTORED: This is now just the checkbox content ---
     const CategoryCheckboxes = () => {
         return (
             <>
@@ -164,58 +256,79 @@ const App = () => {
                     />{' '}
                     All Categories
                 </label>
-                {categoryValues.map(cat => (
-                    <label key={cat} style={{ display: 'block', marginBottom: '5px' }}>
-                        <input
-                            type="checkbox"
-                            checked={selectedCategories.has(cat)}
-                            onChange={() => handleCategoryChange(cat)}
-                        />{' '}
-                        {cat}
-                    </label>
+                <hr style={{ borderTop: '1px solid #eee', margin: '10px 0' }} />
+
+                {hierarchicalCategories.map(item => (
+                    <div key={item.name} style={{ marginBottom: '5px' }}>
+                        <label style={{ display: 'block' }}>
+                            <input
+                                type="checkbox"
+                                ref={el => {
+                                    if (el) {
+                                        const { checked, indeterminate } = getParentCheckboxState(item, selectedCategories);
+                                        el.checked = checked;
+                                        el.indeterminate = indeterminate;
+                                    }
+                                }}
+                                onChange={() => handleParentCategoryChange(item)}
+                            />{' '}
+                            {item.name}
+                        </label>
+                        {item.children.length > 0 && (
+                            <div style={{ marginLeft: '20px', borderLeft: '1px dotted #ccc', paddingLeft: '5px' }}>
+                                {item.children.map(child => (
+                                    <label key={child.name} style={{ display: 'block', marginBottom: '5px' }}>
+                                        <input
+                                            type="checkbox"
+                                            checked={selectedCategories.has(child.name)}
+                                            onChange={() => handleChildCategoryChange(child.name, item)}
+                                        />{' '}
+                                        {child.name}
+                                    </label>
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 ))}
             </>
         );
     };
 
-    // --- NEW: Category Filter Popup Component ---
     const CategoryFilterPopup = () => {
         return (
-            // This div provides the relative positioning context for the popup
             <div style={{ position: 'relative', display: 'inline-block' }}>
                 <button
-                    ref={categoryButtonRef} // Attach ref to the button
-                    className="btn btn-outline-secondary" // Or btn-primary
+                    ref={categoryButtonRef}
+                    className="btn btn-outline-secondary"
                     onClick={() => setShowCategoryPopup(prev => !prev)}
-                    style={{ marginLeft: '10px' }} // Spacing from timezone selector
+                    style={{ marginLeft: '10px' }}
                 >
                     Filter Categories
                 </button>
 
                 {showCategoryPopup && (
                     <div
-                        ref={categoryPopupRef} // Attach ref to the popup content
+                        ref={categoryPopupRef}
                         style={{
                             position: 'absolute',
-                            top: '100%', // Position directly below the button
-                            right: 0,   // Align to the right of the button
-                            zIndex: 1000, // Ensure it's on top of other content
-                            backgroundColor: 'white', // Ensure good contrast
+                            top: '100%',
+                            right: 0,
+                            zIndex: 1000,
+                            backgroundColor: 'white',
                             border: '1px solid #ccc',
                             borderRadius: '5px',
                             padding: '15px',
                             boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-                            minWidth: '200px',
-                            color: 'black' // Text color for contrast on white background
+                            minWidth: '220px',
+                            color: 'black'
                         }}
                     >
-                        {CategoryCheckboxes()} {/* Render the checkbox content */}
+                        {CategoryCheckboxes()}
                     </div>
                 )}
             </div>
         );
     };
-
 
     const singleEvent = (event) => {
         const classNames = {
@@ -229,9 +342,52 @@ const App = () => {
             'Flo': 'flo',
             'F1': 'f1'
         };
+        if(event.subcategory !== "") {
+            return (
+                <button className={`unclickable-button ${classNames[event.subcategory] || classNames[event.category] || classNames['Other']}`}>
+                    {event.subcategory && (
+                        <>
+                            <span style={{ fontSize: 'larger'}}>
+                                {event.subcategory}
+                            </span>
+                        </>
+                    )}
+                    {event.title && (
+                        <>
+                            <br />
+                            <span>
+                                {event.title}
+                            </span>
+                        </>
+                    )}
+                    {event.location && (
+                        <>
+                            <br />
+                            <span style={{ fontSize: 'smaller', fontStyle: 'italic' }}>
+                                {event.location}
+                            </span>
+                        </>
+                    )}
+                </button>
+            );
+        }
         return (
             <button className={`unclickable-button ${classNames[event.subcategory] || classNames[event.category] || classNames['Other']}`}>
-                {event.title}
+                {event.category && (
+                    <>
+                        <span style={{ fontSize: 'larger'}}>
+                            {event.category}
+                        </span>
+                    </>
+                )}
+                {event.title && (
+                    <>
+                        <br />
+                        <span>
+                            {event.title}
+                        </span>
+                    </>
+                )}
                 {event.location && (
                     <>
                         <br />
@@ -244,28 +400,6 @@ const App = () => {
         );
     };
 
-    const sortedEvents = useMemo(() => {
-        const sortableEvents = [...events];
-
-        sortableEvents.sort((a, b) => {
-            const [monthA, dayA, yearA] = a.date.split('/').map(Number);
-            const momentA = moment({ year: 2000 + yearA, month: monthA - 1, day: dayA });
-
-            const [monthB, dayB, yearB] = b.date.split('/').map(Number);
-            const momentB = moment({ year: 2000 + yearB, month: monthB - 1, day: dayB });
-
-            return momentA.diff(momentB);
-        });
-
-        if (selectedCategories.size === 0) {
-            return sortableEvents;
-        } else {
-            return sortableEvents.filter(event =>
-                selectedCategories.has(event.category) || selectedCategories.has(event.subcategory)
-            );
-        }
-    }, [events, selectedCategories]);
-
     const renderEvent = (event) => {
         const currentDate = new Date();
         const [month, day, year] = event.date.split('/').map(Number);
@@ -275,7 +409,7 @@ const App = () => {
 
         if (showAllEvents || eventDate >= currentDate) {
             return (
-                <div key={event.title}>
+                <div key={`${event.title}-${event.date}`}>
                     <div className="row">
                         <div className="col" style={{ textAlign: 'right' }}>
                             <p className="lead title">
@@ -295,7 +429,7 @@ const App = () => {
     };
 
     const allEvents = sortedEvents.map((el) => (
-        <React.Fragment key={el.title}>
+        <React.Fragment key={`${el.title}-${el.date}`}>
             {renderEvent(el)}
         </React.Fragment>
     ));
@@ -306,16 +440,15 @@ const App = () => {
                 <h1 className="page-title">Events</h1>
                 <hr className="featurette-divider" />
 
-                <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4">
-                    <div className="mb-3 mb-lg-0 text-center">
+                <div className="mb-4">
+                    <div className="d-flex justify-content-center mb-3">
                         {makeMenu()}
                     </div>
 
-                    <div className="d-flex flex-column flex-md-row align-items-center ms-lg-auto">
+                    <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
                         <div className="me-md-3 mb-3 mb-md-0">
                             {makeTimeZoneMenu()}
                         </div>
-                        {/* --- REPLACED makeCategoryMenu WITH CategoryFilterPopup --- */}
                         <CategoryFilterPopup />
                     </div>
                 </div>
