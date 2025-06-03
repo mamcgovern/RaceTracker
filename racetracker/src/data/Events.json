@@ -1,0 +1,142 @@
+[
+    {
+        "category": "Football",
+        "date": "08/09/25",
+        "time": "7:00 PM",
+        "title": "Preseason: Chiefs @ Cardinals",
+        "location": "State Farm Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "08/15/25",
+        "time": "9:00 PM",
+        "title": "Preseason: Chiefs @ Seahawks",
+        "location": "Lumen Field"
+    },
+    {
+        "category": "Football",
+        "date": "08/22/25",
+        "time": "7:20 PM",
+        "title": "Preseason: Chiefs vs Bears",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "09/05/25",
+        "time": "7:00 PM",
+        "title": "Chiefs @ Chargers",
+        "location": "Arena Corinthians"
+    },
+    {
+        "category": "Football",
+        "date": "09/14/25",
+        "time": "3:25 PM",
+        "title": "Chiefs vs Eagles",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "09/21/25",
+        "time": "7:20 PM",
+        "title": "Chiefs @ Giants",
+        "location": "Metlife Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "09/28/26",
+        "time": "3:25 PM",
+        "title": "Chiefs vs Ravens",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "10/06/25",
+        "time": "7:15 PM",
+        "title": "Chiefs @ Jaguars",
+        "location": "Everbank Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "10/12/25",
+        "time": "7:20 PM",
+        "title": "Chiefs vs Lions",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "10/19/25",
+        "time": "12:00 PM",
+        "title": "Chiefs vs Raiders",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "10/27/25",
+        "time": "7:15 PM",
+        "title": "Chiefs vs Commanders",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "11/02/25",
+        "time": "3:25 PM",
+        "title": "Chiefs @ Bills",
+        "location": "Highmark Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "11/16/25",
+        "time": "3:25 PM",
+        "title": "Chiefs @ Broncos",
+        "location": "Empower Field at Mile High"
+    },
+    {
+        "category": "Football",
+        "date": "11/23/25",
+        "time": "12:00 PM",
+        "title": "Chiefs vs Colts",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "11/27/25",
+        "time": "3:30 PM",
+        "title": "Chiefs @ Cowboys",
+        "location": "AT&T Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "12/07/25",
+        "time": "7:20 PM",
+        "title": "Chiefs vs Texans",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "12/14/25",
+        "time": "12:00 PM",
+        "title": "Chiefs vs Chargers",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "12/21/25",
+        "time": "12:00 PM",
+        "title": "Chiefs vs Titans",
+        "location": "Nissan Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "12/25/25",
+        "time": "7:15 PM",
+        "title": "Chiefs vs Broncos",
+        "location": "GEHA Field at Arrowhead Stadium"
+    },
+    {
+        "category": "Football",
+        "date": "1/4/26",
+        "time": "",
+        "title": "Chiefs @ Raiders",
+        "location": "Allegiant Stadium"
+    }
+]

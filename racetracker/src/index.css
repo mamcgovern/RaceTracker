@@ -1,3 +1,37 @@
+/* CUSTOM COLORS
+-------------------------------------------------- */
+:root {
+  /* App theme colors */
+  --primary-color: #8F2D56;
+  --secondary-color: #D81159;
+  --tertiary-color: #218380;
+  --accent-color: #FFBC42;
+  --background-color: #dcdcddb0;
+  --dark-gray: #2B3035;
+}
+
+.primaryColor {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.secondaryColor {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+.tertiaryColor {
+  background-color: var(--tertiary-color);
+  color: #ffffff;
+}
+
+.accentColor {
+  background-color: var(--accent-color);
+  color: #000000;
+}
+
+/* APP BASICS
+-------------------------------------------------- */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +44,226 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* APP BASICS
+-------------------------------------------------- */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  text-align: center;
+  font-family: 'Nulshock';
+  font-size: 'large';
+}
+
+/* BUTTONS
+-------------------------------------------------- */
+.button-like-text {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  margin: 4px;
+  align-items: center;
+}
+
+.unclickable-button {
+  pointer-events: none;
+  /* Disable pointer events */
+  /* Copy Bootstrap button styles */
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: not-allowed;
+  /* Optional: Change cursor to indicate non-clickable */
+}
+
+/* FEATURETTES
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0;
+}
+
+.featurette-heading {
+  letter-spacing: -.05rem;
+}
+
+.row-title {
+  font-size: larger;
+  font-weight: bold;
+  margin: 5px;
+}
+
+
+
+.scrollable-container {
+  width: 95%;
+  overflow: auto;
+  border: 1px solid #ccc;
+  /* Optional: Add a border for better visibility */
+}
+
+.carousel-item-small {
+  height: auto; /* or set a specific height */
+}
+
+.tableCell {
+  /* Default style for larger screens */
+  max-width: 100%;
+}
+
+/* Media query for phones */
+@media only screen and (max-width: 767px) {
+  .tableCell {
+      max-width: 100%;
+  }
+}
+
+.container {
+  margin: 25px;
+  margin-top: 100px;
+}
+
+@font-face {
+  font-family: 'Nulshock';
+  src: url('./fonts/nulshock\ bd.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nulshock {
+  font-family: 'Nulshock';
+}
+
+/* NAVBAR & FOOTER
+-------------------------------------------------- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  flex-shrink: 0;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+.footer-dark {
+  color: white;
+}
+
+.footer-dark .nav-link {
+  color: white;
+}
+
+.footer-dark .nav-link:hover {
+  color: #ddd; /* Optional: A lighter shade for hover effect */
+}
+
+.footer-dark .text-light {
+  color: white !important;
+}
+
+.footer-item{
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* SIGN IN FORM
+-------------------------------------------------- */
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+
+.container {
+  margin: 25px;
+  margin-top: 100px;
+}
+
+
+/* 'TS': 'ts',
+            'WoO': 'woo',
+            'LOLMS': 'lolms',
+            'Football': 'football',
+            'F1': 'f1',
+            'Indycar': 'indy',
+            'XR': 'xr',
+            'Other': 'other' */
+
+.ts {
+  background-color: #736D63;
+  color: #ffffff;
+}
+
+.woo {
+  background-color: rgb(229,142,26);
+  color: #000000;
+}
+
+.lolms {
+  background-color: #373737;
+  color: #ffffff;
+}
+
+.football {
+  background-color: #825736;
+  color: #ffffff;
+}
+
+.f1 {
+  background-color: #DF0501;
+  color: #ffffff;
 }

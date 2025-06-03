@@ -1,0 +1,482 @@
+[
+    {
+        "date": "7/19/24",
+        "title": "Hungary Practice 1",
+        "category": "F1",
+        "time": "6:30 AM",
+        "track": "Hungaroring",
+        "city": "Budapest, Hungary"
+    },
+    {
+        "date": "7/19/24",
+        "title": "Hungary Practice 2",
+        "category": "F1",
+        "time": "10 AM",
+        "track": "Hungaroring",
+        "city": "Budapest, Hungary"
+    },
+    {
+        "date": "7/20/24",
+        "title": "Hungary Practice 3",
+        "category": "F1",
+        "time": "5:30 AM",
+        "track": "Hungaroring",
+        "city": "Budapest, Hungary"
+    },
+    {
+        "date": "7/20/24",
+        "title": "Hungary Qualifying",
+        "category": "F1",
+        "time": "9 AM",
+        "track": "Hungaroring",
+        "city": "Budapest, Hungary"
+    },
+    {
+        "date": "7/21/24",
+        "title": "Hungarian Grand Prix",
+        "category": "F1",
+        "time": "8 AM",
+        "track": "Hungaroring",
+        "city": "Budapest, Hungary"
+    },
+    {
+        "date": "7/26/24",
+        "title": "Belgium Practice 1",
+        "category": "F1",
+        "time": "6:30 AM",
+        "track": "Circuit de Spa-Francorchamps",
+        "city": "Stavelot, Belgium"
+    },
+    {
+        "date": "7/26/24",
+        "title": "Belgium Practice 2",
+        "category": "F1",
+        "time": "10 AM",
+        "track": "Circuit de Spa-Francorchamps",
+        "city": "Stavelot, Belgium"
+    },
+    {
+        "date": "7/27/24",
+        "title": "Belgium Practice 3",
+        "category": "F1",
+        "time": "5:30 AM",
+        "track": "Circuit de Spa-Francorchamps",
+        "city": "Stavelot, Belgium"
+    },
+    {
+        "date": "7/27/24",
+        "title": "Belgium Qualifying",
+        "category": "F1",
+        "time": "9 AM",
+        "track": "Circuit de Spa-Francorchamps",
+        "city": "Stavelot, Belgium"
+    },
+    {
+        "date": "7/28/24",
+        "title": "Belgian Grand Prix",
+        "category": "F1",
+        "time": "8 AM",
+        "track": "Circuit de Spa-Francorchamps",
+        "city": "Stavelot, Belgium"
+    },
+    {
+        "date": "8/23/24",
+        "title": "Dutch Practice 1",
+        "category": "F1",
+        "time": "5:30 AM",
+        "track": "Circuit Zandvoort",
+        "city": "Zandvoort, Netherlands"
+    },
+    {
+        "date": "8/23/24",
+        "title": "Dutch Practice 2",
+        "category": "F1",
+        "time": "9 AM",
+        "track": "Circuit Zandvoort",
+        "city": "Zandvoort, Netherlands"
+    },
+    {
+        "date": "8/24/24",
+        "title": "Dutch Practice 3",
+        "category": "F1",
+        "time": "4:30 AM",
+        "track": "Circuit Zandvoort",
+        "city": "Zandvoort, Netherlands"
+    },
+    {
+        "date": "8/24/24",
+        "title": "Dutch Qualifying",
+        "category": "F1",
+        "time": "8 AM",
+        "track": "Circuit Zandvoort",
+        "city": "Zandvoort, Netherlands"
+    },
+    {
+        "date": "8/25/24",
+        "title": "Dutch Grand Prix",
+        "category": "F1",
+        "time": "8 AM",
+        "track": "Circuit Zandvoort",
+        "city": "Zandvoort, Netherlands"
+    },
+    {
+        "date": "8/30/24",
+        "title": "Italy Practice 1",
+        "category": "F1",
+        "time": "6:30 AM",
+        "track": "Autodromo Nazionale Monza",
+        "city": "Monza, Italy"
+    },
+    {
+        "date": "8/30/24",
+        "title": "Italy Practice 2",
+        "category": "F1",
+        "time": "10 AM",
+        "track": "Autodromo Nazionale Monza",
+        "city": "Monza, Italy"
+    },
+    {
+        "date": "8/31/24",
+        "title": "Italy Practice 3",
+        "category": "F1",
+        "time": "5:30 AM",
+        "track": "Autodromo Nazionale Monza",
+        "city": "Monza, Italy"
+    },
+    {
+        "date": "8/31/24",
+        "title": "Italy Qualifying",
+        "category": "F1",
+        "time": "9 AM",
+        "track": "Autodromo Nazionale Monza",
+        "city": "Monza, Italy"
+    },
+    {
+        "date": "9/1/24",
+        "title": "Italian Grand Prix",
+        "category": "F1",
+        "time": "8 AM",
+        "track": "Autodromo Nazionale Monza",
+        "city": "Monza, Italy"
+    },
+    {
+        "date": "9/13/24",
+        "title": "Azerbaijan Practice 1",
+        "category": "F1",
+        "time": "4:30 AM",
+        "track": "Baku City Circuit",
+        "city": "Baku, Azerbaijan"
+    },
+    {
+        "date": "9/13/24",
+        "title": "Azerbaijan Practice 2",
+        "category": "F1",
+        "time": "8 AM",
+        "track": "Baku City Circuit",
+        "city": "Baku, Azerbaijan"
+    },
+    {
+        "date": "9/14/24",
+        "title": "Azerbaijan Practice 3",
+        "category": "F1",
+        "time": "3:30 AM",
+        "track": "Baku City Circuit",
+        "city": "Baku, Azerbaijan"
+    },
+    {
+        "date": "9/14/24",
+        "title": "Azerbaijan Qualifying",
+        "category": "F1",
+        "time": "7 AM",
+        "track": "Baku City Circuit",
+        "city": "Baku, Azerbaijan"
+    },
+    {
+        "date": "9/15/24",
+        "title": "Azerbaijan Grand Prix",
+        "category": "F1",
+        "time": "6 AM",
+        "track": "Baku City Circuit",
+        "city": "Baku, Azerbaijan"
+    },
+    {
+        "date": "9/20/24",
+        "title": "Singapore Practice 1",
+        "category": "F1",
+        "time": "4:30 AM",
+        "track": "Marina Bay Street Circuit",
+        "city": "Marina Bay, Singapore"
+    },
+    {
+        "date": "9/20/24",
+        "title": "Singapore Practice 2",
+        "category": "F1",
+        "time": "8 AM",
+        "track": "Marina Bay Street Circuit",
+        "city": "Marina Bay, Singapore"
+    },
+    {
+        "date": "9/21/24",
+        "title": "Singapore Practice 3",
+        "category": "F1",
+        "time": "4:30 AM",
+        "track": "Marina Bay Street Circuit",
+        "city": "Marina Bay, Singapore"
+    },
+    {
+        "date": "9/21/24",
+        "title": "Singapore Qualifying",
+        "category": "F1",
+        "time": "8 AM",
+        "track": "Marina Bay Street Circuit",
+        "city": "Marina Bay, Singapore"
+    },
+    {
+        "date": "9/22/24",
+        "title": "Singapore Grand Prix",
+        "category": "F1",
+        "time": "7 AM",
+        "track": "Marina Bay Street Circuit",
+        "city": "Marina Bay, Singapore"
+    },
+    {
+        "date": "10/18/24",
+        "title": "United States Practice 1",
+        "category": "F1",
+        "time": "12:30 PM",
+        "track": "Circuit of The Americas",
+        "city": "Austin, TX"
+    },
+    {
+        "date": "10/18/24",
+        "title": "United States Sprint Qualifying",
+        "category": "F1",
+        "time": "4:30 PM",
+        "track": "Circuit of The Americas",
+        "city": "Austin, TX"
+    },
+    {
+        "date": "10/19/24",
+        "title": "United States Sprint",
+        "category": "F1",
+        "time": "1 PM",
+        "track": "Circuit of The Americas",
+        "city": "Austin, TX"
+    },
+    {
+        "date": "10/19/24",
+        "title": "United States Qualifying",
+        "category": "F1",
+        "time": "5 PM",
+        "track": "Circuit of The Americas",
+        "city": "Austin, TX"
+    },
+    {
+        "date": "10/20/24",
+        "title": "United States Grand Prix",
+        "category": "F1",
+        "time": "2 PM",
+        "track": "Circuit of The Americas",
+        "city": "Austin, TX"
+    },
+    {
+        "date": "10/25/24",
+        "title": "Mexico Practice 1",
+        "category": "F1",
+        "time": "1:30 PM",
+        "track": "Autodromo Hermanos Rodriguez",
+        "city": "Mexico City, Mexico"
+    },
+    {
+        "date": "10/25/24",
+        "title": "Mexico Practice 2",
+        "category": "F1",
+        "time": "5 PM",
+        "track": "Autodromo Hermanos Rodriguez",
+        "city": "Mexico City, Mexico"
+    },
+    {
+        "date": "10/26/24",
+        "title": "Mexico Practice 3",
+        "category": "F1",
+        "time": "12:30 PM",
+        "track": "Autodromo Hermanos Rodriguez",
+        "city": "Mexico City, Mexico"
+    },
+    {
+        "date": "10/26/24",
+        "title": "Mexico Qualifying",
+        "category": "F1",
+        "time": "4 PM",
+        "track": "Autodromo Hermanos Rodriguez",
+        "city": "Mexico City, Mexico"
+    },
+    {
+        "date": "10/27/24",
+        "title": "Mexican Grand Prix",
+        "category": "F1",
+        "time": "3 PM",
+        "track": "Autodromo Hermanos Rodriguez",
+        "city": "Mexico City, Mexico"
+    },
+    {
+        "date": "11/1/24",
+        "title": "Brazil Practice 1",
+        "category": "F1",
+        "time": "9:30 AM",
+        "track": "Autodromo Jose Carlos Pace",
+        "city": "Sao Paulo, Brazil"
+    },
+    {
+        "date": "11/1/24",
+        "title": "Brazil Sprint Qualifying",
+        "category": "F1",
+        "time": "1:30 PM",
+        "track": "Autodromo Jose Carlos Pace",
+        "city": "Sao Paulo, Brazil"
+    },
+    {
+        "date": "11/2/24",
+        "title": "Brazil Sprint",
+        "category": "F1",
+        "time": "9 AM",
+        "track": "Autodromo Jose Carlos Pace",
+        "city": "Sao Paulo, Brazil"
+    },
+    {
+        "date": "11/2/24",
+        "title": "Brazil Qualifying",
+        "category": "F1",
+        "time": "1 PM",
+        "track": "Autodromo Jose Carlos Pace",
+        "city": "Sao Paulo, Brazil"
+    },
+    {
+        "date": "11/3/24",
+        "title": "Brazilian Grand Prix",
+        "category": "F1",
+        "time": "11 AM",
+        "track": "Autodromo Jose Carlos Pace",
+        "city": "Sao Paulo, Brazil"
+    },
+    {
+        "date": "11/21/24",
+        "title": "Las Vegas Practice 1",
+        "category": "F1",
+        "time": "8:30 PM",
+        "track": "Las Vegas Strip Circuit",
+        "city": "Las Vegas, NV"
+    },
+    {
+        "date": "11/22/24",
+        "title": "Las Vegas Practice 2",
+        "category": "F1",
+        "time": "12:00 AM",
+        "track": "Las Vegas Strip Circuit",
+        "city": "Las Vegas, NV"
+    },
+    {
+        "date": "11/22/24",
+        "title": "Las Vegas Practice 3",
+        "category": "F1",
+        "time": "8:30 PM",
+        "track": "Las Vegas Strip Circuit",
+        "city": "Las Vegas, NV"
+    },
+    {
+        "date": "11/23/24",
+        "title": "Las Vegas Qualifying",
+        "category": "F1",
+        "time": "12 AM",
+        "track": "Las Vegas Strip Circuit",
+        "city": "Las Vegas, NV"
+    },
+    {
+        "date": "11/24/24",
+        "title": "Las Vegas Grand Prix",
+        "category": "F1",
+        "time": "12 AM",
+        "track": "Las Vegas Strip Circuit",
+        "city": "Las Vegas, NV"
+    },
+    {
+        "date": "11/29/24",
+        "title": "Qatar Practice 1",
+        "category": "F1",
+        "time": "7:30 AM",
+        "track": "Lusail International Circuit",
+        "city": "Doha, Qatar"
+    },
+    {
+        "date": "11/29/24",
+        "title": "Qatar Sprint Qualifying",
+        "category": "F1",
+        "time": "11:30 AM",
+        "track": "Lusail International Circuit",
+        "city": "Doha, Qatar"
+    },
+    {
+        "date": "11/30/24",
+        "title": "Qatar Sprint",
+        "category": "F1",
+        "time": "7 AM",
+        "track": "Lusail International Circuit",
+        "city": "Doha, Qatar"
+    },
+    {
+        "date": "11/30/24",
+        "title": "Qatar Qualifying",
+        "category": "F1",
+        "time": "11 AM",
+        "track": "Lusail International Circuit",
+        "city": "Doha, Qatar"
+    },
+    {
+        "date": "12/1/24",
+        "title": "Qatar Grand Prix",
+        "category": "F1",
+        "time": "10 AM",
+        "track": "Lusail International Circuit",
+        "city": "Doha, Qatar"
+    },
+    {
+        "date": "12/6/24",
+        "title": "Abu Dhabi Practice 1",
+        "category": "F1",
+        "time": "3:30 AM",
+        "track": "Yas Marina Circuit",
+        "city": "Yas Island, Abu Dhabi"
+    },
+    {
+        "date": "12/6/24",
+        "title": "Abu Dhabi Practice 2",
+        "category": "F1",
+        "time": "7 AM",
+        "track": "Yas Marina Circuit",
+        "city": "Yas Island, Abu Dhabi"
+    },
+    {
+        "date": "12/7/24",
+        "title": "Abu Dhabi Practice 3",
+        "category": "F1",
+        "time": "4:30 AM",
+        "track": "Yas Marina Circuit",
+        "city": "Yas Island, Abu Dhabi"
+    },
+    {
+        "date": "12/7/24",
+        "title": "Abu Dhabi Qualifying",
+        "category": "F1",
+        "time": "8 AM",
+        "track": "Yas Marina Circuit",
+        "city": "Yas Island, Abu Dhabi"
+    },
+    {
+        "date": "12/8/24",
+        "title": "Abu Dhabi Grand Prix",
+        "category": "F1",
+        "time": "7 AM",
+        "track": "Yas Marina Circuit",
+        "city": "Yas Island, Abu Dhabi"
+    }
+]

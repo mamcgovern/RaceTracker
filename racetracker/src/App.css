@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
-}
+/* App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Ensure the calendar itself fills its parent container and has a max width */
+.my-custom-calendar {
+    width: 100%; /* Make it take up 100% of its parent's width */
+    max-width: 1000px; /* Set a maximum width for larger screens (adjust as needed) */
+    border: 1px solid #ddd; /* Optional: subtle border */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    font-family: sans-serif; /* Optional: set a consistent font */
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* You might want to adjust internal elements of react-calendar for better appearance */
+  /* Adjust padding of individual day tiles */
+  .my-custom-calendar .react-calendar__tile {
+    padding: 10px 6px; /* Adjust top/bottom and left/right padding */
+    height: 70px; /* Give tiles a minimum height for better event visibility */
+    overflow: hidden; /* Hide overflow if many events in one tile */
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Adjust the text/event size within tiles */
+  .my-custom-calendar .react-calendar__tile div {
+    font-size: 0.8em; /* Make event text a bit smaller to fit more */
+    line-height: 1.2;
   }
-}
+  
+  /* Style the navigation buttons (month/year changers) */
+  .my-custom-calendar .react-calendar__navigation button {
+    font-size: 1.1em; /* Make navigation text larger */
+    min-width: 44px; /* Ensure buttons are not too small */
+  }
+  
+  /* Style the day names (Mon, Tue, etc.) */
+  .my-custom-calendar .react-calendar__month-view__weekdays__weekday {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    padding: 5px;
+  }
