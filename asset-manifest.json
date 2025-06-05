@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/RaceTracker/static/css/main.8baf2630.css",
-    "main.js": "/RaceTracker/static/js/main.99e31088.js",
+    "main.css": "/RaceTracker/static/css/main.30a7d730.css",
+    "main.js": "/RaceTracker/static/js/main.2f344792.js",
     "static/media/nulshock bd.ttf": "/RaceTracker/static/media/nulshock bd.836416c859bbc366b02f.ttf",
     "index.html": "/RaceTracker/index.html",
-    "main.8baf2630.css.map": "/RaceTracker/static/css/main.8baf2630.css.map",
-    "main.99e31088.js.map": "/RaceTracker/static/js/main.99e31088.js.map"
+    "main.30a7d730.css.map": "/RaceTracker/static/css/main.30a7d730.css.map",
+    "main.2f344792.js.map": "/RaceTracker/static/js/main.2f344792.js.map"
   },
   "entrypoints": [
-    "static/css/main.8baf2630.css",
-    "static/js/main.99e31088.js"
+    "static/css/main.30a7d730.css",
+    "static/js/main.2f344792.js"
   ]
 }
