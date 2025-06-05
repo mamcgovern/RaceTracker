@@ -63,9 +63,8 @@ const App = () => {
         };
     }, [showCategoryPopup]);
 
-    // MODIFIED: Corrected year handling for MM/DD/YYYY format
     const convertToTimeZone = (date, time, timeZone) => {
-        const eventDateMomentBase = moment(date, ['MM/DD/YYYY', 'MM/DD/YY']); // Still allows for flexibility, though data is now consistent
+        const eventDateMomentBase = moment(date, ['MM/DD/YYYY', 'MM/DD/YY']);
 
         if (!eventDateMomentBase.isValid()) {
             console.warn(`Warning: Invalid date in convertToTimeZone: "${date}"`);
@@ -88,10 +87,9 @@ const App = () => {
             }
         }
 
-        // Use the year, month, day directly from the parsed moment object
         let eventDate = moment.tz({
             year: eventDateMomentBase.year(),
-            month: eventDateMomentBase.month(), // moment months are 0-indexed
+            month: eventDateMomentBase.month(),
             day: eventDateMomentBase.date(),
             hour: (hours % 12) + (period === 'PM' ? 12 : 0),
             minute: minutes
@@ -221,13 +219,8 @@ const App = () => {
     }, [events, selectedCategories]);
 
     const calendarEvents = useMemo(() => {
-        const currentDate = new Date();
-        const calendarEvents = sortedEvents
-            .filter(event => {
-                const eventDateMoment = moment(event.date, ['MM/DD/YYYY', 'MM/DD/YY']);
-                return showAllEvents || eventDateMoment.isSameOrAfter(moment(currentDate).startOf('day'));
-            })
-            .map(event => {
+        // No date filtering applied here, so all events in sortedEvents will be mapped
+        const calendarEvents = sortedEvents.map(event => {
             const eventStartMoment = moment(event.date, ['MM/DD/YYYY', 'MM/DD/YY']);
 
             let startMoment;
@@ -264,9 +257,9 @@ const App = () => {
 
             let endMoment = displayMoment.clone();
             if (!allDay) {
-                endMoment.add(5, 'hour');
+                endMoment.add(5, 'hour'); // Events with a time are 5 hours long
             } else {
-                endMoment.add(1, 'day').startOf('day');
+                endMoment.add(1, 'day').startOf('day'); // All-day events span the full day
             }
 
             return {
@@ -278,7 +271,7 @@ const App = () => {
             };
         });
         return calendarEvents;
-    }, [sortedEvents, activeOption, showAllEvents]);
+    }, [sortedEvents, activeOption]); // Removed showAllEvents from dependency array as it's no longer used in the filter
 
     const handleOptionChange = (selectedOption) => {
         setActiveOption(selectedOption.value);
@@ -620,7 +613,7 @@ const App = () => {
                             view={currentView}
                             onNavigate={handleNavigate}
                             onView={handleViewChange}
-                            key={activeOption + '-' + selectedCategories.size + '-' + showAllEvents}
+                            key={activeOption + '-' + selectedCategories.size} // Removed showAllEvents from key
                             style={{ height: '100%' }}
                             views={['month', 'week', 'day', 'agenda']}
                             scrollToTime={moment().toDate()}
@@ -651,10 +644,9 @@ const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
     }
 
     let eventMoment;
-    // Use year, month, day directly from the parsed moment object
     const year = eventDateMomentBase.year();
-    const month = eventDateMomentBase.month(); // month is 0-indexed
-    const day = eventDateMomentBase.date(); // day of month
+    const month = eventDateMomentBase.month();
+    const day = eventDateMomentBase.date();
 
     if (event.time && event.time.trim() !== '') {
         const parts = event.time.split(' ');
