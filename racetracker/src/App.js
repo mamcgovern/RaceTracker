@@ -14,10 +14,10 @@ import Select from 'react-select';
 import eventsData from './data/Events.json';
 
 // Import Firebase authentication related modules
-import { auth } from './firebase'; // Make sure this path is correct
+import { auth } from './firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import SignIn from './SignIn'; // Import your SignIn component
-import Navbar from './Navbar'; // Import your Navbar component
+import SignIn from './SignIn';
+import Navbar from './Navbar';
 
 const localizer = momentLocalizer(moment);
 
@@ -35,7 +35,6 @@ const eventClassNames = {
     'Nascar': 'nascar'
 };
 
-// --- Your existing App.js logic (now encapsulated in a sub-component for clarity) ---
 const MainAppContent = ({ user, handleLogout }) => {
     const [showAllEvents, setShowAllEvents] = useState(false);
     const [activeOption, setActiveOption] = useState('America/Chicago');
@@ -263,9 +262,9 @@ const MainAppContent = ({ user, handleLogout }) => {
 
             let endMoment = displayMoment.clone();
             if (!allDay) {
-                endMoment.add(5, 'hour'); // Events with a time are 5 hours long
+                endMoment.add(5, 'hour'); 
             } else {
-                endMoment.add(1, 'day').startOf('day'); // All-day events span the full day
+                endMoment.add(1, 'day').startOf('day');
             }
 
             return {
@@ -587,7 +586,6 @@ const MainAppContent = ({ user, handleLogout }) => {
 
     return (
         <div>
-            {/* Navbar for logged-in users */}
             <Navbar />
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
@@ -648,10 +646,7 @@ const MainAppContent = ({ user, handleLogout }) => {
         </div>
     );
 };
-// --- End of MainAppContent ---
 
-
-// EventDetailsPopup component (remains outside MainAppContent but within App.js scope)
 const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
     if (!event) return null;
 
@@ -695,7 +690,7 @@ const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
 
     const displayMoment = eventMoment.tz(activeTimeZone);
 
-    const displayDate = displayMoment.format('ddd, MMM D, YYYY'); // Changed format to include year for clarity
+    const displayDate = displayMoment.format('ddd, MMM D, YYYY'); 
     const displayTime = event.time ? displayMoment.format('h:mm A z (Z)') : 'All Day';
 
     return (
@@ -715,21 +710,18 @@ const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
 };
 
 
-// --- The main App component that handles authentication routing ---
 const App = () => {
-    const [user, setUser] = useState(null); // Firebase user object
-    const [authLoading, setAuthLoading] = useState(true); // To prevent flashing login/content
+    const [user, setUser] = useState(null);
+    const [authLoading, setAuthLoading] = useState(true);
 
     useEffect(() => {
-        // This listener will fire whenever the user's sign-in state changes
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser); // Set the user state based on the current user
-            setAuthLoading(false); // Authentication state is now known
+            setUser(currentUser);
+            setAuthLoading(false);
         });
 
-        // Cleanup subscription on unmount
         return () => unsubscribe();
-    }, []); // Empty dependency array means this runs once on mount
+    }, []);
 
     const handleLogout = async () => {
         try {
@@ -741,11 +733,9 @@ const App = () => {
         }
     };
 
-    // Define classes for centering the SignIn page
     const centeringWrapperClasses = "d-flex align-items-center justify-content-center py-4 bg-body-tertiary";
     const centeringWrapperStyle = { minHeight: '100vh' };
 
-    // 1. Show loading screen while determining authentication state
     if (authLoading) {
         return (
             <div className={centeringWrapperClasses} style={centeringWrapperStyle}>
@@ -754,7 +744,6 @@ const App = () => {
         );
     }
 
-    // 2. If no user is logged in, show the SignIn component
     if (!user) {
         return (
             <div className={centeringWrapperClasses} style={centeringWrapperStyle}>
@@ -763,7 +752,6 @@ const App = () => {
         );
     }
 
-    // 3. If a user is logged in, render your main application content
     return <MainAppContent user={user} handleLogout={handleLogout} />;
 };
 
