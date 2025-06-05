@@ -11,11 +11,10 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 import Select from 'react-select';
 
-import eventsData from './data/Events.json';
-
-// Import Firebase authentication related modules
-import { auth } from './firebase';
+// Import Firebase authentication and Firestore related modules
+import { auth, db } from './firebase'; // Import both auth and db
 import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { collection, getDocs, addDoc, query, orderBy } from 'firebase/firestore'; // Import Firestore functions
 import SignIn from './SignIn';
 import Navbar from './Navbar';
 
@@ -35,7 +34,115 @@ const eventClassNames = {
     'Nascar': 'nascar'
 };
 
+// --- New component for creating events (only visible to admins) ---
+const CreateEventForm = ({ user, onCreateEvent }) => {
+    const [title, setTitle] = useState('');
+    const [date, setDate] = useState(''); // MM/DD/YYYY format
+    const [time, setTime] = useState(''); // HH:MM AM/PM format
+    const [location, setLocation] = useState('');
+    const [category, setCategory] = useState('');
+    const [subcategory, setSubcategory] = useState('');
+    const [description, setDescription] = useState('');
+    const [formError, setFormError] = useState('');
+    const [formLoading, setFormLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setFormError('');
+        setFormLoading(true);
+
+        // Basic validation
+        if (!title || !date || !category) {
+            setFormError('Title, Date, and Category are required.');
+            setFormLoading(false);
+            return;
+        }
+
+        const newEvent = {
+            title,
+            date,
+            time: time || '', // Allow empty time
+            location: location || '',
+            category,
+            subcategory: subcategory || '', // Allow empty subcategory
+            description: description || '',
+            // Add a timestamp for ordering, and the creator's UID
+            createdAt: new Date(),
+            createdBy: user.uid,
+            creatorEmail: user.email
+        };
+
+        try {
+            await onCreateEvent(newEvent); // Call the prop function to add to Firestore
+            // Clear form
+            setTitle('');
+            setDate('');
+            setTime('');
+            setLocation('');
+            setCategory('');
+            setSubcategory('');
+            setDescription('');
+            setFormError('');
+        } catch (error) {
+            setFormError(`Failed to create event: ${error.message}`);
+            console.error("Error creating event:", error);
+        } finally {
+            setFormLoading(false);
+        }
+    };
+
+    return (
+        <div className="card mt-4 mb-4">
+            <div className="card-header">
+                <h3>Create New Event</h3>
+            </div>
+            <div className="card-body">
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <label className="form-label">Title:</label>
+                        <input type="text" className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} required />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Date (MM/DD/YYYY):</label>
+                        <input type="text" className="form-control" value={date} onChange={(e) => setDate(e.target.value)} required />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Time (e.g., 8:00 AM, optional):</label>
+                        <input type="text" className="form-control" value={time} onChange={(e) => setTime(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Location (optional):</label>
+                        <input type="text" className="form-control" value={location} onChange={(e) => setLocation(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Category:</label>
+                        <input type="text" className="form-control" value={category} onChange={(e) => setCategory(e.target.value)} required />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Subcategory (optional):</label>
+                        <input type="text" className="form-control" value={subcategory} onChange={(e) => setSubcategory(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Description (optional):</label>
+                        <textarea className="form-control" value={description} onChange={(e) => setDescription(e.target.value)} rows="3"></textarea>
+                    </div>
+                    {formError && <div className="alert alert-danger">{formError}</div>}
+                    <button type="submit" className="btn btn-success" disabled={formLoading}>
+                        {formLoading ? 'Creating...' : 'Create Event'}
+                    </button>
+                </form>
+            </div>
+        </div>
+    );
+};
+
 const MainAppContent = ({ user, handleLogout }) => {
+    // New state for events (will be fetched from Firestore)
+    const [events, setEvents] = useState([]);
+    const [isEventsLoading, setIsEventsLoading] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false); // New state to track admin status
+
+    // ... (rest of your state variables are unchanged) ...
     const [showAllEvents, setShowAllEvents] = useState(false);
     const [activeOption, setActiveOption] = useState('America/Chicago');
     const [selectedCategories, setSelectedCategories] = useState(new Set());
@@ -50,6 +157,9 @@ const MainAppContent = ({ user, handleLogout }) => {
     const categoryPopupRef = useRef(null);
     const categoryButtonRef = useRef(null);
 
+    // --- EFFECT HOOKS ---
+
+    // 1. Effect for handleClickOutside (unchanged)
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (categoryPopupRef.current && !categoryPopupRef.current.contains(event.target) &&
@@ -69,6 +179,135 @@ const MainAppContent = ({ user, handleLogout }) => {
         };
     }, [showCategoryPopup]);
 
+    // 2. NEW: Effect to fetch events from Firestore
+    useEffect(() => {
+        const fetchEvents = async () => {
+            setIsEventsLoading(true);
+            try {
+                const eventsCollectionRef = collection(db, 'events');
+                // Optional: Order events as you like, e.g., by date
+                const q = query(eventsCollectionRef, orderBy('date', 'asc')); // Assuming 'date' field exists and is sortable
+                const querySnapshot = await getDocs(q);
+                const fetchedEvents = querySnapshot.docs.map(doc => ({
+                    id: doc.id, // Store Firestore document ID
+                    ...doc.data()
+                }));
+                setEvents(fetchedEvents);
+            } catch (error) {
+                console.error("Error fetching events from Firestore:", error);
+                // Handle error (e.g., show a message to the user)
+            } finally {
+                setIsEventsLoading(false);
+            }
+        };
+
+        fetchEvents();
+    }, []); // Empty dependency array means fetch once on mount
+
+    // 3. NEW: Effect to check user's custom claims for admin status
+    useEffect(() => {
+        const checkAdminStatus = async () => {
+            if (user) {
+                try {
+                    // Force refresh ID token to get latest claims
+                    const idTokenResult = await user.getIdTokenResult(true);
+                    setIsAdmin(!!idTokenResult.claims.admin); // Set isAdmin based on 'admin' custom claim
+                } catch (error) {
+                    console.error("Error getting ID token result:", error);
+                    setIsAdmin(false);
+                }
+            } else {
+                setIsAdmin(false);
+            }
+        };
+        checkAdminStatus();
+    }, [user]); // Re-run when user object changes (e.g., after login/logout)
+
+    // --- FUNCTIONS (adjusted to use Firestore data) ---
+
+    // `events` is now a state variable, no longer imported from JSON
+    // The `useMemo` for `sortedEvents` will now depend on the `events` state
+    const sortedEvents = useMemo(() => {
+        const sortableEvents = [...events]; // `events` now comes from state
+
+        sortableEvents.sort((a, b) => {
+            const momentA = moment(a.date, ['MM/DD/YYYY', 'MM/DD/YY']);
+            const momentB = moment(b.date, ['MM/DD/YYYY', 'MM/DD/YY']);
+
+            if (!momentA.isValid() || !momentB.isValid()) {
+                console.warn(`Warning: Invalid date encountered during sorting. A: "${a.date}", B: "${b.date}"`);
+                return 0;
+            }
+
+            return momentA.diff(momentB);
+        });
+
+        if (selectedCategories.size === 0) {
+            return sortableEvents;
+        } else {
+            const filtered = sortableEvents.filter(event => {
+                return selectedCategories.has(event.category) || selectedCategories.has(event.subcategory);
+            });
+            return filtered;
+        }
+    }, [events, selectedCategories]); // Dependency on `events` state
+
+    // `hierarchicalCategories` will also depend on `events` state
+    const hierarchicalCategories = useMemo(() => {
+        const categoriesWithChildren = new Map();
+        const standaloneCategories = new Set();
+
+        events.forEach(event => { // `events` now comes from state
+            if (event.category) {
+                if (event.subcategory) {
+                    if (!categoriesWithChildren.has(event.category)) {
+                        categoriesWithChildren.set(event.category, new Set());
+                    }
+                    categoriesWithChildren.get(event.category).add(event.subcategory);
+                } else {
+                    standaloneCategories.add(event.category);
+                }
+            }
+        });
+
+        categoriesWithChildren.forEach((_val, key) => standaloneCategories.delete(key));
+
+        const result = [];
+
+        Array.from(categoriesWithChildren.keys()).sort().forEach(categoryName => {
+            const children = Array.from(categoriesWithChildren.get(categoryName)).sort();
+            result.push({
+                name: categoryName,
+                children: children.map(subName => ({ name: subName }))
+            });
+        });
+
+        Array.from(standaloneCategories).sort().forEach(categoryName => {
+            result.push({ name: categoryName, children: [] });
+        });
+
+        return result;
+    }, [events]); // Dependency on `events` state
+
+
+    // NEW: Function to add a new event to Firestore
+    const handleCreateEvent = async (newEventData) => {
+        if (!user || !isAdmin) {
+            throw new Error("You must be an admin to create events.");
+        }
+        try {
+            const docRef = await addDoc(collection(db, 'events'), newEventData);
+            // Update local state by adding the new event, ensuring 'id' is present
+            setEvents(prevEvents => [{ id: docRef.id, ...newEventData }, ...prevEvents]);
+            console.log("Event written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+            throw e; // Re-throw to be caught by the form
+        }
+    };
+
+
+    // --- All other functions (unchanged from your original code) ---
     const convertToTimeZone = (date, time, timeZone) => {
         const eventDateMomentBase = moment(date, ['MM/DD/YYYY', 'MM/DD/YY']);
 
@@ -130,8 +369,6 @@ const MainAppContent = ({ user, handleLogout }) => {
         };
     };
 
-    const events = useMemo(() => eventsData || [], []);
-
     const timeZones = useMemo(() => moment.tz.names()
         .map(zone => {
             const nowInZone = moment().tz(zone);
@@ -162,67 +399,6 @@ const MainAppContent = ({ user, handleLogout }) => {
             return a.label.localeCompare(b.label);
         }), []);
 
-
-    const hierarchicalCategories = useMemo(() => {
-        const categoriesWithChildren = new Map();
-        const standaloneCategories = new Set();
-
-        events.forEach(event => {
-            if (event.category) {
-                if (event.subcategory) {
-                    if (!categoriesWithChildren.has(event.category)) {
-                        categoriesWithChildren.set(event.category, new Set());
-                    }
-                    categoriesWithChildren.get(event.category).add(event.subcategory);
-                } else {
-                    standaloneCategories.add(event.category);
-                }
-            }
-        });
-
-        categoriesWithChildren.forEach((_val, key) => standaloneCategories.delete(key));
-
-        const result = [];
-
-        Array.from(categoriesWithChildren.keys()).sort().forEach(categoryName => {
-            const children = Array.from(categoriesWithChildren.get(categoryName)).sort();
-            result.push({
-                name: categoryName,
-                children: children.map(subName => ({ name: subName }))
-            });
-        });
-
-        Array.from(standaloneCategories).sort().forEach(categoryName => {
-            result.push({ name: categoryName, children: [] });
-        });
-
-        return result;
-    }, [events]);
-
-    const sortedEvents = useMemo(() => {
-        const sortableEvents = [...events];
-
-        sortableEvents.sort((a, b) => {
-            const momentA = moment(a.date, ['MM/DD/YYYY', 'MM/DD/YY']);
-            const momentB = moment(b.date, ['MM/DD/YYYY', 'MM/DD/YY']);
-
-            if (!momentA.isValid() || !momentB.isValid()) {
-                console.warn(`Warning: Invalid date encountered during sorting. A: "${a.date}", B: "${b.date}"`);
-                return 0;
-            }
-
-            return momentA.diff(momentB);
-        });
-
-        if (selectedCategories.size === 0) {
-            return sortableEvents;
-        } else {
-            const filtered = sortableEvents.filter(event => {
-                return selectedCategories.has(event.category) || selectedCategories.has(event.subcategory);
-            });
-            return filtered;
-        }
-    }, [events, selectedCategories]);
 
     const calendarEvents = useMemo(() => {
         const calendarEvents = sortedEvents.map(event => {
@@ -262,7 +438,7 @@ const MainAppContent = ({ user, handleLogout }) => {
 
             let endMoment = displayMoment.clone();
             if (!allDay) {
-                endMoment.add(5, 'hour'); 
+                endMoment.add(5, 'hour');
             } else {
                 endMoment.add(1, 'day').startOf('day');
             }
@@ -584,6 +760,27 @@ const MainAppContent = ({ user, handleLogout }) => {
         setCurrentView(newView);
     };
 
+
+    // --- JSX Return for MainAppContent ---
+    if (isEventsLoading) {
+        return (
+            <div>
+                <Navbar />
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <div className="container-fluid">
+                        <span className="navbar-brand">Welcome, {user.email}</span>
+                        <button className="btn btn-outline-danger" onClick={handleLogout}>
+                            Log Out
+                        </button>
+                    </div>
+                </nav>
+                <div className="container mt-4">
+                    <p>Loading events...</p>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div>
             <Navbar />
@@ -597,6 +794,11 @@ const MainAppContent = ({ user, handleLogout }) => {
             </nav>
 
             <div className="container">
+                 {/* Conditionally render CreateEventForm for admins */}
+                {isAdmin && (
+                    <CreateEventForm user={user} onCreateEvent={handleCreateEvent} />
+                )}
+
                 <div className="mb-4">
                     <div className="d-flex justify-content-center mb-3">
                         {makeMenu()}
@@ -627,7 +829,7 @@ const MainAppContent = ({ user, handleLogout }) => {
                             view={currentView}
                             onNavigate={handleNavigate}
                             onView={handleViewChange}
-                            key={activeOption + '-' + selectedCategories.size}
+                            key={activeOption + '-' + selectedCategories.size} // Re-renders calendar when timezone or categories change
                             style={{ height: '100%' }}
                             views={['month', 'week', 'day', 'agenda']}
                             scrollToTime={moment().toDate()}
@@ -690,7 +892,7 @@ const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
 
     const displayMoment = eventMoment.tz(activeTimeZone);
 
-    const displayDate = displayMoment.format('ddd, MMM D, YYYY'); 
+    const displayDate = displayMoment.format('ddd, MMM D, YYYY'); // Added YYYY for clarity
     const displayTime = event.time ? displayMoment.format('h:mm A z (Z)') : 'All Day';
 
     return (
@@ -715,8 +917,16 @@ const App = () => {
     const [authLoading, setAuthLoading] = useState(true);
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => { // Made async to get claims
             setUser(currentUser);
+            // If a user is logged in, attempt to refresh their token to get latest claims
+            if (currentUser) {
+                try {
+                    await currentUser.getIdToken(true); // Force token refresh
+                } catch (error) {
+                    console.error("Error refreshing token on auth state change:", error);
+                }
+            }
             setAuthLoading(false);
         });
 
