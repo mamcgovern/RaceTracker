@@ -5,13 +5,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import moment from 'moment-timezone';
-import 'moment-timezone'; // This will use a smaller default dataset
+import 'moment-timezone';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 import Select from 'react-select';
 
 import eventsData from './data/Events.json';
+
+// Import Firebase authentication related modules
+import { auth } from './firebase'; // Make sure this path is correct
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import SignIn from './SignIn'; // Import your SignIn component
+import Navbar from './Navbar'; // Import your Navbar component
 
 const localizer = momentLocalizer(moment);
 
@@ -29,7 +35,8 @@ const eventClassNames = {
     'Nascar': 'nascar'
 };
 
-const App = () => {
+// --- Your existing App.js logic (now encapsulated in a sub-component for clarity) ---
+const MainAppContent = ({ user, handleLogout }) => {
     const [showAllEvents, setShowAllEvents] = useState(false);
     const [activeOption, setActiveOption] = useState('America/Chicago');
     const [selectedCategories, setSelectedCategories] = useState(new Set());
@@ -56,7 +63,7 @@ const App = () => {
             document.addEventListener('mousedown', handleClickOutside);
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
-        };
+        }
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
@@ -219,7 +226,6 @@ const App = () => {
     }, [events, selectedCategories]);
 
     const calendarEvents = useMemo(() => {
-        // No date filtering applied here, so all events in sortedEvents will be mapped
         const calendarEvents = sortedEvents.map(event => {
             const eventStartMoment = moment(event.date, ['MM/DD/YYYY', 'MM/DD/YY']);
 
@@ -271,7 +277,7 @@ const App = () => {
             };
         });
         return calendarEvents;
-    }, [sortedEvents, activeOption]); // Removed showAllEvents from dependency array as it's no longer used in the filter
+    }, [sortedEvents, activeOption]);
 
     const handleOptionChange = (selectedOption) => {
         setActiveOption(selectedOption.value);
@@ -581,8 +587,18 @@ const App = () => {
 
     return (
         <div>
-            <div className="container">
+            {/* Navbar for logged-in users */}
+            <Navbar />
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container-fluid">
+                    <span className="navbar-brand">Welcome, {user.email}</span>
+                    <button className="btn btn-outline-danger" onClick={handleLogout}>
+                        Log Out
+                    </button>
+                </div>
+            </nav>
 
+            <div className="container">
                 <div className="mb-4">
                     <div className="d-flex justify-content-center mb-3">
                         {makeMenu()}
@@ -613,7 +629,7 @@ const App = () => {
                             view={currentView}
                             onNavigate={handleNavigate}
                             onView={handleViewChange}
-                            key={activeOption + '-' + selectedCategories.size} // Removed showAllEvents from key
+                            key={activeOption + '-' + selectedCategories.size}
                             style={{ height: '100%' }}
                             views={['month', 'week', 'day', 'agenda']}
                             scrollToTime={moment().toDate()}
@@ -631,8 +647,11 @@ const App = () => {
             )}
         </div>
     );
-}
+};
+// --- End of MainAppContent ---
 
+
+// EventDetailsPopup component (remains outside MainAppContent but within App.js scope)
 const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
     if (!event) return null;
 
@@ -676,7 +695,7 @@ const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
 
     const displayMoment = eventMoment.tz(activeTimeZone);
 
-    const displayDate = displayMoment.format('ddd, MMM D, YYYY');
+    const displayDate = displayMoment.format('ddd, MMM D, YYYY'); // Changed format to include year for clarity
     const displayTime = event.time ? displayMoment.format('h:mm A z (Z)') : 'All Day';
 
     return (
@@ -693,6 +712,59 @@ const EventDetailsPopup = ({ event, onClose, activeTimeZone }) => {
             </div>
         </div>
     );
+};
+
+
+// --- The main App component that handles authentication routing ---
+const App = () => {
+    const [user, setUser] = useState(null); // Firebase user object
+    const [authLoading, setAuthLoading] = useState(true); // To prevent flashing login/content
+
+    useEffect(() => {
+        // This listener will fire whenever the user's sign-in state changes
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser); // Set the user state based on the current user
+            setAuthLoading(false); // Authentication state is now known
+        });
+
+        // Cleanup subscription on unmount
+        return () => unsubscribe();
+    }, []); // Empty dependency array means this runs once on mount
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            console.log('Logged out successfully!');
+        } catch (error) {
+            console.error('Logout error:', error);
+            alert('Failed to log out. Please try again.');
+        }
+    };
+
+    // Define classes for centering the SignIn page
+    const centeringWrapperClasses = "d-flex align-items-center justify-content-center py-4 bg-body-tertiary";
+    const centeringWrapperStyle = { minHeight: '100vh' };
+
+    // 1. Show loading screen while determining authentication state
+    if (authLoading) {
+        return (
+            <div className={centeringWrapperClasses} style={centeringWrapperStyle}>
+                <div>Loading authentication...</div>
+            </div>
+        );
+    }
+
+    // 2. If no user is logged in, show the SignIn component
+    if (!user) {
+        return (
+            <div className={centeringWrapperClasses} style={centeringWrapperStyle}>
+                <SignIn />
+            </div>
+        );
+    }
+
+    // 3. If a user is logged in, render your main application content
+    return <MainAppContent user={user} handleLogout={handleLogout} />;
 };
 
 export default App;
