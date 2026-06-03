@@ -20,7 +20,10 @@ export default function Rounds({ data, deleteRound }) {
 
                             <div className="card-subtitle">
                                 {r.name}
+                            </div>
 
+                            <div className="card-details">
+                                {r.results}
                             </div>
 
                             <div className="grid2">
