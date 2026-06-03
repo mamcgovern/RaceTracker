@@ -83,6 +83,7 @@ body {
   font-family: var(--bold);
   font-size: 3rem;
   margin: 2rem 0 1rem;
+  margin-bottom: 3rem;
 }
 
 .page-container h2 {
@@ -138,14 +139,15 @@ body {
 }
 
 /* Card Text */
-.card-name {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.card-role {
+.card-title {
   color: var(--secondary-dark);
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font: var(--bold);
+}
+
+.card-subtitle {
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -176,6 +178,12 @@ body {
    GRIDS
 ========================= */
 
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
 .grid2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -186,6 +194,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 /* =========================
