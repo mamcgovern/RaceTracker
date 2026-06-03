@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import initialData from './data/sampleData.json'
@@ -13,30 +13,65 @@ import EditRound from './components/EditRound'
 import Leaderboard from './components/Leaderboard'
 import GameOver from './components/GameOver'
 
+const STORAGE_KEY = 'race-tracker-data'
+
 export default function App() {
-    const [data, setData] = useState(initialData)
 
-    // =========================
-    // RESET GAME (START NEW SEASON)
-    // =========================
+    // Load from localStorage OR fallback to initial JSON
+    const [data, setData] = useState(() => {
+        const saved = localStorage.getItem(STORAGE_KEY)
+
+        console.log("🔄 App init")
+        console.log("Saved data:", saved)
+
+        const parsed = saved ? JSON.parse(saved) : initialData
+
+        console.log("Loaded data:", parsed)
+
+        return parsed
+    })
+
+    // Save every change
+    useEffect(() => {
+        console.log("📦 State updated:", data)
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+
+        console.log("💾 Saved to localStorage")
+    }, [data])
+
+    // RESET GAME
     const resetGame = () => {
-        setData(prev => ({
-            ...prev,
+        console.log("🔄 RESET GAME TRIGGERED")
+
+        const fresh = {
+            ...initialData,
             rounds: []
-        }))
+        }
+
+        console.log("🧼 Reset state:", fresh)
+
+        setData(fresh)
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(fresh))
     }
 
-    // =========================
-    // ROUNDS CRUD
-    // =========================
-
+    // ADD ROUND
     const addRound = (newRound) => {
-        setData(prev => ({
-            ...prev,
-            rounds: [...prev.rounds, newRound]
-        }))
+        console.log("➕ Adding round:", newRound)
+
+        setData(prev => {
+            const updated = {
+                ...prev,
+                rounds: [...(prev.rounds || []), newRound]
+            }
+
+            console.log("📊 New rounds array:", updated.rounds)
+
+            return updated
+        })
     }
 
+    // UPDATE ROUND
     const updateRound = (roundId, updatedRound) => {
         setData(prev => ({
             ...prev,
@@ -46,44 +81,32 @@ export default function App() {
         }))
     }
 
+    // DELETE ROUND
     const deleteRound = (roundId) => {
-        setData(prev => ({
-            ...prev,
-            rounds: prev.rounds.filter(r => r.round !== Number(roundId))
-        }))
-    }
+        console.log("🗑 Deleting round:", roundId)
 
-    // =========================
-    // PLAYERS (for leaderboard)
-    // =========================
+        setData(prev => {
+            const updated = {
+                ...prev,
+                rounds: prev.rounds.filter(r => r.round !== Number(roundId))
+            }
 
-    const updatePlayerPoints = (playerName, newPoints) => {
-        setData(prev => ({
-            ...prev,
-            players: prev.players.map(p =>
-                p.name === playerName
-                    ? { ...p, points: newPoints }
-                    : p
-            )
-        }))
+            console.log("📊 After delete:", updated.rounds)
+
+            return updated
+        })
     }
 
     return (
         <>
-
             <ScrollToTop />
-
             <Header />
+
             <Routes>
 
                 <Route
                     path="/"
-                    element={
-                        <Home
-                            data={data}
-                            resetGame={resetGame}
-                        />
-                    }
+                    element={<Home resetGame={resetGame} />}
                 />
 
                 <Route
@@ -100,8 +123,8 @@ export default function App() {
                     path="/rounds/new-round"
                     element={
                         <NewRound
-                            addRound={addRound}
                             data={data}
+                            addRound={addRound}
                         />
                     }
                 />

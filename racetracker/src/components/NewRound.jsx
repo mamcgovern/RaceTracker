@@ -9,62 +9,38 @@ export default function NewRound({ data, addRound }) {
 
     const handleSave = () => {
         const nextRound =
-            data.rounds.length > 0
+            (data.rounds?.length || 0) > 0
                 ? Math.max(...data.rounds.map(r => r.round)) + 1
                 : 1
 
-        const newRound = {
+        addRound({
             round: nextRound,
             name,
             results
-        }
+        })
 
-        addRound(newRound)
         navigate('/rounds')
     }
 
     return (
         <div className="page-container">
-
             <h1>New Round</h1>
 
-            <div className="card form-card">
+            <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Round name"
+            />
 
-                <div className="card-info">
+            <textarea
+                value={results}
+                onChange={(e) => setResults(e.target.value)}
+                placeholder="Results (e.g. FMND)"
+            />
 
-                    <label className="form-label">Round Name</label>
-                    <input
-                        className="form-input"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-
-                    <label className="form-label">Results</label>
-                    <textarea
-                        className="form-input textarea"
-                        value={results}
-                        onChange={(e) => setResults(e.target.value)}
-                    />
-
-                    <div className="grid2" style={{ marginTop: '1rem' }}>
-                        <button
-                            className="btn secondary"
-                            onClick={() => navigate('/rounds')}
-                        >
-                            Cancel
-                        </button>
-
-                        <button
-                            className="btn primary"
-                            onClick={handleSave}
-                        >
-                            Create Round
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-
+            <button className="btn" onClick={handleSave}>
+                Create Round
+            </button>
         </div>
     )
 }
