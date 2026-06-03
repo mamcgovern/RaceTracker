@@ -1,21 +1,5 @@
 {
     "players": [
-        {
-            "name": "Maddie",
-            "code": "M"
-        },
-        {
-            "name": "Fred",
-            "code": "F"
-        },
-        {
-            "name": "Damien",
-            "code": "D"
-        },
-        {
-            "name": "Nick",
-            "code": "N"
-        }
     ],
     "rounds": [
     ]
