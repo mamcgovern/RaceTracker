@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function NewRound() {
+export default function NewRound({ addRound }) {
     const navigate = useNavigate()
 
     const [roundNumber, setRoundNumber] = useState('')
@@ -9,15 +9,11 @@ export default function NewRound() {
     const [results, setResults] = useState('')
 
     const handleSave = () => {
-        const newRound = {
+        addRound({
             round: Number(roundNumber),
             name,
             results
-        }
-
-        console.log('New Round Created:', newRound)
-
-        // later: push into state / backend
+        })
 
         navigate('/rounds')
     }

@@ -2,32 +2,20 @@ import React, { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import data from '../data/sampleData.json'
 
-export default function EditRound() {
+export default function EditRound({ data, updateRound }) {
     const { roundId } = useParams()
     const navigate = useNavigate()
 
-    const round = data?.rounds?.find(
-        r => String(r.round) === String(roundId)
+    const round = data.rounds.find(
+        r => r.round === Number(roundId)
     )
 
     const [name, setName] = useState(round?.name || '')
     const [results, setResults] = useState(round?.results || '')
 
-    if (!round) {
-        return (
-            <div className="page-container">
-                <h1>Round Not Found</h1>
-                <button className="btn" onClick={() => navigate('/rounds')}>
-                    Back to Rounds
-                </button>
-            </div>
-        )
-    }
-
     const handleSave = () => {
-        // placeholder for now (later you’ll connect backend or state)
-        console.log('Saved:', {
-            round: roundId,
+        updateRound(roundId, {
+            ...round,
             name,
             results
         })
