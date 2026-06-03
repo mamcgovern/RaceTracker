@@ -25,22 +25,46 @@
             {
                 "round": 1,
                 "name": "",
-                "results": "FMND"
+                "results": "FMND",
+                "result": {
+                    "first": "F",
+                    "second": "M",
+                    "third": "N",
+                    "fourth": "D"
+                }
             },
             {
                 "round": 2,
                 "name": "",
-                "results": "MDNF"
+                "results": "MDNF",
+                "result": {
+                    "first": "M",
+                    "second": "D",
+                    "third": "N",
+                    "fourth": "F"
+                }
             },
             {
                 "round": 3,
                 "name": "",
-                "results": "MNDF"
+                "results": "MNDF",
+                "result": {
+                    "first": "M",
+                    "second": "N",
+                    "third": "D",
+                    "fourth": "F"
+                }
             },
             {
                 "round": 4,
                 "name": "",
-                "results": "DMFN"
+                "results": "DMFN",
+                "result": {
+                    "first": "D",
+                    "second": "M",
+                    "third": "F",
+                    "fourth": "N"
+                }
             }
         ]
 }

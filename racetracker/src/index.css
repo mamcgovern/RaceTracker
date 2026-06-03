@@ -357,3 +357,68 @@ body {
   color: var(--primary);
   font-weight: 600;
 }
+
+.podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1.5rem;
+
+  margin: 2rem 0 3rem;
+}
+
+/* shared card */
+.podium-card {
+  width: 160px;
+  background: white;
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+/* rank badge */
+.podium-rank {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* names */
+.podium-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.podium-points {
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+/* 🥇 1st place (tallest, center) */
+.first {
+  height: 200px;
+  border: 2px solid gold;
+}
+
+/* 🥈 2nd */
+.second {
+  height: 160px;
+  border: 2px solid silver;
+}
+
+/* 🥉 3rd */
+.third {
+  height: 140px;
+  border: 2px solid #cd7f32;
+}
+
+/* lift effect */
+.podium-card {
+  transition: transform 0.2s ease;
+}
+
+.podium-card:hover {
+  transform: translateY(-6px);
+}
