@@ -1,6 +1,7 @@
 import React from 'react'
 import data from '../data/sampleData.json'
 import { calculateScores } from '../utils/calculateScores'
+import { useNavigate } from 'react-router-dom'
 
 function Card({ position, item }) {
     return (
@@ -25,6 +26,7 @@ function Card({ position, item }) {
 }
 
 export default function Leaderboard() {
+    const navigate = useNavigate()
 
     const players = calculateScores(data)
         .sort((a, b) => b.points - a.points)
@@ -42,6 +44,18 @@ export default function Leaderboard() {
                         <div className="card-description">
                             Create your first round to generate scores.
                         </div>
+                        <div className="card-info">
+                        {/* New Game */}
+                        <button
+                            className="card-btn"
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                navigate("/rounds/")
+                            }}
+                        >
+                            Continue
+                        </button>
+                    </div>
                     </div>
                 </div>
             </div>
