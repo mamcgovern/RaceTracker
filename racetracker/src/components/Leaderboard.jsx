@@ -1,5 +1,6 @@
 import React from 'react'
 import data from '../data/sampleData.json'
+import { calculateScores } from '../utils/calculateScores'
 
 function Card({ position, item }) {
     return (
@@ -7,15 +8,15 @@ function Card({ position, item }) {
             <div className="card-info">
 
                 <div className="card-title">
-                    Position #{position}
+                    #{position} {item.name}
                 </div>
 
                 <div className="card-subtitle">
-                    {item.name}
+                    {item.code}
                 </div>
 
                 <div className="card-description">
-                    Points: {item.points}
+                    {item.points} pts
                 </div>
 
             </div>
@@ -24,12 +25,9 @@ function Card({ position, item }) {
 }
 
 export default function Leaderboard() {
-    const players = data?.players || []
 
-    // sort highest points first
-    const sortedPlayers = [...players].sort(
-        (a, b) => b.points - a.points
-    )
+    const players = calculateScores(data)
+        .sort((a, b) => b.points - a.points)
 
     return (
         <div className="page-container">
@@ -37,14 +35,15 @@ export default function Leaderboard() {
             <h1>Leaderboard</h1>
 
             <div className="grid1">
-                {sortedPlayers.map((player, index) => (
+                {players.map((player, index) => (
                     <Card
-                        key={player.name + index}
+                        key={player.code}
                         position={index + 1}
                         item={player}
                     />
                 ))}
             </div>
+
         </div>
     )
 }

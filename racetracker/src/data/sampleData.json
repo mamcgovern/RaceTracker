@@ -2,69 +2,41 @@
     "players": [
         {
             "name": "Maddie",
-            "code": "M",
-            "points": 75
+            "code": "M"
         },
         {
             "name": "Fred",
-            "code": "F",
-            "points": 51
+            "code": "F"
         },
         {
             "name": "Damien",
-            "code": "D",
-            "points": 56
+            "code": "D"
         },
         {
             "name": "Nick",
-            "code": "N",
-            "points": 52
+            "code": "N"
         }
     ],
-        "rounds": [
-            {
-                "round": 1,
-                "name": "",
-                "results": "FMND",
-                "result": {
-                    "first": "F",
-                    "second": "M",
-                    "third": "N",
-                    "fourth": "D"
-                }
-            },
-            {
-                "round": 2,
-                "name": "",
-                "results": "MDNF",
-                "result": {
-                    "first": "M",
-                    "second": "D",
-                    "third": "N",
-                    "fourth": "F"
-                }
-            },
-            {
-                "round": 3,
-                "name": "",
-                "results": "MNDF",
-                "result": {
-                    "first": "M",
-                    "second": "N",
-                    "third": "D",
-                    "fourth": "F"
-                }
-            },
-            {
-                "round": 4,
-                "name": "",
-                "results": "DMFN",
-                "result": {
-                    "first": "D",
-                    "second": "M",
-                    "third": "F",
-                    "fourth": "N"
-                }
-            }
-        ]
+    "rounds": [
+        {
+            "round": 1,
+            "name": "",
+            "results": "FMND"
+        },
+        {
+            "round": 2,
+            "name": "",
+            "results": "MDNF"
+        },
+        {
+            "round": 3,
+            "name": "",
+            "results": "MNDF"
+        },
+        {
+            "round": 4,
+            "name": "",
+            "results": "DMFN"
+        }
+    ]
 }

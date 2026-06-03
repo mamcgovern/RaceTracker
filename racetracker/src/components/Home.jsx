@@ -21,7 +21,7 @@ export default function Home() {
                     navigate("/rounds")
                 }}
             >
-                View
+                Start
             </button>
 
         </div>

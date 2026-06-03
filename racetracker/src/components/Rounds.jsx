@@ -51,12 +51,31 @@ export default function Rounds({ data, deleteRound }) {
                 ))}
             </div>
 
-            <button
-                className="btn"
-                onClick={() => navigate('/rounds/new-round')}
-            >
-                + New Round
-            </button>
+            <div className="grid1">
+                <div className="card">
+                    <div className="grid3">
+                        <button
+                            className="btn"
+                            onClick={() => navigate('/rounds/new-round')}
+                        >
+                            + New Round
+                        </button>
+                        <button
+                            className="btn"
+                            onClick={() => navigate('/leaderboard')}
+                        >
+                            Leaderboard
+                        </button>
+                        <button
+                            className="btn"
+                            onClick={() => navigate('/gameover')}
+                        >
+                            Game Over
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import confetti from 'canvas-confetti'
 import data from '../data/sampleData.json'
+import { calculateScores } from '../utils/calculateScores'
 
 function Podium({ players }) {
     const first = players[0]
@@ -36,8 +37,8 @@ function Podium({ players }) {
 export default function GameOver() {
     const navigate = useNavigate()
 
-    const players = [...(data?.players || [])]
-        .sort((a, b) => (b.points ?? 0) - (a.points ?? 0))
+    const players = calculateScores(data)
+    .sort((a, b) => b.points - a.points)
 
     const podium = players.slice(0, 3)
     const rest = players.slice(3)
