@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function NewRound({ addRound }) {
+export default function NewRound({ data, addRound }) {
     const navigate = useNavigate()
 
-    const [roundNumber, setRoundNumber] = useState('')
     const [name, setName] = useState('')
     const [results, setResults] = useState('')
 
     const handleSave = () => {
-        addRound({
-            round: Number(roundNumber),
+        const nextRound =
+            Math.max(...(data.rounds || []).map(r => r.round)) + 1
+
+        const newRound = {
+            round: nextRound,
             name,
             results
-        })
+        }
 
+        addRound(newRound)
         navigate('/rounds')
     }
 
@@ -27,16 +30,6 @@ export default function NewRound({ addRound }) {
 
                 <div className="card-info">
 
-                    {/* Round Number */}
-                    <label className="form-label">Round Number</label>
-                    <input
-                        className="form-input"
-                        type="number"
-                        value={roundNumber}
-                        onChange={(e) => setRoundNumber(e.target.value)}
-                    />
-
-                    {/* Round Name */}
                     <label className="form-label">Round Name</label>
                     <input
                         className="form-input"
@@ -44,7 +37,6 @@ export default function NewRound({ addRound }) {
                         onChange={(e) => setName(e.target.value)}
                     />
 
-                    {/* Results */}
                     <label className="form-label">Results</label>
                     <textarea
                         className="form-input textarea"
@@ -52,9 +44,7 @@ export default function NewRound({ addRound }) {
                         onChange={(e) => setResults(e.target.value)}
                     />
 
-                    {/* Buttons */}
                     <div className="grid2" style={{ marginTop: '1rem' }}>
-
                         <button
                             className="btn secondary"
                             onClick={() => navigate('/rounds')}
@@ -68,7 +58,6 @@ export default function NewRound({ addRound }) {
                         >
                             Create Round
                         </button>
-
                     </div>
 
                 </div>
