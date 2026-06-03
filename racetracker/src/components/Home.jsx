@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function Home() {
+export default function Home({ resetGame }) {
     const navigate = useNavigate()
+
+    const handleStart = () => {
+        resetGame()
+        navigate('/rounds')
+    }
 
     return (
         <div className="home-wrapper">
@@ -14,14 +19,9 @@ export default function Home() {
             <p className="subtitle">
                 Description of the webapp.
             </p>
-            <button
-                className="btn"
-                onClick={(e) => {
-                    e.stopPropagation()
-                    navigate("/rounds")
-                }}
-            >
-                View
+
+            <button className="btn" onClick={handleStart}>
+                Start New Game
             </button>
 
         </div>
