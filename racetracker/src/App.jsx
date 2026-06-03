@@ -7,6 +7,7 @@ import Header from './components/Header.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 
 import Home from './components/Home'
+import AddPlayers from './components/AddPlayers'
 import Rounds from './components/Rounds'
 import NewRound from './components/NewRound'
 import EditRound from './components/EditRound'
@@ -17,62 +18,77 @@ const STORAGE_KEY = 'race-tracker-data'
 
 export default function App() {
 
-    // Load from localStorage OR fallback to initial JSON
+    // =========================
+    // LOAD FROM STORAGE OR INIT
+    // =========================
     const [data, setData] = useState(() => {
         const saved = localStorage.getItem(STORAGE_KEY)
 
-        console.log("🔄 App init")
-        console.log("Saved data:", saved)
-
-        const parsed = saved ? JSON.parse(saved) : initialData
-
-        console.log("Loaded data:", parsed)
-
-        return parsed
-    })
-
-    // Save every change
-    useEffect(() => {
-        console.log("📦 State updated:", data)
-
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
-
-        console.log("💾 Saved to localStorage")
-    }, [data])
-
-    // RESET GAME
-    const resetGame = () => {
-        console.log("🔄 RESET GAME TRIGGERED")
-
-        const fresh = {
-            ...initialData,
-            rounds: []
+        if (saved) {
+            console.log("🔄 Loaded saved game")
+            return JSON.parse(saved)
         }
 
-        console.log("🧼 Reset state:", fresh)
+        console.log("🆕 New game session created")
 
-        setData(fresh)
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(fresh))
+        return {
+            players: null,   // 👈 forces setup step
+            rounds: []
+        }
+    })
+
+    // =========================
+    // PERSIST DATA
+    // =========================
+    useEffect(() => {
+        console.log("💾 Saving state:", data)
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+    }, [data])
+
+    // =========================
+    // SET PLAYERS (ONE TIME ONLY)
+    // =========================
+    const addPlayers = (players) => {
+        if (data.players) {
+            console.log("⚠️ Players already set — locked")
+            return
+        }
+
+        console.log("👥 Setting players:", players)
+
+        setData(prev => ({
+            ...prev,
+            players
+        }))
     }
 
-    // ADD ROUND
+    // =========================
+    // RESET GAME (KEEP PLAYERS)
+    // =========================
+    const resetGame = () => {
+        console.log("🔄 Resetting rounds only")
+
+        setData(prev => ({
+            ...prev,
+            rounds: []
+        }))
+    }
+
+    // =========================
+    // ROUND CRUD
+    // =========================
     const addRound = (newRound) => {
         console.log("➕ Adding round:", newRound)
 
-        setData(prev => {
-            const updated = {
-                ...prev,
-                rounds: [...(prev.rounds || []), newRound]
-            }
-
-            console.log("📊 New rounds array:", updated.rounds)
-
-            return updated
-        })
+        setData(prev => ({
+            ...prev,
+            rounds: [...(prev.rounds || []), newRound]
+        }))
     }
 
-    // UPDATE ROUND
     const updateRound = (roundId, updatedRound) => {
+        console.log("✏️ Updating round:", roundId)
+
         setData(prev => ({
             ...prev,
             rounds: prev.rounds.map(r =>
@@ -81,20 +97,13 @@ export default function App() {
         }))
     }
 
-    // DELETE ROUND
     const deleteRound = (roundId) => {
         console.log("🗑 Deleting round:", roundId)
 
-        setData(prev => {
-            const updated = {
-                ...prev,
-                rounds: prev.rounds.filter(r => r.round !== Number(roundId))
-            }
-
-            console.log("📊 After delete:", updated.rounds)
-
-            return updated
-        })
+        setData(prev => ({
+            ...prev,
+            rounds: prev.rounds.filter(r => r.round !== Number(roundId))
+        }))
     }
 
     return (
@@ -104,11 +113,31 @@ export default function App() {
 
             <Routes>
 
+                {/* =========================
+                    HOME (ENTRY POINT)
+                ========================= */}
                 <Route
                     path="/"
-                    element={<Home resetGame={resetGame} />}
+                    element={
+                        data.players
+                            ? <Home resetGame={resetGame} />
+                            : <AddPlayers addPlayers={addPlayers} />
+                    }
                 />
 
+                {/* =========================
+                    SETUP (EXPLICIT ROUTE TOO)
+                ========================= */}
+                <Route
+                    path="/addplayers"
+                    element={
+                        <AddPlayers addPlayers={addPlayers} />
+                    }
+                />
+
+                {/* =========================
+                    ROUNDS
+                ========================= */}
                 <Route
                     path="/rounds"
                     element={
@@ -139,6 +168,9 @@ export default function App() {
                     }
                 />
 
+                {/* =========================
+                    END STATES
+                ========================= */}
                 <Route
                     path="/leaderboard"
                     element={<Leaderboard data={data} />}

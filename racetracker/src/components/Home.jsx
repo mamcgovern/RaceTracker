@@ -6,7 +6,7 @@ export default function Home({ resetGame }) {
 
     const handleStart = () => {
         resetGame()
-        navigate('/rounds')
+        navigate('/addplayers')
     }
 
     return (
