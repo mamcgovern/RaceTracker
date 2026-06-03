@@ -40,6 +40,34 @@ export default function GameOver() {
     const players = calculateScores(data)
     .sort((a, b) => b.points - a.points)
 
+    if (!data.rounds || data.rounds.length === 0) {
+    return (
+        <div className="page-container">
+            <h1>Game Over</h1>
+
+            <div className="card">
+                <div className="card-info">
+                    <div className="card-title">
+                        No rounds yet
+                    </div>
+                    <div className="card-info">
+                        {/* New Game */}
+                        <button
+                            className="card-btn"
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                navigate("/")
+                            }}
+                        >
+                            New Game
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
     const podium = players.slice(0, 3)
     const rest = players.slice(3)
 

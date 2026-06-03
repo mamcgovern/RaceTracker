@@ -1,7 +1,6 @@
 export function calculateScores(data) {
     const scores = {}
 
-    // initialize players
     data.players.forEach(player => {
         scores[player.code] = {
             name: player.name,
@@ -12,7 +11,7 @@ export function calculateScores(data) {
 
     const pointsMap = [4, 3, 2, 1]
 
-    data.rounds.forEach(round => {
+    ;(data.rounds || []).forEach(round => {
         const result = round.results || ""
 
         result.split("").forEach((code, index) => {
