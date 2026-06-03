@@ -1,0 +1,46 @@
+{
+    "players": [
+        {
+            "name": "Maddie",
+            "code": "M",
+            "points": 75
+        },
+        {
+            "name": "Fred",
+            "code": "F",
+            "points": 51
+        },
+        {
+            "name": "Damien",
+            "code": "D",
+            "points": 56
+        },
+        {
+            "name": "Nick",
+            "code": "N",
+            "points": 52
+        }
+    ],
+        "rounds": [
+            {
+                "round": 1,
+                "name": "",
+                "results": "FMND"
+            },
+            {
+                "round": 2,
+                "name": "",
+                "results": "MDNF"
+            },
+            {
+                "round": 3,
+                "name": "",
+                "results": "MNDF"
+            },
+            {
+                "round": 4,
+                "name": "",
+                "results": "DMFN"
+            }
+        ]
+}
