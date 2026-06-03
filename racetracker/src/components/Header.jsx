@@ -27,9 +27,9 @@ export default function Header() {
                 <div className="nav-container">
 
                     {/* Brand */}
-                    <Link to="/" className="brand">
+                    <div className="brand">
                         Race Tracker
-                    </Link>
+                    </div>
 
                     {/* TODO: Decide if this is needed */}
                     {/* Menu */}
