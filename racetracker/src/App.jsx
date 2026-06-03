@@ -10,6 +10,7 @@ import Rounds from './components/Rounds.jsx'
 import NewRound from './components/NewRound.jsx'
 import GameOver from './components/GameOver.jsx'
 import Leaderboard from './components/Leaderboard.jsx'
+import EditRound from './components/EditRound.jsx'
 
 
 export default function App() {
@@ -31,6 +32,8 @@ export default function App() {
                     <Route path="/leaderboard" element={<Leaderboard />} />
                     {/* Game-Over */}
                     <Route path="/game-over" element={<GameOver />} />
+                    {/* Edit Round */}
+                    <Route path="/rounds/edit/:roundId" element={<EditRound />} />
                 </Routes>
             </main>
         </>

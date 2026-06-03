@@ -422,3 +422,54 @@ body {
 .podium-card:hover {
   transform: translateY(-6px);
 }
+
+/* =========================
+   EDIT PAGE FORM
+========================= */
+
+.form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+  font-family: var(--font);
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+}
+
+/* textarea sizing */
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* button variants */
+.btn.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}

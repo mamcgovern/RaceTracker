@@ -4,8 +4,6 @@ import data from '../data/sampleData.json'
 
 function Card({ item }) {
     const navigate = useNavigate()
-
-    const editLink = "/rounds/edit/" + item.round
     const deleteLink = "";
 
     return (
@@ -17,12 +15,11 @@ function Card({ item }) {
 
                 <div className="grid2">
                     {/* Edit Button */}
-                    {/* TODO: Make sure the link is correct & passing data */}
                     <button
                         className="card-btn"
                         onClick={(e) => {
                             e.stopPropagation()
-                            navigate(editLink)
+                            navigate(`/rounds/edit/${item.round}`)
                         }}
                     >
                         Edit
