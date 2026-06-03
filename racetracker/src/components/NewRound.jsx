@@ -9,7 +9,9 @@ export default function NewRound({ data, addRound }) {
 
     const handleSave = () => {
         const nextRound =
-            Math.max(...(data.rounds || []).map(r => r.round)) + 1
+            data.rounds.length > 0
+                ? Math.max(...data.rounds.map(r => r.round)) + 1
+                : 1
 
         const newRound = {
             round: nextRound,

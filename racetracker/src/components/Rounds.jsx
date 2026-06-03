@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import data from '../data/sampleData.json'
 
 export default function Rounds({ data, deleteRound }) {
     const navigate = useNavigate()

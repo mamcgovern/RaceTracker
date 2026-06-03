@@ -17,6 +17,16 @@ export default function App() {
     const [data, setData] = useState(initialData)
 
     // =========================
+    // RESET GAME (START NEW SEASON)
+    // =========================
+    const resetGame = () => {
+        setData(prev => ({
+            ...prev,
+            rounds: []
+        }))
+    }
+
+    // =========================
     // ROUNDS CRUD
     // =========================
 
@@ -71,7 +81,7 @@ export default function App() {
                     element={
                         <Home
                             data={data}
-                            deleteRound={deleteRound}
+                            resetGame={resetGame}
                         />
                     }
                 />
