@@ -1,8 +1,6 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 
-export default function Settings({ resetGame }) {
-    const navigate = useNavigate()
+export default function Settings({ resetGame, darkMode, toggleDarkMode }) {
 
     return (
         <div className="page-container">
@@ -11,7 +9,33 @@ export default function Settings({ resetGame }) {
 
             <div className="grid1">
 
-                {/* RESET GAME */}
+                {/* =========================
+                    THEME TOGGLE
+                ========================= */}
+                <div className="card">
+                    <div className="card-info">
+
+                        <div className="card-title">
+                            Theme
+                        </div>
+
+                        <div className="card-description">
+                            Toggle between light and dark mode.
+                        </div>
+
+                        <button
+                            className="btn"
+                            onClick={toggleDarkMode}
+                        >
+                            {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
+                        </button>
+
+                    </div>
+                </div>
+
+                {/* =========================
+                    RESET GAME
+                ========================= */}
                 <div className="card">
                     <div className="card-info">
 
@@ -20,15 +44,12 @@ export default function Settings({ resetGame }) {
                         </div>
 
                         <div className="card-description">
-                            This will delete all rounds and players and start fresh.
+                            This will delete all rounds and players.
                         </div>
 
                         <button
-                            className="btn"
-                            onClick={() => {
-                                resetGame()
-                                navigate('/')
-                            }}
+                            className="btn secondary"
+                            onClick={resetGame}
                         >
                             Reset
                         </button>
@@ -36,16 +57,18 @@ export default function Settings({ resetGame }) {
                     </div>
                 </div>
 
-                {/* FUTURE SETTINGS PLACEHOLDER */}
+                {/* =========================
+                    APP INFO
+                ========================= */}
                 <div className="card">
                     <div className="card-info">
 
                         <div className="card-title">
-                            App Info
+                            About App
                         </div>
 
                         <div className="card-description">
-                            Version 1.0 — Race Tracker
+                            Race Tracker v1 — scoring-based race ranking system.
                         </div>
 
                     </div>

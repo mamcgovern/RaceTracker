@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import initialData from './data/sampleData.json'
-
 import Header from './components/Header.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 
@@ -19,11 +17,33 @@ import About from './components/About'
 import Settings from './components/Settings'
 
 const STORAGE_KEY = 'race-tracker-data'
+const THEME_KEY = 'race-tracker-theme'
 
 export default function App() {
 
     // =========================
-    // LOAD FROM STORAGE OR INIT
+    // DARK MODE STATE
+    // =========================
+    const [darkMode, setDarkMode] = useState(() => {
+        return localStorage.getItem(THEME_KEY) === 'dark'
+    })
+
+    const toggleDarkMode = () => {
+        setDarkMode(prev => !prev)
+    }
+
+    useEffect(() => {
+        localStorage.setItem(THEME_KEY, darkMode ? 'dark' : 'light')
+
+        if (darkMode) {
+            document.body.classList.add('dark')
+        } else {
+            document.body.classList.remove('dark')
+        }
+    }, [darkMode])
+
+    // =========================
+    // LOAD DATA
     // =========================
     const [data, setData] = useState(() => {
         const saved = localStorage.getItem(STORAGE_KEY)
@@ -36,7 +56,7 @@ export default function App() {
         console.log("🆕 New game session created")
 
         return {
-            players: null,   // 👈 forces setup step
+            players: null,
             rounds: []
         }
     })
@@ -50,7 +70,7 @@ export default function App() {
     }, [data])
 
     // =========================
-    // SET PLAYERS (ONE TIME ONLY)
+    // PLAYERS
     // =========================
     const addPlayers = (players) => {
         if (data.players?.length > 0) {
@@ -70,19 +90,19 @@ export default function App() {
     // RESET GAME
     // =========================
     const resetGame = () => {
-        console.log("🔄 Resetting rounds & players")
+        console.log("🔄 Resetting game")
 
         const freshData = {
-            players: [],
+            players: null,
             rounds: []
         }
 
         setData(freshData)
-        localStorage.setItem('race-tracker-data', JSON.stringify(freshData))
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(freshData))
     }
 
     // =========================
-    // ROUND CRUD
+    // ROUNDS
     // =========================
     const addRound = (newRound) => {
         console.log("➕ Adding round:", newRound)
@@ -113,33 +133,37 @@ export default function App() {
         }))
     }
 
+    // =========================
+    // ENTRY LOGIC FIXED
+    // =========================
+    const hasPlayers = (data?.players?.length ?? 0) > 0
+
     return (
         <>
             <ScrollToTop />
+
             <Header />
 
             <Routes>
 
                 {/* =========================
-                    HOME (ENTRY POINT)
+                    HOME
                 ========================= */}
                 <Route
                     path="/"
                     element={
-                        data.players
+                        hasPlayers
                             ? <Home resetGame={resetGame} data={data} />
                             : <AddPlayers addPlayers={addPlayers} />
                     }
                 />
 
                 {/* =========================
-                    SETUP (EXPLICIT ROUTE TOO)
+                    SETUP
                 ========================= */}
                 <Route
                     path="/addplayers"
-                    element={
-                        <AddPlayers addPlayers={addPlayers} />
-                    }
+                    element={<AddPlayers addPlayers={addPlayers} />}
                 />
 
                 {/* =========================
@@ -148,59 +172,39 @@ export default function App() {
                 <Route
                     path="/rounds"
                     element={
-                        <Rounds
-                            data={data}
-                            deleteRound={deleteRound}
-                        />
+                        <Rounds data={data} deleteRound={deleteRound} />
                     }
                 />
 
                 <Route
                     path="/rounds/new-round"
                     element={
-                        <NewRound
-                            data={data}
-                            addRound={addRound}
-                        />
+                        <NewRound data={data} addRound={addRound} />
                     }
                 />
 
                 <Route
                     path="/rounds/edit/:roundId"
                     element={
-                        <EditRound
-                            data={data}
-                            updateRound={updateRound}
-                        />
+                        <EditRound data={data} updateRound={updateRound} />
                     }
                 />
 
-                <Route
-                    path="/players"
-                    element={
-                        <PlayersPage
-                            data={data}
-                        />
-                    }
-                />
-
-                <Route
-                    path="/about"
-                    element={
-                        <About />
-                    }
-                />
-
+                {/* =========================
+                    INFO PAGES
+                ========================= */}
+                <Route path="/players" element={<PlayersPage data={data} />} />
+                <Route path="/about" element={<About />} />
                 <Route
                     path="/settings"
-                    element={
-                        <Settings
-                            resetGame={resetGame}
-                        />
-                    }
+                    element={<Settings
+                        resetGame={resetGame}
+                        darkMode={darkMode}
+                        toggleDarkMode={toggleDarkMode} />}
                 />
+
                 {/* =========================
-                    END STATES
+                    RESULTS
                 ========================= */}
                 <Route
                     path="/leaderboard"
