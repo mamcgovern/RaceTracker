@@ -46,6 +46,16 @@ export default function Header() {
                             <button
                                 className="dropdown-item"
                                 onClick={() => {
+                                    navigate('/rounds')
+                                    setOpen(false)
+                                }}
+                            >
+                                Rounds
+                            </button>
+
+                            <button
+                                className="dropdown-item"
+                                onClick={() => {
                                     navigate('/players')
                                     setOpen(false)
                                 }}
