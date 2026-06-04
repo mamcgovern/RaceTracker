@@ -251,13 +251,119 @@ body {
 ========================= */
 
 @media (max-width: 768px) {
+
+  /* =========================
+     PAGE LAYOUT FIX
+  ========================= */
+
+  .page-container {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  /* =========================
+     GRID FIXES
+  ========================= */
+
+  /* Make sure grid centers items properly */
+  .grid1,
+  .grid2,
+  .grid3 {
+    justify-items: center;
+  }
+
+  /* Force cards to behave consistently */
+  .card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  /* Ensure grid doesn't stretch weirdly */
+  .grid1,
+  .grid2,
+  .grid3 {
+    justify-content: center;
+  }
+  
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+
   .grid2 {
     grid-template-columns: 1fr;
   }
 
-  .home-hero .MN-Logo {
-    width: 50%;
-    height: 50%;
+  .grid1 {
+    gap: 1rem;
+  }
+
+  /* =========================
+     TYPOGRAPHY SCALE DOWN
+  ========================= */
+
+  .page-container h1 {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  .page-container h2 {
+    font-size: 1.3rem;
+  }
+
+  /* =========================
+     CARDS
+  ========================= */
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  .form-card .card-info {
+    padding: 1rem;
+  }
+
+  /* =========================
+     BUTTONS
+  ========================= */
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* =========================
+     PODIUM (VERY IMPORTANT FIX)
+  ========================= */
+
+  .podium {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .first,
+  .second,
+  .third {
+    height: auto;
+    width: 90%;
+  }
+
+  /* =========================
+     HEADER / DROPDOWN
+  ========================= */
+
+  .nav-container {
+    padding: 0 0.75rem;
+  }
+
+  .dropdown {
+    right: 0;
+    left: auto;
+    min-width: 140px;
   }
 }
 
@@ -431,6 +537,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
+  padding: 2rem;
 }
 
 .form-label {
@@ -442,7 +549,7 @@ body {
 }
 
 .form-input {
-  width: 100%;
+  width: 75%;
   padding: 0.75rem 1rem;
   border-radius: 10px;
   border: 1px solid var(--border);
