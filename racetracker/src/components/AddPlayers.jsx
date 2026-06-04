@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+const DEFAULT_PLAYERS = [
+    { name: 'Maddie', code: 'R', points: 0 },
+    { name: 'Nick', code: 'N', points: 0 },
+    { name: 'Mary', code: 'M', points: 0 },
+    { name: 'Damien', code: 'D', points: 0 }
+]
+
 export default function AddPlayers({ addPlayers }) {
     const navigate = useNavigate()
 
@@ -63,10 +70,25 @@ export default function AddPlayers({ addPlayers }) {
         navigate('/rounds')
     }
 
+    // TODO: Remove testing button
+    const handleAddDefault = () => {
+        console.log("⚙️ Adding default players")
+
+        addPlayers(DEFAULT_PLAYERS)
+
+        // Go straight into the game
+        navigate('/rounds')
+    }
+
     return (
         <div className="page-container">
 
             <h1>Set Up Players</h1>
+
+            {/* TODO: Remove testing button */}
+            <button className="btn secondary" onClick={handleAddDefault}>
+                Add Default
+            </button>
 
             <p className="subtitle">
                 Create 4 players (this cannot be changed later)
