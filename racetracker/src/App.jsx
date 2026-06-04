@@ -49,29 +49,32 @@ export default function App() {
     // SET PLAYERS (ONE TIME ONLY)
     // =========================
     const addPlayers = (players) => {
-        if (data.players) {
-            console.log("⚠️ Players already set — locked")
-            return
-        }
-
-        console.log("👥 Setting players:", players)
-
-        setData(prev => ({
-            ...prev,
-            players
-        }))
+    if (data.players?.length > 0) {
+        console.log("⚠️ Players already set — locked")
+        return
     }
 
+    console.log("👥 Setting players:", players)
+
+    setData(prev => ({
+        ...prev,
+        players
+    }))
+}
+
     // =========================
-    // RESET GAME (KEEP PLAYERS)
+    // RESET GAME
     // =========================
     const resetGame = () => {
-        console.log("🔄 Resetting rounds only")
+        console.log("🔄 Resetting rounds & players")
 
-        setData(prev => ({
-            ...prev,
+        const freshData = {
+            players: [],
             rounds: []
-        }))
+        }
+
+        setData(freshData)
+        localStorage.setItem('race-tracker-data', JSON.stringify(freshData))
     }
 
     // =========================

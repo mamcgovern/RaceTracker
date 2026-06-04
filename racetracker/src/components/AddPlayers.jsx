@@ -27,7 +27,8 @@ export default function AddPlayers({ addPlayers }) {
         // =========================
         const cleaned = players.map(p => ({
             name: p.name.trim(),
-            code: p.code.trim().toUpperCase()
+            code: p.code.trim().toUpperCase(),
+            points: 0
         }))
 
         // Check empty fields
