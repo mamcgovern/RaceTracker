@@ -127,7 +127,7 @@ export default function App() {
                     path="/"
                     element={
                         data.players
-                            ? <Home resetGame={resetGame} />
+                            ? <Home resetGame={resetGame} data={data} />
                             : <AddPlayers addPlayers={addPlayers} />
                     }
                 />

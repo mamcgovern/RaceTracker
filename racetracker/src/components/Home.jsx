@@ -1,7 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function Home({ resetGame }) {
+function Continue({ data }) {
+    const navigate = useNavigate()
+
+    const hasGame =
+        (data?.players?.length ?? 0) > 0 &&
+        (data?.rounds?.length ?? 0) >= 0
+
+    if (!hasGame) return null
+
+    console.log("🎮 Old Game Exists — Continue available")
+
+    return (
+        <button
+            className="btn secondary"
+            onClick={() => navigate('/rounds')}
+        >
+            Continue Game
+        </button>
+    )
+}
+
+export default function Home({ resetGame, data }) {
     const navigate = useNavigate()
 
     const handleStart = () => {
@@ -16,10 +37,11 @@ export default function Home({ resetGame }) {
             <div className="home-hero">
                 <h1>Race Tracker</h1>
             </div>
-            {/* <p className="subtitle">
-                Description of the webapp.
-            </p> */}
 
+            {/* CONTINUE (only shows if game exists) */}
+            <Continue data={data} />
+
+            {/* START NEW GAME */}
             <button className="btn" onClick={handleStart}>
                 Start New Game
             </button>
