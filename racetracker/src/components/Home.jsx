@@ -16,9 +16,9 @@ export default function Home({ resetGame }) {
             <div className="home-hero">
                 <h1>Race Tracker</h1>
             </div>
-            <p className="subtitle">
+            {/* <p className="subtitle">
                 Description of the webapp.
-            </p>
+            </p> */}
 
             <button className="btn" onClick={handleStart}>
                 Start New Game
