@@ -1,65 +1,84 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-
-const PAGES = [
-    { path: '/', label: 'Home' },
-]
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { FiSettings } from 'react-icons/fi'
 
 export default function Header() {
     const [open, setOpen] = useState(false)
     const ref = useRef(null)
     const location = useLocation()
+    const navigate = useNavigate()
 
     useEffect(() => {
-        function onClick(e) {
+        function handleClick(e) {
             if (ref.current && !ref.current.contains(e.target)) {
                 setOpen(false)
             }
         }
 
-        document.addEventListener('mousedown', onClick)
-        return () => document.removeEventListener('mousedown', onClick)
+        document.addEventListener('mousedown', handleClick)
+        return () => document.removeEventListener('mousedown', handleClick)
     }, [])
 
     return (
-        <header className="header-wrapper">
+        <div className="header-wrapper">
             <nav className="header">
-                <div className="nav-container">
 
-                    {/* Brand */}
-                    <div className="brand">
+                <div className="header-left">
+                    <Link to="/" className="brand">
                         Race Tracker
-                    </div>
+                    </Link>
+                </div>
 
-                    {/* TODO: Decide if this is needed */}
-                    {/* Menu */}
-                    {/* <div className="menu" ref={ref}>
-                        <button
-                            className="menu-btn"
-                            onClick={() => setOpen(v => !v)}
-                        >
-                            Menu
-                        </button>
+                <div className="header-right" ref={ref}>
 
-                        {open && (
-                            <div className="dropdown">
-                                {PAGES.map(page => (
-                                    <Link
-                                        key={page.path}
-                                        to={page.path}
-                                        className={`dropdown-item ${location.pathname === page.path ? 'active' : ''
-                                            }`}
-                                        onClick={() => setOpen(false)}
-                                    >
-                                        {page.label}
-                                    </Link>
-                                ))}
-                            </div>
-                        )}
-                    </div> */}
+                    {/* Gear button */}
+                    <button
+                        className="icon-btn"
+                        onClick={() => setOpen(v => !v)}
+                    >
+                        <FiSettings size={20} />
+                    </button>
+
+                    {/* Dropdown */}
+                    {open && (
+                        <div className="dropdown">
+
+                            <button
+                                className="dropdown-item"
+                                onClick={() => {
+                                    navigate('/players')
+                                    setOpen(false)
+                                }}
+                            >
+                                Players
+                            </button>
+
+                            <button
+                                className="dropdown-item"
+                                onClick={() => {
+                                    navigate('/about')
+                                    setOpen(false)
+                                }}
+                            >
+                                About
+                            </button>
+
+                            <button
+                                className="dropdown-item"
+                                onClick={() => {
+                                    navigate('/settings')
+                                    setOpen(false)
+                                }}
+                            >
+                                Settings
+                            </button>
+
+                        </div>
+                    )}
 
                 </div>
+
             </nav>
-        </header>
+        </div>
     )
 }

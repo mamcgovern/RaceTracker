@@ -14,6 +14,10 @@ import EditRound from './components/EditRound'
 import Leaderboard from './components/Leaderboard'
 import GameOver from './components/GameOver'
 
+import PlayersPage from './components/PlayersPage'
+import About from './components/About'
+import Settings from './components/Settings'
+
 const STORAGE_KEY = 'race-tracker-data'
 
 export default function App() {
@@ -49,18 +53,18 @@ export default function App() {
     // SET PLAYERS (ONE TIME ONLY)
     // =========================
     const addPlayers = (players) => {
-    if (data.players?.length > 0) {
-        console.log("⚠️ Players already set — locked")
-        return
+        if (data.players?.length > 0) {
+            console.log("⚠️ Players already set — locked")
+            return
+        }
+
+        console.log("👥 Setting players:", players)
+
+        setData(prev => ({
+            ...prev,
+            players
+        }))
     }
-
-    console.log("👥 Setting players:", players)
-
-    setData(prev => ({
-        ...prev,
-        players
-    }))
-}
 
     // =========================
     // RESET GAME
@@ -171,6 +175,30 @@ export default function App() {
                     }
                 />
 
+                <Route
+                    path="/players"
+                    element={
+                        <PlayersPage
+                            data={data}
+                        />
+                    }
+                />
+
+                <Route
+                    path="/about"
+                    element={
+                        <About />
+                    }
+                />
+
+                <Route
+                    path="/settings"
+                    element={
+                        <Settings
+                            resetGame={resetGame}
+                        />
+                    }
+                />
                 {/* =========================
                     END STATES
                 ========================= */}
