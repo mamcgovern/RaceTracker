@@ -17,14 +17,12 @@ export default function About() {
                         Each round is entered as a sequence of player codes.
                         <br /><br />
 
-                        The scoring system is:
-                        <ul style={{ textAlign: 'left', marginTop: '10px' }}>
-                            <li>1st place → 4 points</li>
-                            <li>2nd place → 3 points</li>
-                            <li>3rd place → 2 points</li>
-                            <li>4th place → 1 point</li>
-                        </ul>
-
+                        <p className="subtitle" style={{ fontWeight: 'bold'}}>The scoring system is:</p>
+                        <p className="subtitle">1st place → 4 points</p>
+                        <p className="subtitle">2nd place → 3 points</p>
+                        <p className="subtitle">3rd place → 2 points</p>
+                        <p className="subtitle">4th place → 1 point</p>
+                        
                         <br />
 
                         Example round:
